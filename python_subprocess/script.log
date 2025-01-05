@@ -1,0 +1,40 @@
++ echo 'iam testing sync.sh'
+iam testing sync.sh
++ echo aaa bbb ccc
+aaa bbb ccc
++++ realpath /home/ilya-martynov/IdeaProjects/yc-monitoring/solomon-tf/main/iam/testing/sync.sh
+++ dirname /home/ilya-martynov/IdeaProjects/yc-monitoring/solomon-tf/main/iam/testing/sync.sh
++ SCRIPTS_DIR=/home/ilya-martynov/IdeaProjects/yc-monitoring/solomon-tf/main/iam/testing
++ ROOT_PATH=/home/ilya-martynov/IdeaProjects/yc-monitoring/solomon-tf/main/iam/testing/../../../..
++ export YCP_PROFILE=preprod
++ YCP_PROFILE=preprod
+++ /home/ilya-martynov/IdeaProjects/yc-monitoring/solomon-tf/main/iam/testing/../../../../common/get_iam_token.py preprod
+Running "ycp --profile preprod --format text iam create-token"...
+[Errno 13] Permission denied: 'ycp'
+Retry 1/5...
+Running "ycp --profile preprod --format text iam create-token"...
+[Errno 13] Permission denied: 'ycp'
+Retry 2/5...
+Running "ycp --profile preprod --format text iam create-token"...
+[Errno 13] Permission denied: 'ycp'
+Retry 3/5...
+Running "ycp --profile preprod --format text iam create-token"...
+[Errno 13] Permission denied: 'ycp'
+Retry 4/5...
+Running "ycp --profile preprod --format text iam create-token"...
+[Errno 13] Permission denied: 'ycp'
+Retry 5/5...
+Traceback (most recent call last):
+  File "/home/ilya-martynov/IdeaProjects/yc-monitoring/solomon-tf/main/iam/testing/../../../../common/get_iam_token.py", line 48, in <module>
+    token = get_iam_token(env)
+  File "/home/ilya-martynov/IdeaProjects/yc-monitoring/solomon-tf/main/iam/testing/../../../../common/get_iam_token.py", line 13, in get_iam_token
+    return ycp_retry(["--profile", ycp_profile, "--format", "text", "iam", "create-token"])
+  File "/home/ilya-martynov/IdeaProjects/yc-monitoring/common/utils.py", line 53, in ycp_retry
+    raise Exception(f"max number of retries ({max_retries}) reached")
+Exception: max number of retries (5) reached
++ export YC_IAM_TOKEN=
++ YC_IAM_TOKEN=
++ echo 'iam testing got tokens'
+iam testing got tokens
++ terraform aaa bbb ccc
+/home/ilya-martynov/IdeaProjects/yc-monitoring/solomon-tf/main/iam/testing/sync.sh: line 16: terraform: command not found

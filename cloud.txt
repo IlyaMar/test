@@ -1,0 +1,27 @@
+ycp --profile=doublecloud-aws-prod --impersonate-service-account-id yc.iam.service-account resource-manager cloud create --organization-id=comktmkfs4vva8g3ge8t --name=cloud
+ycp --profile=doublecloud-aws-prod --impersonate-service-account-id yc.iam.service-account resource-manager folder create --cloud-id=abcq14q27nqmtv17rqu7 --name=default
+
+ycp --profile=doublecloud-aws-prod --impersonate-service-account-id yc.iam.service-account resource-manager cloud update-access-bindings -r - <<REQ
+resource_id: abcq14q27nqmtv17rqu7
+private_call: true
+access_binding_deltas:
+- action: ADD
+  access_binding:
+    role_id: resource-manager.clouds.owner
+    subject:
+      id: accjfv0j2ar0pgmp51um
+      type: userAccount
+REQ
+
+
+ycp --profile=doublecloud-aws-prod --impersonate-service-account-id yc.iam.service-account resource-manager folder update-access-bindings -r - <<REQ
+resource_id: abcq14q27nqmtv17rqu7
+private_call: true
+access_binding_deltas:
+- action: ADD
+  access_binding:
+    role_id: resource-manager.folders.owner
+    subject:
+      id: accjfv0j2ar0pgmp51um
+      type: userAccount
+REQ

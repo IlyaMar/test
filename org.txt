@@ -1,0 +1,1 @@
+ycp --profile=doublecloud-aws-prod --impersonate-service-account-id yc.iam.service-account org-manager federation --organization-id=comktmkfs4vva8g3ge8t --name=cloud

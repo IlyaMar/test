@@ -1,0 +1,16 @@
+
+openssl genrsa -out iam_ci_ca.key 2048
+
+CN=yc-iam-ci
+openssl req -x509 -new -key iam_ci_ca.key -days 3650 -subj "/CN=${CN}/" -config openssl.cfg -extensions v3_ca -out iam_ci_ca.crt
+openssl x509 -text -in iam_ci_ca.crt
+
+# generate priv key and cert for service-account
+https://dev.to/aws-builders/iam-roles-anywhere-introduction-and-demo-5h2j
+
+openssl genrsa -out iam_ci_sa.key 4096
+openssl req -new -key iam_ci_sa.key -subj "/CN=yc.iam.deployer-preprod" -out client.csr
+openssl x509 -req -in client.csr -CA iam_ci_ca.crt -CAkey iam_ci_ca.key -set_serial 01 -out iam_ci_sa.crt -days 3650 -sha256 -extfile client_v3.ext
+
+
+

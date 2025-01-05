@@ -1,0 +1,2 @@
+
+https://s3.mds.yandex.net/yc-bootstrap-lts/terraform/preprod/system-resources/resource-type-bindings/cloud-video

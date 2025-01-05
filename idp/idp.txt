@@ -1,0 +1,5 @@
+
+
+ycp --profile prod --impersonate-service-account-id yc.iam.openid-server  organization-manager idp password-auth authenticate-by-password --subject-id aje87raerf0jk2pq4pd4 --password 123 --cookie-header 1 --ip-address 1
+
+
