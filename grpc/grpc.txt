@@ -1,0 +1,1 @@
+:~/arcadia/cloud/iam/terraform/idp/docker/app-grpc-test$ grpcurl  -import-path=. -proto=route_guide.proto  -d '{"latitude": 1, "longitude": 2}' auth.idp.iam.cloud.yandex.net:443 routeguide.RouteGuide/GetFeature

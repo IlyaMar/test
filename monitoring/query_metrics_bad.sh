@@ -1,0 +1,21 @@
+curl 'https://solomon.cloud.yandex-team.ru/rest/grafana/search' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'accept-language: ru,en;q=0.9,bg;q=0.8' \
+  -H 'content-type: application/json' \
+  -H 'cookie: ...' \
+  -H 'origin: https://grafana.yandex-team.ru' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://grafana.yandex-team.ru/' \
+  -H 'sec-ch-ua: "Not/A)Brand";v="8", "Chromium";v="126", "YaBrowser";v="24.7", "Yowser";v="2.5"' \
+  -H 'sec-ch-ua-arch: "x86"' \
+  -H 'sec-ch-ua-bitness: "64"' \
+  -H 'sec-ch-ua-full-version-list: "Not/A)Brand";v="8.0.0.0", "Chromium";v="126.0.6478.234", "YaBrowser";v="24.7.1.1120", "Yowser";v="2.5"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Linux"' \
+  -H 'sec-ch-ua-platform-version: "6.5.0"' \
+  -H 'sec-ch-ua-wow64: ?0' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-site' \
+  -H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 YaBrowser/24.7.0.0 Safari/537.36' \
+  --data-raw $'{"app":"dashboard","requestId":"Q363","timezone":"browser","panelId":37,"dashboardUID":"iam-duty-test-ilya-martynov","publicDashboardAccessToken":"","range":{"from":"2024-10-01T03:56:33.468Z","to":"2024-10-01T06:56:33.468Z","raw":{"from":"now-3h","to":"now"}},"timeInfo":"","interval":"1m","intervalMs":60000,"targets":[{"target":"alias(histogram_percentile(50, \'le\', sum(non_negative_derivative(drop_nan(group_by_time(1m, \'max\', {\'cluster\'=\'prod-iam-control-plane\', \'hist_type\'=\'bin\', \'host\'=\'iam-cp-klg1|iam-cp-klg2|iam-cp-klg3|iam-cp-sas1|iam-cp-sas2|iam-cp-sas3|iam-cp-vla1|iam-cp-vla2|iam-cp-vla3\', \'le\'=\'*\', \'pool\'=\'default\', \'project\'=\'yc.iam.service-cloud\', \'sensor\'=\'taskprocessor_task_delay\', \'service\'=\'iam-control-plane\'})))) by (le)), \'p50\')","refId":"Q1","type":"timeserie"},{"target":"alias(histogram_percentile(75, \'le\', sum(non_negative_derivative(drop_nan(group_by_time(1m, \'max\', {\'cluster\'=\'prod-iam-control-plane\', \'hist_type\'=\'bin\', \'host\'=\'iam-cp-klg1|iam-cp-klg2|iam-cp-klg3|iam-cp-sas1|iam-cp-sas2|iam-cp-sas3|iam-cp-vla1|iam-cp-vla2|iam-cp-vla3\', \'le\'=\'*\', \'pool\'=\'default\', \'project\'=\'yc.iam.service-cloud\', \'sensor\'=\'taskprocessor_task_delay\', \'service\'=\'iam-control-plane\'})))) by (le)), \'p75\')","refId":"Q2","type":"timeserie"},{"target":"alias(histogram_percentile(90, \'le\', sum(non_negative_derivative(drop_nan(group_by_time(1m, \'max\', {\'cluster\'=\'prod-iam-control-plane\', \'hist_type\'=\'bin\', \'host\'=\'iam-cp-klg1|iam-cp-klg2|iam-cp-klg3|iam-cp-sas1|iam-cp-sas2|iam-cp-sas3|iam-cp-vla1|iam-cp-vla2|iam-cp-vla3\', \'le\'=\'*\', \'pool\'=\'default\', \'project\'=\'yc.iam.service-cloud\', \'sensor\'=\'taskprocessor_task_delay\', \'service\'=\'iam-control-plane\'})))) by (le)), \'p90\')","refId":"Q3","type":"timeserie"},{"target":"alias(histogram_percentile(99, \'le\', sum(non_negative_derivative(drop_nan(group_by_time(1m, \'max\', {\'cluster\'=\'prod-iam-control-plane\', \'hist_type\'=\'bin\', \'host\'=\'iam-cp-klg1|iam-cp-klg2|iam-cp-klg3|iam-cp-sas1|iam-cp-sas2|iam-cp-sas3|iam-cp-vla1|iam-cp-vla2|iam-cp-vla3\', \'le\'=\'*\', \'pool\'=\'default\', \'project\'=\'yc.iam.service-cloud\', \'sensor\'=\'taskprocessor_task_delay\', \'service\'=\'iam-control-plane\'})))) by (le)), \'p99\')","refId":"Q4","type":"timeserie"}],"maxDataPoints":164,"scopedVars":{"__interval":{"text":"1m","value":"1m"},"__interval_ms":{"text":"60000","value":60000}},"startTime":1727765793468,"rangeRaw":{"from":"now-3h","to":"now"}}'

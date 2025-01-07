@@ -1,0 +1,21 @@
+# TYPE http_durations histogram
+http_durations_bucket{app="iam-oslogin-daemon_server",method="authorize",le="0.005"} 839133
+http_durations_bucket{app="iam-oslogin-daemon_server",method="authorize",le="0.01"} 841356
+http_durations_bucket{app="iam-oslogin-daemon_server",method="authorize",le="0.025"} 843721
+http_durations_bucket{app="iam-oslogin-daemon_server",method="authorize",le="0.05"} 843948
+http_durations_bucket{app="iam-oslogin-daemon_server",method="authorize",le="0.1"} 844033
+http_durations_bucket{app="iam-oslogin-daemon_server",method="authorize",le="0.25"} 844082
+http_durations_bucket{app="iam-oslogin-daemon_server",method="authorize",le="0.5"} 844108
+http_durations_bucket{app="iam-oslogin-daemon_server",method="authorize",le="1"} 844121
+http_durations_bucket{app="iam-oslogin-daemon_server",method="authorize",le="2.5"} 844126
+http_durations_bucket{app="iam-oslogin-daemon_server",method="authorize",le="5"} 844126
+http_durations_bucket{app="iam-oslogin-daemon_server",method="authorize",le="10"} 844126
+http_durations_bucket{app="iam-oslogin-daemon_server",method="authorize",le="+Inf"} 844126
+http_durations_sum{app="iam-oslogin-daemon_server",method="authorize"} 836.5706359979853
+http_durations_count{app="iam-oslogin-daemon_server",method="authorize"} 844126
+
+# TYPE grpc_statuses counter
+grpc_statuses{app="access_service_client",method="/yandex.cloud.priv.accessservice.v2.AccessService/Authenticate",status="Canceled"} 49
+
+# TYPE go_threads gauge
+go_threads 23

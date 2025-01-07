@@ -1,0 +1,4 @@
+yc-bootstrap --ticket-id CLOUD-178796 --template prod.yaml --apply  - provision-default-resources --resources-path system-resources/cloud-bindings/iam
+
+terraform state push -force /home/ilya-martynov/Downloads/TF/terraform-datacloud-aws-prod-resources_13.08.json
+

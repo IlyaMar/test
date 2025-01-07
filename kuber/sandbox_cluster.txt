@@ -1,0 +1,12 @@
+yc --profile=sandbox managed-kubernetes cluster list
++----------------------+----------+---------------------+---------+---------+-----------------------+--------------------+
+|          ID          |   NAME   |     CREATED AT      | HEALTH  | STATUS  |   EXTERNAL ENDPOINT   | INTERNAL ENDPOINT  |
++----------------------+----------+---------------------+---------+---------+-----------------------+--------------------+
+| cat7l0mjq4mj513u8pcd | cluster1 | 2024-09-09 13:52:59 | HEALTHY | RUNNING | https://51.250.25.180 | https://10.129.0.6 |
++----------------------+----------+---------------------+---------+---------+-----------------------+--------------------+
+
+yc --profile=sandbox managed-kubernetes cluster get-credentials cat7l0mjq4mj513u8pcd --external --kubeconfig ~/.kube/config_sandbox
+KUBECONFIG=~/.kube/config_sandbox kubectl cluster-info
+Kubernetes control plane is running at https://51.250.25.180
+CoreDNS is running at https://51.250.25.180/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+

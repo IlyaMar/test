@@ -1,0 +1,26 @@
+F2                  edit entry. again F2 to save.
+Ctrl + Up/Down      move entries
+
+
+
+Settings
+General
+store text selected with mouse: y
+
+History
+After item is activated
+focus last window: no
+paster to current window: no
+Copyq should pasete to clipboard only, not in current window, because it activates wrong window.
+
+Tabs
+Maximum number of items: 500
+
+
+Setup
+/.config/autostart/copyq.desktop
+Find Exec=copyq, replace on Exec=env QT_QPA_PLATFORM=xcb copyq
+
+Hotkey
+Settings > Keyboard > Keyboard Shortcuts > View and Customise Shortcuts > Custom Shortcuts
+Add shortcut on Alt + Q, command: copyq -e "toggle()"

@@ -1,0 +1,4 @@
+kubectl get pod -l yc.iam.app=access-service --output=jsonpath={.items..metadata.name}
+
+kubectl get pod -l app.kubernetes.io/name=app --output=jsonpath={.items..metadata.name}
+

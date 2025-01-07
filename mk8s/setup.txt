@@ -1,0 +1,44 @@
+helm install \
+  --namespace yc-alb \
+  --set-file saKeySecretKey=sa-key.json \
+
+kubectl get ingress
+
+
+cat sa-key.json | helm registry login cr.yandex --username 'json_key' --password-stdin && \
+helm pull oci://cr.yandex/yc-marketplace/yandex-cloud/yc-alb-ingress/yc-alb-ingress-controller-chart \
+  --version v0.2.10 \
+  --untar && \
+helm install \
+  --namespace <пространство_имен> \
+  --create-namespace \
+  --set folderId=<идентификатор_каталога> \
+  --set clusterId=<идентификатор_кластера> \
+  --set enableDefaultHealthChecks=<true_или_false> \
+  --set-file saKeySecretKey=sa-key.json \
+  yc-alb-ingress-controller ./yc-alb-ingress-controller-chart/
+
+
+SA_TOKEN=$(kubectl -n kube-system get secret $(kubectl -n kube-system get secret | \
+  grep admin-user-token | \
+  awk '{print $1}') -o json | \
+  jq -r .data.token | \
+  base64 -d)
+
+kubectl config set-credentials admin-user \
+  --token=$SA_TOKEN \
+  --kubeconfig=test.kubeconfig
+
+MASTER_ENDPOINT=$(yc managed-kubernetes cluster get --id $CLUSTER_ID \
+    --format json | \
+    jq -r .master.endpoints.external_v4_endpoint)
+
+kubectl config set-cluster sa-test2 \
+  --certificate-authority=ca.pem \
+  --server=$MASTER_ENDPOINT \
+  --kubeconfig=test.kubeconfig
+
+yc managed-kubernetes node-group list
+
+
+kubectl exec app-6958f8f6db-5rc2c -c ua  -- curl http://localhost:16301/status

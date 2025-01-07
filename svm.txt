@@ -1,0 +1,2 @@
+HOST=\'x@iam-ya-*.svc.cloud.yandex.net\'
+pssh exec run-predefined --ycp-profile prod "iam.systemctl" ${HOST?} -- --sudo="sudo" --command="restart" --unit="yc-team-integrations"

@@ -1,0 +1,629 @@
+{
+  "widgets": [
+    {
+      "chart": {
+        "id": "ig7qfxj06",
+        "queries": {
+          "targets": [
+            {
+              "query": "series_sum(\"status\", non_negative_derivative({project=\"yc.iam.service-cloud\", cluster=\"prod-iam-token-service\", service=\"iam-token-service\", app=\"token-service_server\", sensor=\"grpc_statuses\", host=\"iam-ts-klg*|iam-ts-vla*|iam-ts-sas*|iam-ts-myt*\"}))",
+              "textMode": false,
+              "hidden": false,
+              "name": "A",
+              "scopeId": "yc.iam.service-cloud"
+            }
+          ],
+          "downsampling": {
+            "gridAggregation": "GRID_AGGREGATION_UNSPECIFIED",
+            "gapFilling": "GAP_FILLING_UNSPECIFIED"
+          }
+        },
+        "visualizationSettings": {
+          "type": "VISUALIZATION_TYPE_STACK",
+          "stack": true,
+          "normalize": false,
+          "yaxisSettings": {
+            "left": {
+              "title": "",
+              "type": "YAXIS_TYPE_LINEAR",
+              "precision": null,
+              "unitFormat": "UNIT_NONE"
+            },
+            "right": {
+              "title": "",
+              "type": "YAXIS_TYPE_LINEAR",
+              "precision": null,
+              "unitFormat": "UNIT_NONE"
+            }
+          },
+          "tilesSettings": {
+            "showValue": true,
+            "showTitle": true,
+            "sortOrder": "ASC",
+            "sortField": "VALUE"
+          },
+          "showLabels": false,
+          "aggregation": "SERIES_AGGREGATION_AVG",
+          "colorSchemeSettings": {
+            "automatic": {}
+          },
+          "interpolate": "INTERPOLATE_LINEAR"
+        },
+        "seriesOverrides": [
+          {
+            "targetIndex": "0",
+            "settings": {
+              "growDown": false,
+              "yaxisPosition": "YAXIS_POSITION_LEFT"
+            }
+          }
+        ],
+        "nameHidingSettings": {
+          "names": [],
+          "positive": false
+        },
+        "description": "",
+        "title": "grpc_statuses",
+        "displayLegend": false,
+        "freeze": "FREEZE_DURATION_UNSPECIFIED"
+      },
+      "position": {
+        "x": 12,
+        "y": 2,
+        "h": 8,
+        "w": 12
+      }
+    },
+    {
+      "chart": {
+        "id": "fualpwnu7",
+        "queries": {
+          "targets": [
+            {
+              "query": "series_sum({project=\"yc.iam.service-cloud\", cluster=\"prod-iam-token-service\", service=\"iam-token-service\", sensor=\"grpc_requests\", meter_type=\"m1_rate\", app=\"token-service_server\", host=\"iam-ts-klg*|iam-ts-vla*|iam-ts-sas*|iam-ts-myt*\"})",
+              "textMode": false,
+              "hidden": false,
+              "name": "A",
+              "scopeId": "yc.iam.service-cloud"
+            }
+          ],
+          "downsampling": {
+            "gridAggregation": "GRID_AGGREGATION_UNSPECIFIED",
+            "gapFilling": "GAP_FILLING_UNSPECIFIED"
+          }
+        },
+        "visualizationSettings": {
+          "type": "VISUALIZATION_TYPE_UNSPECIFIED",
+          "stack": false,
+          "normalize": false,
+          "yaxisSettings": {
+            "left": {
+              "title": "",
+              "type": "YAXIS_TYPE_LINEAR",
+              "min": "0",
+              "precision": null,
+              "unitFormat": "UNIT_NONE"
+            },
+            "right": {
+              "title": "",
+              "type": "YAXIS_TYPE_LINEAR",
+              "precision": null,
+              "unitFormat": "UNIT_NONE"
+            }
+          },
+          "tilesSettings": {
+            "showValue": true,
+            "showTitle": true,
+            "sortOrder": "ASC",
+            "sortField": "VALUE"
+          },
+          "showLabels": false,
+          "aggregation": "SERIES_AGGREGATION_AVG",
+          "colorSchemeSettings": {
+            "automatic": {}
+          },
+          "interpolate": "INTERPOLATE_LINEAR"
+        },
+        "seriesOverrides": [
+          {
+            "targetIndex": "0",
+            "settings": {
+              "growDown": false,
+              "yaxisPosition": "YAXIS_POSITION_LEFT"
+            }
+          }
+        ],
+        "nameHidingSettings": {
+          "names": [],
+          "positive": false
+        },
+        "description": "",
+        "title": "grpc_requests",
+        "displayLegend": false,
+        "freeze": "FREEZE_DURATION_UNSPECIFIED"
+      },
+      "position": {
+        "x": 0,
+        "y": 2,
+        "h": 8,
+        "w": 12
+      }
+    },
+    {
+      "chart": {
+        "id": "ub8nq1r8h",
+        "queries": {
+          "targets": [
+            {
+              "query": "histogram_percentile(as_vector(50, 99, 99.9, 99.99, 100), \"le\", diff({project=\"yc.iam.service-cloud\", cluster=\"prod-iam-token-service\", service=\"iam-token-service\", sensor=\"grpc_durations\", app=\"token-service_server\", host=\"iam-ts-klg*|iam-ts-vla*|iam-ts-sas*|iam-ts-myt*\"}))",
+              "textMode": false,
+              "hidden": false,
+              "name": "A",
+              "scopeId": "yc.iam.service-cloud"
+            }
+          ],
+          "downsampling": {
+            "gridAggregation": "GRID_AGGREGATION_UNSPECIFIED",
+            "gapFilling": "GAP_FILLING_UNSPECIFIED"
+          }
+        },
+        "visualizationSettings": {
+          "type": "VISUALIZATION_TYPE_UNSPECIFIED",
+          "stack": false,
+          "normalize": false,
+          "yaxisSettings": {
+            "left": {
+              "title": "",
+              "type": "YAXIS_TYPE_LINEAR",
+              "min": "0",
+              "precision": null,
+              "unitFormat": "UNIT_NONE"
+            },
+            "right": {
+              "title": "",
+              "type": "YAXIS_TYPE_LINEAR",
+              "precision": null,
+              "unitFormat": "UNIT_NONE"
+            }
+          },
+          "tilesSettings": {
+            "showValue": true,
+            "showTitle": true,
+            "sortOrder": "ASC",
+            "sortField": "VALUE"
+          },
+          "showLabels": false,
+          "aggregation": "SERIES_AGGREGATION_AVG",
+          "colorSchemeSettings": {
+            "automatic": {}
+          },
+          "interpolate": "INTERPOLATE_LINEAR"
+        },
+        "seriesOverrides": [
+          {
+            "targetIndex": "0",
+            "settings": {
+              "growDown": false,
+              "yaxisPosition": "YAXIS_POSITION_LEFT"
+            }
+          }
+        ],
+        "nameHidingSettings": {
+          "names": [],
+          "positive": false
+        },
+        "description": "",
+        "title": "grpc_durations",
+        "displayLegend": false,
+        "freeze": "FREEZE_DURATION_UNSPECIFIED"
+      },
+      "position": {
+        "x": 24,
+        "y": 2,
+        "h": 8,
+        "w": 12
+      }
+    },
+    {
+      "title": {
+        "text": "Common",
+        "size": "TITLE_SIZE_L"
+      },
+      "position": {
+        "x": 0,
+        "y": 0,
+        "h": 2,
+        "w": 36
+      }
+    },
+    {
+      "title": {
+        "text": "YDB",
+        "size": "TITLE_SIZE_L"
+      },
+      "position": {
+        "x": 0,
+        "y": 10,
+        "h": 2,
+        "w": 36
+      }
+    },
+    {
+      "chart": {
+        "id": "7tkgu7ey3",
+        "queries": {
+          "targets": [
+            {
+              "query": "series_sum({project=\"yc.iam.service-cloud\", cluster=\"prod-iam-token-service\", service=\"iam-token-service\", sensor=\"grpc_requests\", meter_type=\"m1_rate\", app=\"token-service_server\", host=\"iam-ts-ydb*\"})",
+              "textMode": false,
+              "hidden": false,
+              "name": "A",
+              "scopeId": "yc.iam.service-cloud"
+            }
+          ],
+          "downsampling": {
+            "gridAggregation": "GRID_AGGREGATION_UNSPECIFIED",
+            "gapFilling": "GAP_FILLING_UNSPECIFIED"
+          }
+        },
+        "visualizationSettings": {
+          "type": "VISUALIZATION_TYPE_UNSPECIFIED",
+          "stack": false,
+          "normalize": false,
+          "yaxisSettings": {
+            "left": {
+              "title": "",
+              "type": "YAXIS_TYPE_LINEAR",
+              "min": "0",
+              "precision": null,
+              "unitFormat": "UNIT_NONE"
+            },
+            "right": {
+              "title": "",
+              "type": "YAXIS_TYPE_LINEAR",
+              "precision": null,
+              "unitFormat": "UNIT_NONE"
+            }
+          },
+          "tilesSettings": {
+            "showValue": true,
+            "showTitle": true,
+            "sortOrder": "ASC",
+            "sortField": "VALUE"
+          },
+          "showLabels": false,
+          "aggregation": "SERIES_AGGREGATION_AVG",
+          "colorSchemeSettings": {
+            "automatic": {}
+          },
+          "interpolate": "INTERPOLATE_LINEAR"
+        },
+        "seriesOverrides": [
+          {
+            "targetIndex": "0",
+            "settings": {
+              "growDown": false,
+              "yaxisPosition": "YAXIS_POSITION_LEFT"
+            }
+          }
+        ],
+        "nameHidingSettings": {
+          "names": [],
+          "positive": false
+        },
+        "description": "",
+        "title": "grpc_requests",
+        "displayLegend": false,
+        "freeze": "FREEZE_DURATION_UNSPECIFIED"
+      },
+      "position": {
+        "x": 0,
+        "y": 12,
+        "h": 8,
+        "w": 12
+      }
+    },
+    {
+      "chart": {
+        "id": "hvmdzrbxr",
+        "queries": {
+          "targets": [
+            {
+              "query": "series_sum(\"status\", non_negative_derivative({project=\"yc.iam.service-cloud\", cluster=\"prod-iam-token-service\", service=\"iam-token-service\", app=\"token-service_server\", sensor=\"grpc_statuses\", host=\"iam-ts-ydb*\"}))",
+              "textMode": false,
+              "hidden": false,
+              "name": "A",
+              "scopeId": "yc.iam.service-cloud"
+            }
+          ],
+          "downsampling": {
+            "gridAggregation": "GRID_AGGREGATION_UNSPECIFIED",
+            "gapFilling": "GAP_FILLING_UNSPECIFIED"
+          }
+        },
+        "visualizationSettings": {
+          "type": "VISUALIZATION_TYPE_STACK",
+          "stack": true,
+          "normalize": false,
+          "yaxisSettings": {
+            "left": {
+              "title": "",
+              "type": "YAXIS_TYPE_LINEAR",
+              "precision": null,
+              "unitFormat": "UNIT_NONE"
+            },
+            "right": {
+              "title": "",
+              "type": "YAXIS_TYPE_LINEAR",
+              "precision": null,
+              "unitFormat": "UNIT_NONE"
+            }
+          },
+          "tilesSettings": {
+            "showValue": true,
+            "showTitle": true,
+            "sortOrder": "ASC",
+            "sortField": "VALUE"
+          },
+          "showLabels": false,
+          "aggregation": "SERIES_AGGREGATION_AVG",
+          "colorSchemeSettings": {
+            "automatic": {}
+          },
+          "interpolate": "INTERPOLATE_LINEAR"
+        },
+        "seriesOverrides": [
+          {
+            "targetIndex": "0",
+            "settings": {
+              "growDown": false,
+              "yaxisPosition": "YAXIS_POSITION_LEFT"
+            }
+          }
+        ],
+        "nameHidingSettings": {
+          "names": [],
+          "positive": false
+        },
+        "description": "",
+        "title": "grpc_statuses",
+        "displayLegend": false,
+        "freeze": "FREEZE_DURATION_UNSPECIFIED"
+      },
+      "position": {
+        "x": 12,
+        "y": 12,
+        "h": 8,
+        "w": 12
+      }
+    },
+    {
+      "chart": {
+        "id": "h10pxkd18",
+        "queries": {
+          "targets": [
+            {
+              "query": "histogram_percentile(as_vector(50, 99, 99.9, 99.99, 100), \"le\", diff({project=\"yc.iam.service-cloud\", cluster=\"prod-iam-token-service\", service=\"iam-token-service\", sensor=\"grpc_durations\", app=\"token-service_server\", host=\"iam-ts-ydb*\"}))",
+              "textMode": false,
+              "hidden": false,
+              "name": "A",
+              "scopeId": "yc.iam.service-cloud"
+            }
+          ],
+          "downsampling": {
+            "gridAggregation": "GRID_AGGREGATION_UNSPECIFIED",
+            "gapFilling": "GAP_FILLING_UNSPECIFIED"
+          }
+        },
+        "visualizationSettings": {
+          "type": "VISUALIZATION_TYPE_UNSPECIFIED",
+          "stack": false,
+          "normalize": false,
+          "yaxisSettings": {
+            "left": {
+              "title": "",
+              "type": "YAXIS_TYPE_LINEAR",
+              "min": "0",
+              "precision": null,
+              "unitFormat": "UNIT_NONE"
+            },
+            "right": {
+              "title": "",
+              "type": "YAXIS_TYPE_LINEAR",
+              "precision": null,
+              "unitFormat": "UNIT_NONE"
+            }
+          },
+          "tilesSettings": {
+            "showValue": true,
+            "showTitle": true,
+            "sortOrder": "ASC",
+            "sortField": "VALUE"
+          },
+          "showLabels": false,
+          "aggregation": "SERIES_AGGREGATION_AVG",
+          "colorSchemeSettings": {
+            "automatic": {}
+          },
+          "interpolate": "INTERPOLATE_LINEAR"
+        },
+        "seriesOverrides": [
+          {
+            "targetIndex": "0",
+            "settings": {
+              "growDown": false,
+              "yaxisPosition": "YAXIS_POSITION_LEFT"
+            }
+          }
+        ],
+        "nameHidingSettings": {
+          "names": [],
+          "positive": false
+        },
+        "description": "",
+        "title": "grpc_durations",
+        "displayLegend": false,
+        "freeze": "FREEZE_DURATION_UNSPECIFIED"
+      },
+      "position": {
+        "x": 24,
+        "y": 12,
+        "h": 8,
+        "w": 12
+      }
+    },
+    {
+      "chart": {
+        "id": "atkkg36vh",
+        "queries": {
+          "targets": [
+            {
+              "query": "alias(series_sum(non_negative_derivative({project = \"yc.iam.service-cloud\", cluster = \"prod-iam-token-service\", service = \"iam-token-service\", sensor = \"grpc_discarded_requests\", app = \"iam-token-service\", host = \"iam-ts-vla*|iam-ts-sas*|iam-ts-klg*\"})), \"Common\")",
+              "textMode": true,
+              "hidden": false,
+              "name": "A",
+              "scopeId": "yc.iam.service-cloud"
+            },
+            {
+              "query": "alias(series_sum(non_negative_derivative({project = \"yc.iam.service-cloud\", cluster = \"prod-iam-token-service\", service = \"iam-token-service\", sensor = \"grpc_discarded_requests\", app = \"iam-token-service\", host = \"iam-ts-ydb*\"})), \"YDB\")",
+              "textMode": true,
+              "hidden": false,
+              "name": "B",
+              "scopeId": "yc.iam.service-cloud"
+            }
+          ],
+          "downsampling": {
+            "gridAggregation": "GRID_AGGREGATION_UNSPECIFIED",
+            "gapFilling": "GAP_FILLING_UNSPECIFIED"
+          }
+        },
+        "visualizationSettings": {
+          "type": "VISUALIZATION_TYPE_TILES",
+          "stack": false,
+          "normalize": false,
+          "yaxisSettings": {
+            "left": {
+              "title": "",
+              "type": "YAXIS_TYPE_LINEAR",
+              "precision": null,
+              "unitFormat": "UNIT_NONE"
+            },
+            "right": {
+              "title": "",
+              "type": "YAXIS_TYPE_LINEAR",
+              "precision": null,
+              "unitFormat": "UNIT_NONE"
+            }
+          },
+          "tilesSettings": {
+            "showValue": true,
+            "showTitle": true,
+            "sortOrder": "ASC",
+            "sortField": "VALUE"
+          },
+          "showLabels": false,
+          "aggregation": "SERIES_AGGREGATION_AVG",
+          "colorSchemeSettings": {
+            "automatic": {}
+          },
+          "interpolate": "INTERPOLATE_LINEAR"
+        },
+        "seriesOverrides": [],
+        "nameHidingSettings": {
+          "names": [],
+          "positive": false
+        },
+        "description": "",
+        "title": "Discarted requests",
+        "displayLegend": false,
+        "freeze": "FREEZE_DURATION_UNSPECIFIED"
+      },
+      "position": {
+        "x": 0,
+        "y": 28,
+        "h": 8,
+        "w": 12
+      }
+    },
+    {
+      "chart": {
+        "id": "va4j8biz3",
+        "queries": {
+          "targets": [
+            {
+              "query": "alias(series_sum(non_negative_derivative({project = \"yc.iam.service-cloud\", cluster = \"prod-iam-token-service\", service = \"iam-token-service\", sensor = \"logging_discard_count\", host = \"iam-ts-vla*|iam-ts-sas*|iam-ts-klg*\"})), \"Common\")",
+              "textMode": false,
+              "hidden": false,
+              "name": "A",
+              "scopeId": "yc.iam.service-cloud"
+            },
+            {
+              "query": "alias(series_sum(non_negative_derivative({project = \"yc.iam.service-cloud\", cluster = \"prod-iam-token-service\", service = \"iam-token-service\", sensor = \"logging_discard_count\", host = \"iam-ts-ydb*\"})), \"YDB\")",
+              "textMode": false,
+              "hidden": false,
+              "name": "B",
+              "scopeId": "yc.iam.service-cloud"
+            }
+          ],
+          "downsampling": {
+            "gridAggregation": "GRID_AGGREGATION_UNSPECIFIED",
+            "gapFilling": "GAP_FILLING_UNSPECIFIED"
+          }
+        },
+        "visualizationSettings": {
+          "type": "VISUALIZATION_TYPE_TILES",
+          "stack": false,
+          "normalize": false,
+          "yaxisSettings": {
+            "left": {
+              "title": "",
+              "type": "YAXIS_TYPE_LINEAR",
+              "precision": null,
+              "unitFormat": "UNIT_NONE"
+            },
+            "right": {
+              "title": "",
+              "type": "YAXIS_TYPE_LINEAR",
+              "precision": null,
+              "unitFormat": "UNIT_NONE"
+            }
+          },
+          "tilesSettings": {
+            "showValue": true,
+            "showTitle": true,
+            "sortOrder": "ASC",
+            "sortField": "VALUE"
+          },
+          "showLabels": false,
+          "aggregation": "SERIES_AGGREGATION_AVG",
+          "colorSchemeSettings": {
+            "automatic": {}
+          },
+          "interpolate": "INTERPOLATE_LINEAR"
+        },
+        "seriesOverrides": [],
+        "nameHidingSettings": {
+          "names": [],
+          "positive": false
+        },
+        "description": "",
+        "title": "Logging discards",
+        "displayLegend": false,
+        "freeze": "FREEZE_DURATION_UNSPECIFIED"
+      },
+      "position": {
+        "x": 12,
+        "y": 20,
+        "h": 8,
+        "w": 12
+      }
+    }
+  ],
+  "parametrization": null,
+  "eventSources": {
+    "infra": []
+  },
+  "title": "iam-token-service PROD",
+  "description": "",
+  "name": ""
+}

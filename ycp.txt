@@ -1,0 +1,14 @@
+environments:
+  prod:
+    based-on: prod
+    organization-manager:
+      v1:
+        idp:
+          services:
+            password-auth:
+              address: auth.idp.iam.cloud.yandex.net:443
+              plaintext: false
+
+  kz:
+    based-on: "kz"
+    federation-endpoint: oauth.private-api.yacloudkz.tech:9090

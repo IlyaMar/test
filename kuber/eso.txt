@@ -1,0 +1,3 @@
+
+# force sync secret
+kubectl annotate es pepper-v1 force-sync=$(date +%s) --overwrite

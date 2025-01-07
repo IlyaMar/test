@@ -1,0 +1,3 @@
+IAM_TOKEN=...
+yc --profile preprod serverless function invoke b09kba1adf0iipb4vntr -d "$IAM_TOKEN"
+
