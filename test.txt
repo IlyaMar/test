@@ -1,0 +1,23 @@
+export YCP_PROFILE=prod
+export YC_PROFILE=$YCP_PROFILE
+export YC_IAM_TOKEN=
+export YC_IAM_TOKEN=$(ycp --profile ${YCP_PROFILE?} iam iam-token create-for-subject --subject-id yc.iam.service-account)
+export YC_TOKEN=${YC_IAM_TOKEN?}
+export KUBECONFIG=~/cloudia-terraform/cloud/iam/terraform/mk8s/prod/.kubeconfig_iam-prod
+
+
+export YCP_PROFILE=preprod
+export YC_PROFILE=$YCP_PROFILE
+export YC_IAM_TOKEN=
+export YC_IAM_TOKEN=$(ycp --profile ${YCP_PROFILE?} iam iam-token create-for-subject --subject-id yc.iam.service-account)
+export YC_TOKEN=${YC_IAM_TOKEN?}
+export KUBECONFIG=~/cloudia-terraform/cloud/iam/terraform/mk8s/preprod/.kubeconfig_iam-preprod
+
+
+
+
+
+ integral(series_sum(non_negative_derivative({'cluster'='preprod-iam-token-service', 'host'='iam-*', 'project'='yc.iam.service-cloud', 'service'='iam-token-service',sensor="grpc_statuses|servlet_statuses",app="*_server",method="iam.v1.IamTokenService/Create",status="OK|UNAUTHENTICATED|CANCELLED|NOT_FOUND|PERMISSION_DENIED|INVALID_ARGUMENT|4*|2*|3*"}))) / integral(series_sum(non_negative_derivative({'cluster'='preprod-iam-token-service', 'host'='iam-*', 'project'='yc.iam.service-cloud', 'service'='iam-token-service',sensor="grpc_statuses|servlet_statuses",app="*_server",method="iam.v1.IamTokenService/Create"}))) / (1 + integral(series_sum(non_negative_derivative({'cluster'='preprod-iam-token-service', 'host'='iam-*', 'project'='yc.iam.service-cloud', 'service'='iam-token-service',sensor="grpc_discarded_requests"}))) / integral(series_sum(non_negative_derivative({'cluster'='preprod-iam-token-service', 'host'='iam-*', 'project'='yc.iam.service-cloud', 'service'='iam-token-service',app="*_server",sensor="grpc_statuses|servlet_statuses"}))) )
+
+
+  kubectl exec -c ua app-ru-central1-a-0-5d9bbd46b4-7k8cb -- curl -v https://ingester.logging.cloud.yandex.net:8443

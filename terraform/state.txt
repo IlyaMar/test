@@ -1,2 +1,27 @@
 
 https://s3.mds.yandex.net/yc-bootstrap-lts/terraform/preprod/system-resources/resource-type-bindings/cloud-video
+
+
+terraform state push -force /home/ilya-martynov/Downloads/TF/terraform-datacloud-aws-prod-resources_13.08.json
+
+
+terraform state rm module.app.module.helm.helm_release.chart
+terraform import module.app.module.helm.helm_release.chart iam-idp-auth-service/app-ru-central1-a-1
+
+
+terraform import module.base.module.ingress.module.ingress.helm_release.chart yc-alb-ingress/alb-ingress-controller
+terraform import module.base.module.ingress.module.network-policy.module.base.helm_release.chart yc-alb-ingress/network-policy
+
+terraform import module.base.module.eso.module.external_secrets_operator.helm_release.chart     eso/external-secrets
+terraform import module.base.module.eso.module.network-policy.module.base.helm_release.chart    eso/network-policy
+
+
+
+# Enable S3 state versioning
+ycp --profile=prod storage v1 bucket update -r - <<REQ
+versioning: VERSIONING_ENABLED
+name: iam-terraform-state
+update_mask:
+  paths:
+    - versioning
+REQ
