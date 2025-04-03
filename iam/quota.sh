@@ -1,5 +1,14 @@
 # https://docs.yandex-team.ru/iam-playbook-operation/duty/organization_manager#kakie-byvayut-kvoty,-svyazannye-s-organizaciyami,-i-gde-oni-zhivut
 
+ORG_ID=f9nubpvgojtoqu59gqi6
+PROFILE=kz
+ycp --profile ${PROFILE?} --impersonate-service-account-id yc.iam.service-account iam quota-limit get -r - <<REQ
+resource:
+  resource_id: $ORG_ID
+  resource_type: organization-manager.federation
+REQ
+
+
 
 CLOUD_ID=yc.iam.service-cloud
 PROFILE=preprod
@@ -41,3 +50,7 @@ limit:
   quota_id: vpc.ipv6Addresses.count
   limit: 5
 REQ
+
+
+прод - через суппорт
+препрод - через бэкофисс https://backoffice-preprod.yandex.cloud/clouds/{CLOUD_ID}/quotas

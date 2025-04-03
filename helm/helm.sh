@@ -7,7 +7,9 @@ export HELM_REGISTRY_CONFIG=~/.docker/config.json
 
 
 
-helm pull --version 105543  oci://cr.yandex/crpb27ur8r606mfu5f7v/charts/iam-idp-auth-service
+helm pull --version 105543 --untar oci://cr.yandex/crpb27ur8r606mfu5f7v/charts/iam-idp-auth-service
+helm pull --version 156638 oci://cr.cloud-preprod.yandex.net/crtqchh33vmh7gjrr5uq/charts/iam-idp-cp
+
 helm pull oci://cr.yandex/yc-marketplace/yandex-cloud/external-secrets/chart/external-secrets --version 0.9.20 --untar
 helm pull oci://cr.yandex/yc-marketplace/yandex-cloud/yc-alb-ingress/yc-alb-ingress-controller-chart --version v0.2.15 --untar
 helm pull oci://cr.yandex/crp9j326k6up539jsjlm/charts/infra/unified-agent --version 41806-c99bac973a3 --untar

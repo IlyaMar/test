@@ -15,9 +15,15 @@ export KUBECONFIG=~/cloudia-terraform/cloud/iam/terraform/mk8s/preprod/.kubeconf
 
 
 
+integral(series_sum(non_negative_derivative({'cluster'='preprod-iam-token-service', 'host'='iam-*', 'project'='yc.iam.service-cloud', 'service'='iam-token-service',sensor="grpc_statuses|servlet_statuses",app="*_server",method="iam.v1.IamTokenService/Create",status="OK|UNAUTHENTICATED|CANCELLED|NOT_FOUND|PERMISSION_DENIED|INVALID_ARGUMENT|4*|2*|3*"}))) / integral(series_sum(non_negative_derivative({'cluster'='preprod-iam-token-service', 'host'='iam-*', 'project'='yc.iam.service-cloud', 'service'='iam-token-service',sensor="grpc_statuses|servlet_statuses",app="*_server",method="iam.v1.IamTokenService/Create"}))) / (1 + integral(series_sum(non_negative_derivative({'cluster'='preprod-iam-token-service', 'host'='iam-*', 'project'='yc.iam.service-cloud', 'service'='iam-token-service',sensor="grpc_discarded_requests"}))) / integral(series_sum(non_negative_derivative({'cluster'='preprod-iam-token-service', 'host'='iam-*', 'project'='yc.iam.service-cloud', 'service'='iam-token-service',app="*_server",sensor="grpc_statuses|servlet_statuses"}))) )
+
+kubectl exec -c ua app-ru-central1-a-0-5d9bbd46b4-7k8cb -- curl -v https://ingester.logging.cloud.yandex.net:8443
 
 
- integral(series_sum(non_negative_derivative({'cluster'='preprod-iam-token-service', 'host'='iam-*', 'project'='yc.iam.service-cloud', 'service'='iam-token-service',sensor="grpc_statuses|servlet_statuses",app="*_server",method="iam.v1.IamTokenService/Create",status="OK|UNAUTHENTICATED|CANCELLED|NOT_FOUND|PERMISSION_DENIED|INVALID_ARGUMENT|4*|2*|3*"}))) / integral(series_sum(non_negative_derivative({'cluster'='preprod-iam-token-service', 'host'='iam-*', 'project'='yc.iam.service-cloud', 'service'='iam-token-service',sensor="grpc_statuses|servlet_statuses",app="*_server",method="iam.v1.IamTokenService/Create"}))) / (1 + integral(series_sum(non_negative_derivative({'cluster'='preprod-iam-token-service', 'host'='iam-*', 'project'='yc.iam.service-cloud', 'service'='iam-token-service',sensor="grpc_discarded_requests"}))) / integral(series_sum(non_negative_derivative({'cluster'='preprod-iam-token-service', 'host'='iam-*', 'project'='yc.iam.service-cloud', 'service'='iam-token-service',app="*_server",sensor="grpc_statuses|servlet_statuses"}))) )
-
-
-  kubectl exec -c ua app-ru-central1-a-0-5d9bbd46b4-7k8cb -- curl -v https://ingester.logging.cloud.yandex.net:8443
+https://monitoring.yandex.cloud/projects/yc.iam.service-cloud/dashboards/fbe19hr86nois7rke10a/view
+?p%5Bcluster%5D=prod-iam-token-service
+&p%5Bservice%5D=iam-token-service
+&p%5Bmethod%5D%5B0%5D=iam.v1.IamTokenService%2FCreateForServiceAccount
+&p%5Bhost%5D%5B1%5D=iam-ts-klg1
+&p%5Bapp%5D=token-service_server
+&refresh=off&to=now&from=now-1w

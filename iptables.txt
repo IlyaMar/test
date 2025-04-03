@@ -1,0 +1,85 @@
+﻿Просмотр
+iptables -nv --line-numbers -L INPUT
+iptables -nv --line-numbers -L
+
+
+Запретить все соединения за исключением одного ip адреса. Порядок команд важен, иначе пропадёт ssh-соединение!
+iptables -A INPUT -p tcp -m tcp -s 10.30.18.23/32 --dport 8081 -j ACCEPT
+iptables -A INPUT -p tcp -m tcp -s 10.30.18.23/32 -m multiport --dports 22,8080,1099 -j ACCEPT
+iptables -I INPUT 22 -s 10.4.82.16/32 -j ACCEPT -i eth0
+iptables -P INPUT DROP
+iptables -P FORWARD DROP
+iptables -I FORWARD 22 -s 10.4.1.0/24 -d 10.161.0.0/16 -j ACCEPT
+
+
+Запретить все исходящие соединения за исключением одного ip адреса
+iptables -A OUTPUT -p tcp -m tcp -d 10.30.18.23/32 -j ACCEPT
+iptables -A OUTPUT -p tcp -m tcp -d dc.sw.ru/32 --dport 3268 -j ACCEPT
+iptables -A OUTPUT -d dc.sw.ru/32  -j ACCEPT
+iptables -P FORWARD DROP
+iptables -P OUTPUT DROP
+добавить правило с номером
+iptables -I INPUT 6 -p tcp --dport 22 -j ACCEPT
+
+удаление
+iptables -D INPUT 2
+
+
+
+Работа с NAT. Посмотреть записи
+iptables -t nat -L
+Добавить запись в NAT. У пакетов с хоста 10.27.72.122 подменить ip отправителя на свой (10.27.1.208), послать на eth0
+iptables -t nat -A POSTROUTING -s 10.27.72.122 ! -d 10.0.0.0/255.0.0.0 -o eth0 -j SNAT --to-source 10.27.1.208
+iptables -t nat -A POSTROUTING -s 10.27.72.245 ! -d 10.27.0.0/255.255.0.0 -o eth0 -j SNAT --to-source 10.27.0.48
+
+iptables -t nat -A POSTROUTING -s 10.27.75.179 -d dc.sw.ru/32 -o eth0 -j SNAT --to-source 10.27.1.191
+
+
+закрыть себе доступ к хосту по адресу
+iptables -t filter -I OUTPUT -s 10.27.75.116 -d mir.sw.ru -j DROP
+отменить правило
+iptables -t filter -D OUTPUT -s 10.27.75.116 -d mir.sw.ru -j DROP
+Как удалить? смортим номер правила.
+iptables -t nat --line-numbers -n -L
+Допустим, номер = 2. удаляем правило из цепи POSTROUTING в таблице nat
+iptables -t nat -D POSTROUTING 2
+
+Сохранить настройки, в файл /etc/sysconfig/iptables (можно удалять)
+/etc/init.d/iptables save
+Может не сработать из-за PSBM. Решение - апдейтить до последней версии, + выполнить проверку:
+cat /sys/module/nf_conntrack/parameters/ip_conntrack_disable_ve0
+- должен вернуть 0. Если вернул 1, то выставить 0 
+Иногда даже это не помогает, тогда удаляем nat-правило и выставляем шлюз на контейнере где нет интернета в heh-dev2.qa.sw.ru (10.27.1.210)
+
+
+
+iptables -F
+iptables -t nat -F
+iptables -t mangle -F
+iptables -X
+
+# Always accept loopback traffic
+iptables -A INPUT -i lo -j ACCEPT
+
+# Allow established connections, and those not coming from the outside
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A INPUT -m state --state NEW ! -i eth2 -j ACCEPT
+iptables -A FORWARD -i eth2 -o eth1 -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+# Allow outgoing connections from the LAN side.
+iptables -A FORWARD -i eth1 -o eth2 -j ACCEPT
+
+# Masquerade.
+iptables -t nat -A POSTROUTING -o eth2 -j MASQUERADE
+
+# Don't forward from the outside to the inside.
+iptables -A FORWARD -i eth2 -o eth2 -j REJECT
+iptables -A FORWARD -i eth1 -o eth2 -j REJECT
+
+
+
+iptables -A INPUT -p tcp -m tcp -m multiport --dports 22,8080 -j ACCEPT
+iptables -A INPUT -p icmp -j ACCEPT
+iptables -A INPUT -p tcp -m tcp -s 10.12.72.40/32 --dport 7501 -j ACCEPT
+iptables -P INPUT DROP
+

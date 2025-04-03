@@ -1,9 +1,10 @@
 mkdir ~/.arc/stores/objects-common
 mkdir ~/.arc/stores/objects-common-arcadia
 
-nice arc mount --mount ~/arcadia-terraform/
+nice arc mount --mount ~/arcadia --object-store ~/.arc/stores/objects-common
 nice arc mount --mount ~/arcadia-scripts --object-store ~/.arc/stores/objects-common-arcadia
-nice arc mount --mount ~/arcadia-dashboard --object-store ~/.arc/stores/objects-common-arcadia
+nice arc mount --mount ~/arcadia-docs --object-store ~/.arc/stores/objects-common-arcadia
+nice arc mount --mount ~/arcadia-dashboard --allow-root --object-store ~/.arc/stores/objects-common-arcadia
 nice arc mount --mount ~/arcadia-iam-bot --object-store ~/.arc/stores/objects-common-arcadia
 nice arc mount -r cloudia -m ~/cloudia --object-store ~/.arc/stores/objects-common
 nice arc mount -r cloudia -m ~/cloudia-cloud-java --object-store ~/.arc/stores/objects-common
@@ -11,8 +12,11 @@ nice arc mount -r cloudia -m ~/cloudia-terraform --object-store ~/.arc/stores/ob
 nice arc mount -r cloudia -m ~/cloudia-monitoring --object-store ~/.arc/stores/objects-common
 nice arc mount -r cloudia -m ~/cloudia-spinnaker --object-store ~/.arc/stores/objects-common
 nice arc mount -r cloudia -m ~/cloudia-cloud-go --object-store ~/.arc/stores/objects-common
+nice arc mount -r cloudia -m ~/cloudia-activeprobes --object-store ~/.arc/stores/objects-common
 nice arc mount -r cloudia -m ~/cloudia-k8s-deploy --object-store ~/.arc/stores/objects-common
 nice arc mount -r cloudia -m ~/cloudia-bootstrap-templates --object-store ~/.arc/stores/objects-common
+nice arc mount -r cloudia -m ~/cloudia-iam-sync --object-store ~/.arc/stores/objects-common
+nice arc mount -r cloudia -m ~/cloudia-salt-formula --object-store ~/.arc/stores/objects-common
 
 arc unmount ~/cloudia-cloud-java
 arc unmount ~/cloudia-terraform

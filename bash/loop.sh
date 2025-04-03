@@ -1,12 +1,9 @@
 #!/bin/bash -eEu
 set -o pipefail
 
-
 for dir in app-*; do
   echo "terraform-chdir=./$dir  apply -auto-approve"
 done
-
-
 
 
 profile=kz
