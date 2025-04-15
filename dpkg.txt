@@ -1,0 +1,15 @@
+
+dpkg -S /usr/bin/debuild	find package owning a file
+dpkg -s yc-compute-metadata	show installed package
+dpkg -l	show all
+dpkg-query -L imagemagick	list installed package files
+apt-get install --only-upgrade xxx	upgrade package
+
+dpkg -i file.deb
+dpkg -r yc-iam-oslogin-daemon
+
+apt-file find security/pam_ext.h	search who provides a file
+apt-cache show libpam0g-dev
+
+apt-get install --only-upgrade google-compute-engine-oslogin=20220205.00~2402020807~yc+underlay	upgrade to sepcific version
+apt-get install --allow-downgrades google-compute-engine-oslogin=20220205.00~2203171259~yc+underlay	downgrade

@@ -1,3 +1,5 @@
 yc-bootstrap --ticket-id CLOUD-178796 --template prod.yaml --apply  - provision-default-resources --resources-path system-resources/cloud-bindings/iam
 
 
+
+

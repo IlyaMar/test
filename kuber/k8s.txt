@@ -1,6 +1,6 @@
 kubectl config get-contexts
 
-kubectl config set-context --namespace --current iam-idp-auth-service
+kubectl config set-context --current --namespace iam-idp-cp
 
 
 kubectl get pod -l yc.iam.app=access-service --output=jsonpath={.items..metadata.name}

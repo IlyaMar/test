@@ -1,1 +1,2 @@
 curl -H 'X-Solomon-FetcherId: internal/prod/sas' 'http://0:10100/storage/read?project=yandexcloud&service=kubelet'
+curl -H 'X-Solomon-FetcherId: internal/prod/sas' 'http://localhost:8080/storage/read?project=yc.iam.service-cloud&service=iam'

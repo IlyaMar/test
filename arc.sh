@@ -4,8 +4,9 @@ mkdir ~/.arc/stores/objects-common-arcadia
 nice arc mount --mount ~/arcadia --object-store ~/.arc/stores/objects-common
 nice arc mount --mount ~/arcadia-scripts --object-store ~/.arc/stores/objects-common-arcadia
 nice arc mount --mount ~/arcadia-docs --object-store ~/.arc/stores/objects-common-arcadia
-nice arc mount --mount ~/arcadia-dashboard --allow-root --object-store ~/.arc/stores/objects-common-arcadia
 nice arc mount --mount ~/arcadia-iam-bot --object-store ~/.arc/stores/objects-common-arcadia
+nice arc mount --mount ~/arcadia-dashboard --object-store ~/.arc/stores/objects-common-arcadia
+
 nice arc mount -r cloudia -m ~/cloudia --object-store ~/.arc/stores/objects-common
 nice arc mount -r cloudia -m ~/cloudia-cloud-java --object-store ~/.arc/stores/objects-common
 nice arc mount -r cloudia -m ~/cloudia-terraform --object-store ~/.arc/stores/objects-common
