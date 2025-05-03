@@ -1,0 +1,3 @@
+
+yc config profile list
+yc config profile activate default

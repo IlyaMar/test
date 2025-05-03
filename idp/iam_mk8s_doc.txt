@@ -1,0 +1,12 @@
+обновление
+хотфиксы - автоматом, минорная версия - вручную. без даунтайма.
+
+препрод:
+yc managed-kubernetes cluster update c49dl090dgcii33p1tcc --version 1.29
+yc managed-kubernetes node-group list --folder-id yc.iam.mk8s-folder
+yc managed-kubernetes node-group update c49nd1j44uh0g5i22rke --version 1.29
+yc managed-kubernetes node-group update c49ktisrqm6fgru57grk --version 1.29
+yc managed-kubernetes node-group update c499h9do4sckg9rvc59k --version 1.29
+
+прод
+yc managed-kubernetes cluster update catto8lrg2rltbiujdai --version 1.29

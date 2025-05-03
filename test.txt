@@ -3,7 +3,6 @@ export YC_PROFILE=$YCP_PROFILE
 export YC_IAM_TOKEN=
 export YC_IAM_TOKEN=$(ycp --profile ${YCP_PROFILE?} iam iam-token create-for-subject --subject-id yc.iam.service-account)
 export YC_TOKEN=${YC_IAM_TOKEN?}
-export KUBECONFIG=~/cloudia-terraform/cloud/iam/terraform/mk8s/prod/.kubeconfig_iam-prod
 
 
 export YCP_PROFILE=preprod

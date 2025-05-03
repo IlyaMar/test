@@ -1,7 +1,7 @@
 mkdir ~/.arc/stores/objects-common
 mkdir ~/.arc/stores/objects-common-arcadia
 
-nice arc mount --mount ~/arcadia --object-store ~/.arc/stores/objects-common
+nice arc mount --mount ~/arcadia --object-store ~/.arc/stores/objects-common-arcadia
 nice arc mount --mount ~/arcadia-scripts --object-store ~/.arc/stores/objects-common-arcadia
 nice arc mount --mount ~/arcadia-docs --object-store ~/.arc/stores/objects-common-arcadia
 nice arc mount --mount ~/arcadia-iam-bot --object-store ~/.arc/stores/objects-common-arcadia
