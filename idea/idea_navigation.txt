@@ -1,0 +1,24 @@
+Ctrl + Alt + rl	cursor history
+Alt + rl	code tabs
+Ctrl + Shift + Backspace	navigate to last edit
+Ctrl + F4	close tab
+Alt + Shift + Left/Right	navigate cursor history
+
+
+
+Alt + F1	show current file in proj/frmw view
+Alt + 0	go to messages view
+Alt + 1	go to project view
+Alt + 3	go to search view
+Alt + 5	go to debug view
+
+F12 / Esc	switch btw tool and edit windows
+Shift + Esc	hide panel
+
+F11	toggle bookmark
+Shift + F11	show bookmarks
+Ctrl + F11	numbered bookmark
+Ctrl + 1	go to numbered bookmark
+
+Ctrl + Shift + A	search IDE action/option
+Ctrl + E	last edited files

@@ -1,0 +1,31 @@
+Win + Tab	switch window
+Alt + F2	launch application by name
+Win	        search
+Alt + F7	move window
+Alt + F8	                resize window
+Alt + F10	                expand window
+Win + PageUp/Down	        switch workspace
+Win + Shift + PageUp/Down	move window to workspace at left/right
+Win + Space	                switch language
+Win + D	minimize all windows
+Win + A	applications menu
+Win + M	notifications tray
+Ctrl + Q	close application
+Ctrl + L	select file by path in Nautilus
+
+
+
+Packages
+dpkg -S /usr/bin/debuild	find package owning a file
+dpkg -s yc-compute-metadata	show installed package
+dpkg -l	show all
+dpkg-query -L imagemagick	list installed package files
+apt-get install --only-upgrade xxx	upgrade package
+dpkg -i file.deb                    install package
+dpkg -r yc-iam-oslogin-daemon       remove
+
+apt-file find security/pam_ext.h	search who provides a file
+apt-cache show libpam0g-dev
+
+apt-get install --only-upgrade google-compute-engine-oslogin=20220205.00~2402020807~yc+underlay	        upgrade to sepcific version
+apt-get install --allow-downgrades google-compute-engine-oslogin=20220205.00~2203171259~yc+underlay	    downgrade

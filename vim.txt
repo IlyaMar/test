@@ -1,0 +1,14 @@
+undo	u
+redo	Ctrl + R
+select	v
+select lines	V
+cut block	d
+copy block	y
+copy line	yy
+paste	p (after), P (before cursor)
+delete line	dd
+
+replacement	%s/old/new/g
+
+multiline indent	Ctrl + V, up/down, Shift + I, Tab, Esc
+multiline delete	Ctrl + V, up/down, x

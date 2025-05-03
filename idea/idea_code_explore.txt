@@ -1,0 +1,35 @@
+code explore
+Ctrl + N	go to class
+Ctrl + Shift + N	go to file
+Ctrl + G	go to line
+Ctrl + Q	Documentation lookup
+
+Ctrl + U	show super method
+Ctrl + Alt + B	show implementation
+Ctrl + Shift + B	show interface implementation
+Ctrl + H	type hierarchy
+Ctrl + F12	file structure popup
+Ctrl + B	usages popup
+Ctrl + Alt + H	call hierarchy
+Ctrl + Shift + I	show method quick definition
+Alt + Up/Down	navigate btw methods
+
+
+Ctrl + []	navigate to block begin/end
+Ctrl + /	toggle block comment
+
+
+
+
+Shift, Shift	search everywhere
+Alt + F7	find usages
+Alt + E + F + P	find in text
+Alt + E + F + A	replace everywhere
+
+Ctrl + -/+	collapse/expand block
+Ctrl + Shift + -/+	collapse/expand all blocks
+
+Ctrl + Shift + Up/Down/L/R	resize panel
+
+
+Ctrl + `, 4, 3	toggle full screen

@@ -1,0 +1,7 @@
+sudo screen	enter new screen
+Ctrl + a, d	detach
+Ctrl + a, n/p	switch to next/prev screen
+Ctrl + a, c	new screen
+Ctrl + a, K	terminate
+screen -ls	list
+screen -r #	attach screen

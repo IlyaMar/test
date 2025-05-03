@@ -1,0 +1,35 @@
+Ctrl + left/right	navigate by words
+Ctrl + A/E	navigate begin/end
+
+Ctrl + W	cut one word backward
+Ctrl + U	cut all backward
+Ctrl + K	cut all forward
+Ctrl + Y	paste word
+Alt + Y	            after paste, cycle over paste variants
+Ctrl + X, U	        undo command edit
+Alt + Shift + 3	    comment line
+Alt + T	            rotate 2 last words
+
+
+cd -	cd to previous dir
+
+
+
+Ctrl + Shift + T	new Tab
+Alt + 1	            switch to Tab 1
+
+
+Terminal
+middle mouse, Shift + Ins	    paste
+Ctrl + D	close
+Ctrl + L	clear
+Ctrl + A	move cursor first
+Ctrl + E	move cursor last
+Ctrl + U	erase up to beginning
+Ctrl + E	erase up to end
+Ctrl + W	erase a word
+Ctrl + Y	paste erased text
+Ctrl + B,F	move cursor back/forward by words
+Alt + T	    rotate 2 last words
+Ctrl + Shift + T	new Tab
+Alt + 1	            switch to Tab 1

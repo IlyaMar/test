@@ -1,0 +1,16 @@
+Ctrl + -	navigate backward
+Ctrl + Shift + -	navigate forward
+Ctrl + K,T	call hierarchy
+Shift + F12	references
+
+Ctrl + K,W	bookmarks
+Ctrl + K,K	toggle bookmark
+
+Ctrl + Alt + L	Solution Explorer
+Alt + F7	switch tool window
+Ctrl + ;	find file by name
+
+
+F9	toggle breakpoint
+Shift+Alt+Enter	fullscreen
+

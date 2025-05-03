@@ -1,0 +1,16 @@
+Ctrl + X, C	    file permissions
+Ctrl + X, O	    file owner
+Shift + F4	    new file
+Shift + F6	    rename file
+Esc + a	        copy dir path
+Esc + Enter	    copy file name
+
+
+Ctrl + S	        search file in current dir
+Alt + Shift + ?	    search in files
+
+
+Ctrl + X, Q	    browse content on 2nd pane
+Ctrl + X, I	    browse info on 2nd pane
+Alt + I	        open current dir on 2nd pane
+Ctrl + Space	dir size

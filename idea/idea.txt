@@ -1,0 +1,38 @@
+edit
+Ctrl + Shift + Enter	complete
+Alt + Enter	            auto import current
+Ctrl + Alt + O	organize imports
+Ctrl + D	dublicate
+Ctrl + Y	delete line
+Ctrl + Alt + I	auto-indent
+Shift + F6	rename
+Ctrl + F6	change signature
+Ctrl + W	extend selection
+Ctrl + Shift + Up/Down	move line/block
+Ctrl + Shift + V	clipboard history
+Alt + mouse select	multiline edit
+
+
+Settings
+Ctrl + Alt + Shift + S	project settings
+
+
+VCS
+Ctrl + Shift + ~	git branches
+Alt + 9	git history
+Alt + S + G + N	annotate
+Alt + `, 7	checkout branch
+
+
+debug
+F9	resume
+F8	step over
+F7	step into
+Shift + F8	step out
+Alt + F8	evaluate
+Alt + F10	to execution point
+Ctrl + F8	toggle breakpoint
+Alt + Shift + 9	run to cursor
+Ctrl + F2	stop debug
+Ctrl + F8	toggle breakpoint
+Ctrl + Shift + F8	breakpoints

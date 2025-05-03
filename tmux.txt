@@ -1,0 +1,9 @@
+tmux ls	list sessions
+tmux attach	attach first session
+Ctrl + b, d	detach
+Ctrl + b, s	select session
+tmux -L VAR1 new	new session
+Ctrl + b, x	close session
+tmux attach -dt 1	attach session #1
+Ctrl + b	enter scroll mode PgUp/Down
+q	exit scroll mode

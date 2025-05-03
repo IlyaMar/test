@@ -1,0 +1,2 @@
+tar -cvf ~/arch.tgz .	        archive folder
+tar -C ~/dst -xvf ~/arch.tgz	unpack to folder

@@ -1,0 +1,26 @@
+F11	        full screen
+F12	        dev mode
+Ctlr + '+-'	zoom
+Ctrl + 0	zoom to original
+
+Navigation
+Space	            scroll by page
+Ctrl + L	        to URL string
+Alt + E	            Settings
+Ctrl + Shift + O	Bookmarks Settings
+Ctrl + H	        history
+Ctrl + J	        Downloads
+
+Ctrl + G	        Find Next (from cursor)
+Alt + Left/Right	Back/Forth in page history
+
+Ctrl + Shift + B	Bookmarks
+F6	                Move to tabs, bookmarks, content, address
+
+
+Ctrl + Shift + N	New Incognito window
+Shift + Esc	Process Manager
+Ctrl + Shift + T	Open last closed tab
+Ctrl + T	New tab
+Alt + D, Alt + Enter	Dublicate tab
+Ctrl + Shift + PgDown	move tab

@@ -1,0 +1,10 @@
+https://yandex.ru/support/yandex-360/customers/disk/desktop/linux/ru/installation#cli-setup
+
+yandex-disk status
+
+~/.config/yandex-disk/config.cfg
+
+auth="/home/ilya-martynov/.config/yandex-disk/passwd"
+dir="/home/ilya-martynov/Yandex.Disk"
+proxy="no"
+exclude-dirs="Фото"

@@ -1,0 +1,5 @@
+Shift + F2	show task info
+Ins	add task
+Ctrl + F2	link tasks
+Ctrl + Shift + A/M	set auto/manually sched
+Alt + Shift + Right/Left	indent/outdent task

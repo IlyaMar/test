@@ -1,0 +1,40 @@
+Operator test []
+string	            True if the string is not an empty string
+string1 = string2	If the strings are the same
+string1 != string2	If the strings are not equal
+-n string	        If the string is not null
+-z string	        It the string is null
+
+expr1 -eq expr2	    True if expr1 equals expr2
+expr1 -ne expr2	    True if expr1 not equal expr2
+expr1 -gt expr2	    True if expr1 > expr2
+expr1 -ge expr2	    True if expr1 >= expr2
+expr1 -lt expr2	    True if expr1 < expr2
+expr1 -le expr2	    True if expr1 <= expr2
+! expr	            negate the logical expression
+
+-d file	True if file is a directory
+-e file	True if file exists
+-f file	True if file is a regular file
+-g file	True if set-group-id is set on file
+-r file	True if file is readable
+-a file	True if file has non-zero size
+-u file	True if set-user-id is set on file
+-w file	True if file is writeable
+-x file	True if file is executable
+
+Shell special symbols
+$0	script file name
+$1	1st argument
+$9	9th argument
+$@	all params, separated
+$*	all params, glued
+$#	params count
+$$	last process id
+$!	last background process id
+$-	shell FLAGS
+$?	last command return code
+${BASH_SOURCE[0]}	current script path
+
+
+${VAR:-defaultValue}	use var or default

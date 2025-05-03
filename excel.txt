@@ -1,0 +1,3 @@
+F2	start editing cell
+Alt + I, R	insert row
+
