@@ -10,5 +10,5 @@ yc-bootstrap --template pre-prod.yaml --ticket-id CLOUD-143756 --filter host=myt
 yc-bootstrap --template pre-prod.yaml --ticket-id CLOUD-143756 --filter host=myt1-ct7-4.cloud.yandex.net
  --apply  - init-iam-agent-hosts
 
-
+r
 --filter role=compute --filter zone=ru-central1-a

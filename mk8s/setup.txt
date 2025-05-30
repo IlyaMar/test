@@ -42,3 +42,20 @@ yc managed-kubernetes node-group list
 
 
 kubectl exec app-6958f8f6db-5rc2c -c ua  -- curl http://localhost:16301/status
+
+
+
+export YCP_PROFILE=prod
+export YC_PROFILE=$YCP_PROFILE
+export YC_IAM_TOKEN=
+export YC_IAM_TOKEN=$(ycp --profile ${YCP_PROFILE?} iam iam-token create-for-subject --subject-id yc.iam.service-account)
+export YC_TOKEN=${YC_IAM_TOKEN?}
+
+
+export YCP_PROFILE=preprod
+export YC_PROFILE=$YCP_PROFILE
+export YC_IAM_TOKEN=
+export YC_IAM_TOKEN=$(ycp --profile ${YCP_PROFILE?} iam iam-token create-for-subject --subject-id yc.iam.service-account)
+export YC_TOKEN=${YC_IAM_TOKEN?}
+
+

@@ -14,3 +14,7 @@ grpcurl \
   -d "{\"subject\":{\"service_account\":{\"id\":\"${SUBJECT_ID?}\"}},\"permission\":\"${PERMISSION?}\",\"resource_path\":[{\"id\":\"${RESOURCE_ID?}\",\"type\":\"${RESOURCE_TYPE?}\"}]}" \
   as.private-api.cloud-testing.yandex.net:4286 \
   yandex.cloud.priv.servicecontrol.v1.AccessService/Authorize
+
+
+
+grpcurl -v --insecure -H "Authroization: Bearer $YC_IAM_TOKEN" -d '{"payload":"{\"arguments\":[\"dynamic-values\",\"cache-refresher\",\"unset\"],\"flags\":{\"instance-id\":\"iam-internal-prestable-klg1\"}}"}' localhost:4286 yandex.cloud.priv.maintenance.v1.MaintenanceService/ExecuteCommand

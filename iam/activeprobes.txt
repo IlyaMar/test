@@ -1,0 +1,79 @@
+|| test | service | component | description ||
+|| AbstractTokenService.Test   | iam-ts |  | issue token, revoke  ||
+
+|| AccessBindingService.ListAccessBindings   | iam-cp | iam-cp | create sa, add bindings on itself, list bindings  ||
+|| AccessBindingService.Authorization        | iam-cp | iam-cp |  create sa, create authorized key, get iam token, get sa with token ||
+
+|| AccessKeyService.Get/List/Write | iam-cp | iam-cp ||
+|| AccessKeyService.Authorization | iam-cp | iam-cp ||
+
+|| AccessService.Authenticate.byMetadataServiceIamToken | iam-as | |  get iam token from metadata, authenticate ||
+|| AccessService.Authorize.byMetadataServiceIamToken | iam-as | |   ||
+|| AccessService.AuthorizeByBalancer | iam-as | ||
+
+|| ApiKeyService.Get/List/Write/Authorization/Scoped | iam-cp | | ||
+
+|| CertificateService.Get/List/Write | iam-org ||
+
+|| FederationService.Get/List/Write                   | iam-org | |  ||
+|| FederationService.AddUserAccountsCase[In]Sensitive | iam-org | | create fed, add user accounts, list org members, add users with same login ||
+
+|| FolderService.Get/List/Write | iam-rm ||
+
+|| GizmoService.Authorization/ListAccessBindings | iam-cp | iam-cp |  ||
+
+|| GroupService.Get/List/Write                      | iam-org | | ||
+|| GroupService.Update/ListMembers                  | iam-org | | ||
+|| GroupService.AuthorizationRevokeRole/Membership  | iam-org | | ||
+
+|| Console.AccessBindingService.ListAccessBindings | iam-cp | | list access bindings to folder ||
+
+|| KeyService.Get/List/Write | iam-cp | | authorization key ||
+|| KeyService.Authorization  | iam-cp | | Create > Auth > Delete > Deauth ||
+
+|| MembershipService.FederatedUserMembership  | iam-cp | | create fed, add user, verify user's membership in cloud, remove membership, verify user has no membership ||
+|| MembershipService.ServiceAccountMembership | iam-cp | | create sa, verify sa's membership in cloud, remove membership binding, verify as still has membership ||
+
+|| OrganizationService.Get/List/Resolve/BatchGet | iam-org | | ||
+
+|| OsLogin.Http.Ssh | iam-oslogin | | rest queries for ssh login scenario ||
+
+|| QuotaLimitService.Get/List | iam-qm | ||
+
+|| RootService.Authorization/ListAccessBindings | iam-cp | | ||
+
+|| ServiceAccountService.Get/List/Write                   | iam-cp | | ||
+|| ServiceAccountService.Authorization/ListAccessBindings | iam-cp | | ||
+
+|| ServiceControlService.ServiceScenario | iam-cp | service-control ||
+|| ServiceControlService.UserScenario | iam-cp | service-control ||
+
+|| TemporaryAccessKeyService.Authentication | iam-ts | | Crete SA > Create AccessKey > Create TempAccessKey > Authenticate ||
+
+|| IamTokenService.Create.forYandexPassportCookies | iam-ts  ||
+|| IamTokenService.CreateForServiceAccount         | iam-ts  ||
+|| IamTokenService.ExchangeXXX          | iam-ts | | ||
+|| IamTokenService.Authorize.fromJWT    | iam-ts | | | jwt -> iam token   ||
+|| IamTokenService.Create.fromOAUTH     | iam-ts | | | oauth -> iam token ||
+|| IamTokenService.Revoke               | iam-ts | | ||
+
+|| UserAccountService.GetPassport/FederatedUserAccount | iam-cp | | ||
+|| YandexPassportUserAccountService.GetByLogin         | iam-cp | | ||
+
+
+||  | | | ||
+||  | | | ||
+||  | | | ||
+||  | | | ||
+
+
+
+
+
+
+
+|| FederationService.ListByOrganization | iam-org ||
+
+
+
+|| IamTokenService.Authorize.fromJWT | iam-ts ||

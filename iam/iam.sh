@@ -3,7 +3,7 @@ curl https://auth.yandex.cloud/oauth/userinfo -H "Authorization: Bearer $(ycp --
 ycp --profile prod oauth claim get --subject-ids ajele9dp0oc631ihg4t0
 
 
-ycp --profile prod --impersonate-service-account-id yc.iam.serviceAccount maintenance access-service dynamic-values get-all-values
+ycp --profile prod --impersonate-service-account-id yc.iam.service-account maintenance access-service dynamic-values get-all-values
 
 
 ycp --profile ${PROFILE?} iam backoffice  access-binding list-by-subject --subject-id ajekdpbsrmuo96650cb0
@@ -19,3 +19,19 @@ subject:
     id: yc.compute.tf-compute-metadata-sa
 REQ
 
+
+ycp --profile internal-dev iam backoffice  access-binding list-by-subject --subject-id yc.iam.metadata-deployer
+
+
+export YCP_PROFILE=
+export YCP_PROFILE=internal-prestable
+export YC_IAM_TOKEN=
+export YC_IAM_TOKEN=$(ycp --profile ${YCP_PROFILE?} iam iam-token create-for-service-account --service-account-id yc.iam.service-account)
+export YC_IAM_TOKEN=$(ycp --profile ${YCP_PROFILE?} iam iam-token create-for-service-account --service-account-id yc.iam.metadata-deployer)
+ycp --profile $YCP_PROFILE maintenance access-service dynamic-values cache-refresher unset  --instance-id iam-internal-prestable-klg1
+
+export YCP_PROFILE=prod
+export YC_IAM_TOKEN=
+export YC_IAM_TOKEN=$(ycp --profile ${YCP_PROFILE?} iam iam-token create-for-service-account --service-account-id yc.iam.service-account)
+export YC_IAM_TOKEN=$(ycp --profile ${YCP_PROFILE?} iam iam-token create-for-service-account --service-account-id yc.iam.metadata-deployer)
+ycp iam o-auth-client list
