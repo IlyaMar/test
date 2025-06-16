@@ -1,0 +1,62 @@
+root@ilya-martynov-l:~# lsusb
+Bus 006 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 005 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 004: ID 04f2:b74f Chicony Electronics Co., Ltd Integrated Camera
+Bus 001 Device 003: ID 1050:0406 Yubico.com Yubikey 4/5 U2F+CCID
+Bus 001 Device 002: ID 27c6:6594 Shenzhen Goodix Technology Co.,Ltd. Goodix USB2.0 MISC
+Bus 001 Device 005: ID 8087:0033 Intel Corp.
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+
+root@ilya-martynov-l:~# dmidecode -s system-product-name
+21FWS8BP00
+root@ilya-martynov-l:~# boltctl list
+ ○ Dell Thunderbolt Cable
+   ├─ type:          peripheral
+   ├─ name:          Dell Thunderbolt Cable
+   ├─ vendor:        Dell
+   ├─ uuid:          00489928-d84d-d400-ffff-ffffffffffff
+   ├─ generation:    Thunderbolt 3
+   ├─ status:        disconnected
+   ├─ authorized:    Tue 03 Jun 2025 07:29:13 AM UTC
+   ├─ connected:     Tue 03 Jun 2025 07:29:13 AM UTC
+   └─ stored:        Tue 03 Jun 2025 07:21:52 AM UTC
+      ├─ policy:     iommu
+      └─ key:        no
+
+ ○ Dell Thunderbolt Dock
+   ├─ type:          peripheral
+   ├─ name:          Dell Thunderbolt Dock
+   ├─ vendor:        Dell
+   ├─ uuid:          100eead4-3485-8680-ffff-ffffffffffff
+   ├─ generation:    Thunderbolt 3
+   ├─ status:        disconnected
+   ├─ authorized:    Tue 03 Jun 2025 07:29:14 AM UTC
+   ├─ connected:     Tue 03 Jun 2025 07:29:14 AM UTC
+   └─ stored:        Tue 03 Jun 2025 07:21:52 AM UTC
+      ├─ policy:     iommu
+      └─ key:        no
+
+ ● Lenovo ThinkPad Thunderbolt 3 Dock
+   ├─ type:          peripheral
+   ├─ name:          ThinkPad Thunderbolt 3 Dock
+   ├─ vendor:        Lenovo
+   ├─ uuid:          00171900-85d5-0801-ffff-ffffffffffff
+   ├─ generation:    Thunderbolt 3
+   ├─ status:        authorized
+   │  ├─ domain:     be308780-0099-5098-ffff-ffffffffffff
+   │  ├─ rx speed:   40 Gb/s = 2 lanes * 20 Gb/s
+   │  ├─ tx speed:   40 Gb/s = 2 lanes * 20 Gb/s
+   │  └─ authflags:  none
+   ├─ authorized:    Wed 11 Jun 2025 11:44:48 AM UTC
+   ├─ connected:     Wed 11 Jun 2025 11:44:48 AM UTC
+   └─ stored:        Mon 02 Jun 2025 10:41:28 AM UTC
+      ├─ policy:     iommu
+      └─ key:        no
+
+dmesg
+[14060.254959] thinkpad_acpi: undocked from hotplug port replicator
+[14060.381948] ucsi_acpi USBC000:00: UCSI_GET_PDOS failed (-95)

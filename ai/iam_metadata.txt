@@ -1,16 +1,31 @@
 Ты ассистент разработчика, который создает новые роли и пермиссии в облаке.
-В облаке определены сервисы, например iam, compute, mdb. У сервиса заданы ресурс типы - это виды сущностей сервиса, например serviceAccount, cloud, instance, disk.
-На ресурсах можно поизводить действия, например - read, create, update, execute.
-Пермиссия определяет можно ли проводить действие на ресурсе. Облако проверяет пермиссию перед исполнением действия.
-Имя пермиссии задаётся по шаблону <сервис>.<ресурс>.<действие>. У пермиссии есть:
+В облаке определены сервисы, например iam, compute, mdb.
+
+У сервиса заданы ресурс типы - это виды сущностей сервиса, например cloud, instance, disk, serviceAccount, database, image. Ресурс типы задаются в формате <сервис>.<ресурс>, например iam.serviceAccount, compute.image
+На ресурсах можно поизводить действия, например - read, create, update, execute, stop, start, delete, admin.
+
+Пермиссия определяет можно ли производить действие на ресурсе. Облако проверяет пермиссию перед исполнением действия.
+Имя пермиссии задаётся по шаблону <сервис>.<ресурс тип>.<действие>. У пермиссии есть:
 - ресурс тип
-- категория. описывает с какого рода данными ресурса проводим действие. READ_CONTROL_PLANE - читать метаданные ресурса, READ_DATA_PLANE - читать данные ресурса, DELETE, CREATE, USE_DATA_PLANE, USE_CONTROL_PLANE, START, STOP
+- категория. описывает род действия с ресурсом.
 - видимость. private / public
 - стейдж. обычно GA - пермиссия в общем доступе
 
+Список категорий пермиссий:
+ * READ_CONTROL_PLANE читать метаданные и настройки ресурса
+ * READ_DATA_PLANE читать данные ресурса
+ * DELETE удалять ресурсы
+ * CREATE создавать ресурсы
+ * UPDATE модифицировать ресурс
+ * USE_DATA_PLANE читать и писать данные ресурса, включая пользовательские данные
+ * USE_CONTROL_PLANE конфигурировать ресурс
+ * START запускать ресурс
+ * STOP останавливать ресурс
+
+
 Примеры пермиссий:
 
-для сервиса example ресурс типа example.child и действия get:
+для сервиса example ресурс типа example.child и действия get. Категория READ_DATA_PLANE потому что читаются данные ресурса:
 permissions:
   example.children.get:
     description: Returns a child entity
@@ -19,7 +34,7 @@ permissions:
     visibility: internal
     resourceType: example.child
 
-для листинга пользователей в облаке iam:
+для листинга пользователей в облаке iam. Категория READ_CONTROL_PLANE потому что мы просто перечисляем ресурсы, их данные не читаем:
 permissions:
   iam.cloudUsers.list:
     description: List users in a cloud
@@ -28,13 +43,52 @@ permissions:
     visibility: public
     resourceType: resource-manager.cloud
 
-для выпуска токена сервисного аккаунта iam:
+для выпуска токена сервисного аккаунта iam. Категория USE_DATA_PLANE так выпуск токенов это работа с данными ресурса
+permissions:
   iam.serviceAccounts.issueToken:
     description: ''
     category: USE_DATA_PLANE
     stage: GA
     visibility: public
     resourceType: iam.serviceAccount
+
+
+Задание: определи категорию данной пермиссии:
+permissions:
+  iam.folders.list:
+    description: List folders in a cloud
+    category: ?
+    stage: GA
+    visibility: public
+    resourceType: resource-manager.folder
+
+  iam.oauthClients.get:
+    description: Get OAuth clients
+    #   added to restrictions: freeTier;
+    category: ?
+    stage: GA
+    visibility: public
+    resourceType: iam.oauthClient
+
+  iam.oauthClients.create:
+    description: Create OAuth clients
+    #   added to restrictions: freeTier;
+    category: ?
+    stage: GA
+    visibility: public
+    resourceType: resource-manager.folder
+
+  iam.oauthClients.update:
+    description: Update OAuth clients
+    #   added to restrictions: freeTier;
+    category: ?
+    stage: GA
+    visibility: public
+    resourceType: iam.oauthClient
+
+
+
+
 
 Роль это объединение несколько пермиссий, которое можно выдать пользователю.
 Имя роли задаются по шаблону <сервис>.<ресурс>.<название актора>.

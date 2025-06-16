@@ -1,9 +1,20 @@
-kubectl config get-contexts
+alias k='k'
 
-kubectl config set-context --current --namespace iam-idp-cp
+k config get-contexts
+k config set-context --current --namespace iam-idp-cp
 
 
-kubectl get pod -l yc.iam.app=access-service --output=jsonpath={.items..metadata.name}
+k get pod -l yc.iam.app=access-service --output=jsonpath={.items..metadata.name}
+k get pod -l app.kubernetes.io/name=app --output=jsonpath={.items..metadata.name}
 
-kubectl get pod -l app.kubernetes.io/name=app --output=jsonpath={.items..metadata.name}
+k logs <pod-name> --all-containers
+k get events --sort-by=.metadata.creationTimestamp
 
+# Проверка свободных ресурсов в кластере
+k describe nodes | grep -A 10 "Allocated resources"
+k top pod pod1
+
+k get pod iam-resource-manager-control-plane-d5c844cd4-lb8mz -o jsonpath='{.spec.containers[*].image}'
+
+# Просмотр логов предыдущих запусков
+k logs <pod-name> --previous

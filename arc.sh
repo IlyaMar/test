@@ -7,18 +7,18 @@ function arc_mount() {
   if [ "${repo?}" ]; then
     echo "it's cloudia"
     object_store=~/.arc/stores/objects-common
-    repo_param="-m cloudia"
+    repo_param="--repository cloudia"
   else
     echo "it's arcadia"
     object_store=~/.arc/stores/objects-common-arcadia
     repo_param=
   fi
-  if nice arc mount ${repo_param?} -m ${path?} --object-store ${object_store?}; then
+  if nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?}; then
     echo "Mounted ${path?}"
   else
     echo "Failed to mount ${path?}"
     sudo umount -f ${path?}
-    nice arc mount ${repo_param?} -m ${path?} --object-store ${object_store?}
+    nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?}
   fi
 }
 
@@ -41,6 +41,21 @@ arc_mount ~/cloudia-bootstrap-templates cloudia
 arc_mount ~/cloudia-iam-sync cloudia
 arc_mount ~/cloudia-salt-formula cloudia
 
+
+
+
+arc unmount ~/cloudia
+arc unmount ~/cloudia-metro
+arc unmount ~/cloudia-cloud-java
+arc unmount ~/cloudia-terraform
+arc unmount ~/cloudia-monitoring
+arc unmount ~/cloudia-spinnaker
+arc unmount ~/cloudia-cloud-go
+arc unmount ~/cloudia-activeprobes
+arc unmount ~/cloudia-k8s-deploy
+arc unmount ~/cloudia-bootstrap-templates
+arc unmount ~/cloudia-iam-sync
+arc unmount ~/cloudia-salt-formula
 
 
 nice arc mount --mount ~/arcadia --object-store ~/.arc/stores/objects-common-arcadia

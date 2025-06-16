@@ -34,8 +34,17 @@ access_binding_deltas:
       type: serviceAccount
 REQ
 
-
-
-
-
 grpcurl -H "Authorization: Bearer ${SA_IAM_TOKEN?}" -d ''{"access_binding_deltas":[{"action":"ADD","access_binding":{"role_id":"admin","subject":{"id":"yc.iam.serivce-account","type":"serviceAccount"}}}],"private_call":true,"resource_path":[{"id":"yc.iam.service-cloud","type":"resource-manager.cloud"}]}'' ops.private-api.iam.internal.double.tech:4283 yandex.cloud.priv.iam.v1.AccessBindingService/UpdateAccessBindings
+
+
+ycp --profile=preprod lockbox v1 secret update-access-bindings -r - <<REQ
+resource_id: fc3t1v1fhql58h68ha3f
+private_call: true
+access_binding_deltas:
+- action: REMOVE
+  access_binding:
+    role_id: editor
+    subject:
+      id: bfb1q7uugm4rt293sr8q
+      type: userAccount
+REQ

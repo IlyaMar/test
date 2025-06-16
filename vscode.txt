@@ -1,0 +1,5 @@
+Ctrl + Shift + X		marketplace
+Ctrl Alt   -       go backward
+Ctrl Shift -       go forward
+
+Ctrl ,			open settings:
