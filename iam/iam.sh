@@ -35,3 +35,17 @@ export YC_IAM_TOKEN=
 export YC_IAM_TOKEN=$(ycp --profile ${YCP_PROFILE?} iam iam-token create-for-service-account --service-account-id yc.iam.service-account)
 export YC_IAM_TOKEN=$(ycp --profile ${YCP_PROFILE?} iam iam-token create-for-service-account --service-account-id yc.iam.metadata-deployer)
 ycp iam o-auth-client list
+
+
+ycp --profile testing --impersonate-service-account-id yc.iam.service-account iam key create -r -<<REQ
+description: "metro PoC"
+format: json
+key_algorithm: RSA_4096
+service_account_id: yc.iam.rm-control-plane
+REQ
+
+yc --profile testing iam key create --algorithm rsa-4096 --service-account-id yc.iam.resource-manager-control-plane --output yc.iam.resource-manager-control-plane-key.json
+
+
+
+

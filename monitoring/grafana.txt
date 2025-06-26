@@ -1,0 +1,14 @@
+
+cd /path/to/arcadia
+$ ya make -j0 --checkout devtools/junit-runner
+$ ya make -j0 --checkout cloud/java/dashboard
+$ cd cloud/java/dashboard
+
+# произвести сборку и тестовый запуск приложения
+$ ./run-main.sh
+
+# для самостоятельной сборки docker-образа
+$ ./docker-build.sh
+
+
+./spec-single.sh upload main iam/sli.yaml
