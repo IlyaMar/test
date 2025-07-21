@@ -1,0 +1,16 @@
+ST_OAUTH_TOKEN=$(cat ~/.st_oauth_token)
+
+curl 'https://st-api.yandex-team.ru/v2/issues/DEVTOOLSSUPPORT-66446' -H 'content-type: application/json' -H "'Authorization: OAuth ${ST_OAUTH_TOKEN?}'" | jq .
+
+
+curl -X POST -H 'content-type: application/json' -H "Authorization: OAuth ${ST_OAUTH_TOKEN?}" https://st-api.yandex-team.ru/v3/issues/_search?expand=transitions -d '{"query": "Queue: YCIAM Components: \"IAM Metadata\" Summary: Deploy Status: Закрыт \"Sort by\": Created DESC"}'
+(queue: yciam) and Components: "IAM Metadata" and Summary: Deploy and Status: Закрыт
+
+
+
+{
+   "filter": {
+      "<имя_поля>": "<значение_в_поле>"
+   },
+   "order":"+<ключ_поля>"
+}

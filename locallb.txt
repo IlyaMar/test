@@ -1,0 +1,1 @@
+dig klg.9080.tcp.compute-api-l7.local-lb.compute.cloud-preprod.yandex.net. aaaa +short

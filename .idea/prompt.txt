@@ -1,0 +1,48 @@
+This is awesome! // Positive
+This is bad! // Negative
+Wow that movie was rad! // Positive
+What a horrible show! //
+
+
+### Instruction ###
+Translate the text below to Spanish:
+Text: "hello!"
+
+
+Explain antibiotics
+A:
+
+....
+Explain the above in one sentence:
+
+
+...
+Mention the large language model based product mentioned in the paragraph above:
+
+
+Classify the text into neutral, negative or positive. 
+Text: I think the vacation is okay.
+Sentiment:
+
+
+Answer the question based on the context below. Keep the answer short and concise. Respond "Unsure about answer" if not sure about the answer.
+Context: Teplizumab traces its roots to a New Jersey drug company called Ortho Pharmaceutical. There, scientists generated an early version of the antibody, dubbed OKT3. Originally sourced from mice, the molecule was able to bind to the surface of T cells and limit their cell-killing potential. In 1986, it was approved to help prevent organ rejection after kidney transplants, making it the first therapeutic antibody allowed for human use.
+Question: What was OKT3 originally sourced from?
+Answer:
+
+
+
+Table departments, columns = [DepartmentId, DepartmentName]
+Table students, columns = [DepartmentId, StudentId, StudentName]
+Create a MySQL query for all students in the Computer Science Department
+
+
+The odd numbers in this group add up to an even number: 15, 32, 5, 13, 82, 7, 1. 
+Solve by breaking the problem into steps. First, identify the odd numbers, add them, and indicate whether the result is odd or even. 
+
+
+Let's think step by step.
+
+Question: Part of golf is trying to get a higher point total than others. Yes or No?
+Knowledge: The objective of golf is to play a set of holes in the least number of strokes. A round of golf typically consists of 18 holes. Each hole is played once in the round on a standard golf course. Each stroke is counted as one point, and the total number of strokes is used to determine the winner of the game.
+Explain and Answer:
