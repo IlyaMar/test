@@ -20,3 +20,6 @@ Ctrl Shift F        search file by content
 
 Ctrl ]/[          increase/decrease tab
 Ctrl Alt Shift + Numpad down        dublicate line
+
+
+Ctrl Alt A          annotate

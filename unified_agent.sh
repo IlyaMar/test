@@ -1,4 +1,8 @@
-curl http://localhost:16301/status
+cat curl http://localhost:16301/status > status.yml
+
+cd ~/arcadia/logbroker/unified_agent/tools/status_graph
+ya make
+./status_graph --input ~/status.yml --output ~/status
 
 
 
@@ -15,3 +19,4 @@ channels:
           iam:
             jwt:
               file: /etc/sa-metrics-pusher-key.json
+
