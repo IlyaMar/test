@@ -1,6 +1,15 @@
 mkdir ~/.arc/stores/objects-common
 mkdir ~/.arc/stores/objects-common-arcadia
 
+nice arc mount --allow-other --repository arcadia -m ~/arcadia --object-store ~/.arc/stores/objects-common-arcadia
+
+nice arc mount --allow-other --repository cloudia -m ~/cloudia-cloud-go --object-store ~/.arc/stores/objects-common
+nice arc mount --allow-other --repository cloudia -m ~/cloudia-terraform --object-store ~/.arc/stores/objects-common
+nice arc mount --allow-other --repository cloudia -m ~/cloudia-salt --object-store ~/.arc/stores/objects-common
+nice arc mount --allow-other --repository cloudia -m ~/cloudia-bootstrap --object-store ~/.arc/stores/objects-common
+
+
+
 function arc_mount() {
   path=$1
   repo=$2
@@ -56,6 +65,9 @@ arc unmount ~/cloudia-k8s-deploy
 arc unmount ~/cloudia-bootstrap-templates
 arc unmount ~/cloudia-iam-sync
 arc unmount ~/cloudia-salt-formula
+
+
+
 
 
 nice arc mount --mount ~/arcadia --object-store ~/.arc/stores/objects-common-arcadia

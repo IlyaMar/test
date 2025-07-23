@@ -2,6 +2,7 @@ alias k='k'
 
 k config get-contexts
 k config set-context --current --namespace iam-idp-cp
+kubectl config use-context iam-mk8s-preprod
 
 
 k get pod -l yc.iam.app=access-service --output=jsonpath={.items..metadata.name}

@@ -1,3 +1,17 @@
+Comm J              terminal
+Comm K, Z           zen mode
+Ctrl W              switch VSCode window
+
+Comm L              select line
+
+Shift Opt Down      dublicate line
+
+
+
+
+
+
+
 Ctrl + Shift + X		marketplace
 Ctrl + Shift + E		file explorer
 Ctrl + Shift + G		vcs

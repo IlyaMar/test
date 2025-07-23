@@ -28,3 +28,8 @@ extra_params:
     - vmi-drop-l2-advertisements
     - vmi-reduce-flow-log-event-size
 REQ
+
+
+
+extra_params вообще не надо задавать если не знаешь зачем оно нужно (дефолт приедет правильный), вместо project_id_cidr_spec надо использовать 
+ipam_cidr_spec как у коллег сделано. дойди до @SlipKo (не уверен в какой именно это /duty, игорь подскажет) чтобы тебе ipam выдали на твой project-id
