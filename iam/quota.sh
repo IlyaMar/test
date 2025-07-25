@@ -11,7 +11,7 @@ REQ
 
 
 CLOUD_ID=yc.iam.service-cloud
-PROFILE=preprod
+PROFILE=prod
 ycp --profile ${PROFILE?} --impersonate-service-account-id yc.iam.service-account iam quota-limit get -r - <<REQ
 resource:
   resource_id: $CLOUD_ID
@@ -50,6 +50,7 @@ limit:
   quota_id: vpc.ipv6Addresses.count
   limit: 5
 REQ
+
 
 
 прод - через суппорт

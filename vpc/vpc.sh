@@ -30,6 +30,11 @@ extra_params:
 REQ
 
 
+Создание субнетов с прожект-айди
+заказать прожект-айди
+проверить что ipam cidr создался, /duty yc-fw
+ycp --profile prod vpc ipam-cidr list --folder-id yc.iam.access-service-folder
+
 
 extra_params вообще не надо задавать если не знаешь зачем оно нужно (дефолт приедет правильный), вместо project_id_cidr_spec надо использовать 
 ipam_cidr_spec как у коллег сделано. дойди до @SlipKo (не уверен в какой именно это /duty, игорь подскажет) чтобы тебе ipam выдали на твой project-id

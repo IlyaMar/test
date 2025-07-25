@@ -1,0 +1,16 @@
+Terminal 
+Ctrl A / E          cursor to line begin / end
+Ctrl U / K          remove text until begin / end
+Ctrl W              remove word
+Shift Comm Click X2     copy URL
+
+
+Shift Comm I        rename tab
+
+
+
+UI
+	
+Ctrl Comm F         full screen
+Fn Down             page down
+Shift Comm 5        take screenshot
