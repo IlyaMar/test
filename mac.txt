@@ -14,3 +14,8 @@ UI
 Ctrl Comm F         full screen
 Fn Down             page down
 Shift Comm 5        take screenshot
+
+Maccy clipboard
+Comm Shift C        open
+Opt Enter           paste selected
+Enter               copy selected to clipboard

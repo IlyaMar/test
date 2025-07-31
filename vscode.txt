@@ -1,17 +1,4 @@
-Comm J              terminal
-Comm K, Z           zen mode
-Ctrl W              switch VSCode window
-
-Comm L              select line
-
-Shift Opt Down      dublicate line
-
-
-
-
-
-
-
+Comm J                  terminal
 Ctrl + Shift + X		marketplace
 Ctrl + Shift + E		file explorer
 Ctrl + Shift + G		vcs
@@ -20,20 +7,28 @@ Ctrl Shift P            command palette
 Ctrl `                  console
 
 
-Ctrl Alt   -       go backward
-Ctrl Shift -       go forward
-Ctrl K, Z           zen mode
-F11                 full screen
+Comm K, Z           zen mode
+Ctrl W              switch VSCode window
+Ctrl Comm F         full screen
+
+
+Comm L              select line
+Shift Opt Down      dublicate line
+Comm Shift K        delete line
+
+
+Ctrl -              navigate backward
+Ctrl Shift -        navigate forward
+Shift Comm O        go to symbol in file
+Ctrl G              go to line
+Comm Up/Down        navigate to first/last line
+
+
+
+
+
+
+
+
 Ctrl Alt K          toggle bookmark
-
-
-Ctrl P              search file by name
-Ctrl Shift F        search file by content
-
-
-
-Ctrl ]/[          increase/decrease tab
-Ctrl Alt Shift + Numpad down        dublicate line
-
-
 Ctrl Alt A          annotate

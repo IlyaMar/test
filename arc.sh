@@ -8,6 +8,7 @@ nice arc mount --allow-other --repository cloudia -m ~/cloudia-terraform --objec
 nice arc mount --allow-other --repository cloudia -m ~/cloudia-salt --object-store ~/.arc/stores/objects-common
 nice arc mount --allow-other --repository cloudia -m ~/cloudia-bootstrap --object-store ~/.arc/stores/objects-common
 nice arc mount --allow-other --repository cloudia -m ~/cloudia-k8s-deploy --object-store ~/.arc/stores/objects-common
+nice arc mount --allow-other --repository cloudia -m ~/cloudia-cloud-java --object-store ~/.arc/stores/objects-common
 
 
 

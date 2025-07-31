@@ -1,0 +1,1782 @@
+get-cert-tpm
+cd ~/
+cd IdeaProjects
+mkdir IdeaProjects
+cd IdeaProjects/
+cd test/
+git remote -v
+git pull
+ll arc.sh 
+git checkout master
+git pull
+mkdir ~/.arc/stores/objects-common
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="-m cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/cloudia cloudia
+arc_mount ~/cloudia-metro cloudia
+curl -sSL https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash
+sudo su -
+pssh yubikey list
+skotty setup
+skotty yubikey list
+cat /sys/power/mem_sleep
+top
+systemctl --user enable --now arc-update.timer
+ssh-add
+arc token store
+ssh-add
+echo $?
+arc token store
+arc token store --ask
+ycp --profile=prod iam -h
+mv ~/Downloads/ideaIC-2025.1.1.1.tar.gz /opt/Idea/
+cd /opt/Idea/
+ll
+tar xvf ideaIC-2025.1.1.1.tar.gz 
+cd idea-IC-251.25410.129/bin/
+ll
+ya whoami
+cat > ~/.ya_token
+ll
+ya whoami
+./idea.sh
+ll
+./idea
+pssh --cause other:check iam-as-vla1.svc.cloud.yandex.net
+pssh --cause other:check 2a02:6b8:bf00:1c8:5058:2aff:feb7:a5c0
+mkdir ~/.arc/stores/objects-common-arcadia
+mkdir -p ~/.arc/stores/objects-common-arcadia
+nice arc mount -m ~/arcadia --objects-store ~/.arc/stores/objects-common-arcadia
+nice arc mount -m ~/arcadia --object-store ~/.arc/stores/objects-common-arcadia
+ll /media/ilya-martynov/
+mc
+OAll
+ll
+chmod 600 id_*
+ll
+cat config 
+yc --profile prod resource-manager cloud get yc.iam.service-cloud
+source ~/.bashrc
+yc --profile prod resource-manager cloud get yc.iam.service-cloud
+OBOB
+yc --profile prod resource-manager cloud get yc.iam.service-cloud
+yc init --region kz --federation-id yc.yandex-team.federation --cloud-id yc.iam.service-cloud --folder-id yc.iam.service-folder
+curl https://s3.mds.yandex.net/mcdev/ycp/install.sh | bash
+source ~/.bashrc
+OAycp --profile=prod iam whoami
+ycp --profile=prod iam whoami
+mv ~/Downloads/YCKZInternalIntermediateCA.txt /usr/share/ca-certificates/YCKZInternalIntermediateCA.crt
+cd ~/Downloads/
+ll
+mv YCKZInternalRootCA.txt YCKZInternalRootCA.crt
+ycp --profile=prod iam key get aje32de12n43r8g5gdjv
+sudo su 
+passwd
+telnet 2a02:6b8:bf00:3b04:5058:1782:de8d:bf0f 9983
+telnet 2a02:6b8:bf00:3b04:5058:1782:de8d:bf0f 9960
+telnet 2a02:6b8:bf00:3b04:5058:1782:de8d:bf0f 4284
+cd ~
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="-m cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/arcadia
+arc_mount ~/arcadia-iam-bot
+arc_mount ~/arcadia-scripts
+arc_mount ~/arcadia-docs
+arc_mount ~/arcadia-dashboard
+arc_mount ~/cloudia cloudia
+arc_mount ~/cloudia-metro cloudia
+arc_mount ~/cloudia-cloud-java cloudia
+arc_mount ~/cloudia-terraform cloudia
+arc_mount ~/cloudia-monitoring cloudia
+arc_mount ~/cloudia-spinnaker cloudia
+arc_mount ~/cloudia-cloud-go cloudia
+arc_mount ~/cloudia-activeprobes cloudia
+arc_mount ~/cloudia-k8s-deploy cloudia
+arc_mount ~/cloudia-bootstrap-templates cloudia
+arc_mount ~/cloudia-iam-sync cloudia
+arc_mount ~/cloudia-salt-formula cloudia
+mc
+cd /opt/Idea/idea-IC-251.25410.129/bin/
+./idea 
+kubectl
+kubectl 
+kubectl config -h
+kubectl config get-contexts
+kubectl config use-context bastion-ycp-preprod-underlay-metro-poc
+kubectl get pod
+vim ~/.kube/config 
+kubectl get pod
+vim ~/.kube/config 
+ycp
+kubectl get pod
+kubectl -n iam-resource-manager-control-plane get pod
+kubectl -n iam-resource-manager-control-plane get svc
+kubectl -n iam-resource-manager-control-plane describe pod iam-resource-manager-control-plane-68cbbcb476-lrsm5 | less
+kubectl -n iam-resource-manager-control-plane get secret
+kubectl -n iam-resource-manager-control-plane get secret fc3iv2cq0q5qnr1lmvsi -o yaml | less
+kubectl -n iam-resource-manager-control-plane get configmap
+kubectl -n iam-resource-manager-control-plane get configmap service-configs | less
+kubectl -n iam-resource-manager-control-plane get configmap service-configs -o yaml | less
+kubectl -n iam-resource-manager-control-plane logs iam-resource-manager-control-plane-68cbbcb476-lrsm5 
+kubectl -n iam-resource-manager-control-plane logs iam-resource-manager-control-plane-68cbbcb476-lrsm5  | less
+kubectl -n iam-resource-manager-control-plane exec -it iam-resource-manager-control-plane-68cbbcb476-lrsm5 -- bash  
+kubectl -n iam-resource-manager-control-plane get pod
+kubectl -n iam-resource-manager-control-plane logs iam-resource-manager-control-plane-68cbbcb476-lrsm5  | less
+kubectl -n iam-resource-manager-control-plane get externalsecret
+kubectl -n iam-resource-manager-control-plane describe externalsecret resource-manager-control-plane-fc3iv2cq0q5qnr1lmvsi-es
+kubectl -n iam-resource-manager-control-plane get secretstore
+kubectl -n iam-resource-manager-control-plane get secret
+kubectl -n iam-resource-manager-control-plane describe externalsecret docker-registry-puller
+kubectl -n iam-resource-manager-control-plane get svc
+kubectl -n iam-resource-manager-control-plane get nodes
+copyq
+mc
+vim .kube/config 
+kubectl -h
+sudo su -
+cd ~/Downloads/
+ll
+sudo dpkg -i synaptics-repository-keyring.deb 
+sudo su -
+cd /opt/
+cd ~
+kubectl config get-contexts
+kubectl config use-context preprod-b-svm
+kubectl -n iam get pod
+kubectl -n iam get pod | grep active
+kubectl -n iam describe pod iam-activeprobes-canary-vzzzj | less
+kubectl -n iam logs iam-activeprobes-canary-vzzzj 
+kubectl -n iam logs iam-activeprobes-canary-vzzzj  | less
+cd ~/cloudia-cloud-go/
+arc checkout users/timurabs/some
+jobs
+vim ~/.bashrc
+jobs
+vim ~/.bashrc
+rm ~/.bashrc.swp
+vim ~/.bashrc
+source ~/.bashrc
+go
+go env GOPATH
+vim ~/.gitconfig
+./install-build-deps.sh
+cd cloud/cloud-go/
+./install-build-deps.sh
+vim ~/.gitconfig
+top
+sudo apt search nvidia-driver
+sudo apt install nvidia-driver-575
+sudo shutdown -r now
+cd /opt/Idea/idea-IC-251.25410.129/bin/
+./idea > /dev/null 2>&1
+bg
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="-m cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/arcadia
+arc_mount ~/arcadia-iam-bot
+arc_mount ~/arcadia-scripts
+arc_mount ~/arcadia-docs
+arc_mount ~/arcadia-dashboard
+arc_mount ~/cloudia cloudia
+arc_mount ~/cloudia-metro cloudia
+arc_mount ~/cloudia-cloud-java cloudia
+arc_mount ~/cloudia-terraform cloudia
+arc_mount ~/cloudia-monitoring cloudia
+arc_mount ~/cloudia-spinnaker cloudia
+arc_mount ~/cloudia-cloud-go cloudia
+arc_mount ~/cloudia-activeprobes cloudia
+arc_mount ~/cloudia-k8s-deploy cloudia
+arc_mount ~/cloudia-bootstrap-templates cloudia
+arc_mount ~/cloudia-iam-sync cloudia
+arc_mount ~/cloudia-salt-formula cloudia
+cd ~
+kubectl -n resource-manager-control-plane get pod
+kubectl config get-contexts
+kubectl 
+kubectl -n iam-resource-manager-control-plane get pod
+kubectl -n iam-resource-manager-control-plane get configmap
+kubectl -n iam-resource-manager-control-plane get configmap service-configs
+kubectl -n iam-resource-manager-control-plane get configmap service-configs -o yaml | less
+kubectl -n iam-resource-manager-control-plane get pod
+kubectl -n iam-resource-manager-control-plane describe pod iam-resource-manager-control-plane-68cbbcb476-lrsm5 | less
+kubectl -n iam-resource-manager-control-plane exec -it iam-resource-manager-control-plane-68cbbcb476-lrsm5 -- ps auxf
+kubectl -n iam-resource-manager-control-plane exec -it iam-resource-manager-control-plane-68cbbcb476-lrsm5 -c iam-resource-manager-control-plane-service  -- ps auxf
+kubectl -n iam-resource-manager-control-plane exec -it iam-resource-manager-control-plane-68cbbcb476-lrsm5 -c iam-resource-manager-control-plane-service  -- cat /proc/1/environ 
+fg
+kubectl -n iam-resource-manager-control-plane exec -it iam-resource-manager-control-plane-68cbbcb476-lrsm5 -c compute-metaproxy  -- cat /etc/yc-compute-metaproxy 
+kubectl -n iam-resource-manager-control-plane exec -it iam-resource-manager-control-plane-68cbbcb476-lrsm5 -c compute-metaproxy  -- ls /etc/yc-compute-metaproxy
+kubectl -n iam-resource-manager-control-plane exec -it iam-resource-manager-control-plane-68cbbcb476-lrsm5 -c compute-metaproxy  -- cat /etc/yc-compute-metaproxy/config.yaml
+kubectl -n iam-resource-manager-control-plane get deployments
+fg
+fg 2
+vim ~/.bashrc
+ll ~/cloudia-cloud-go
+ll ~/cloudia-cloud-go/cloud/cloud-go
+cd cloudia-cloud-go/
+ll
+cd cloud
+ll
+ll cloud*
+ll cloud-go
+cd ~
+arc unmount cloudia-cloud-go
+arc_mount ~/cloudia-cloud-go cloudia
+ll cloudia-cloud-go/cloud/
+cd cloudia-cloud-go/cloud/
+arc status
+arc pull
+arc unmount ~/cloudia
+arc unmount ~/cloudia-metro
+arc unmount ~/cloudia-cloud-java
+arc unmount ~/cloudia-terraform
+arc unmount ~/cloudia-monitoring
+arc unmount ~/cloudia-spinnaker
+arc unmount ~/cloudia-cloud-go
+arc unmount ~/cloudia-activeprobes
+arc unmount ~/cloudia-k8s-deploy
+arc unmount ~/cloudia-bootstrap-templates
+arc unmount ~/cloudia-iam-sync
+arc unmount ~/cloudia-salt-formula
+cd ~
+arc unmount ~/cloudia
+arc unmount ~/cloudia-metro
+arc unmount ~/cloudia-cloud-java
+arc unmount ~/cloudia-terraform
+arc unmount ~/cloudia-monitoring
+arc unmount ~/cloudia-spinnaker
+arc unmount ~/cloudia-cloud-go
+arc unmount ~/cloudia-activeprobes
+arc unmount ~/cloudia-k8s-deploy
+arc unmount ~/cloudia-bootstrap-templates
+arc unmount ~/cloudia-iam-sync
+arc unmount ~/cloudia-salt-formula
+ps auxf | grep arc
+rm -rf ~/.arc/stores/objects-common
+mkdir ~/.arc/stores/objects-common
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="--repository cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount --allow-root --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount --allow-root --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/cloudia cloudia
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="--repository cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/cloudia cloudia
+rm -rf ~/cloudia*
+arc_mount ~/cloudia cloudia
+rm -rf ~/.arc/stores/_home_ilya-martynov_cloudia*
+mc
+cd ..
+arc_mount ~/cloudia cloudia
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="--repository cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/cloudia cloudia
+arc unmount ~/cloudia
+arc_mount ~/cloudia cloudia
+arc_mount ~/cloudia-metro cloudia
+arc_mount ~/cloudia-cloud-java cloudia
+arc_mount ~/cloudia-terraform cloudia
+arc_mount ~/cloudia-monitoring cloudia
+arc_mount ~/cloudia-spinnaker cloudia
+arc_mount ~/cloudia-cloud-go cloudia
+arc_mount ~/cloudia-activeprobes cloudia
+arc_mount ~/cloudia-k8s-deploy cloudia
+arc_mount ~/cloudia-bootstrap-templates cloudia
+arc_mount ~/cloudia-iam-sync cloudia
+arc_mount ~/cloudia-salt-formula cloudia
+ll
+tar xvf goland-2024.3.tar.gz 
+ll
+rm goland-2024.3.tar.gz 
+cd GoLand-2024.3/bin/
+./goland
+bg
+jobs
+cd ~
+pssh --cause other:check iam-as-vla1.svc.cloud.yandex.net
+cd /opt/Idea/idea-IC-251.25410.129/bin/
+./idea > /dev/null 2>&1
+bg
+cd ~
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="--repository cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/arcadia
+arc_mount ~/arcadia-iam-bot
+arc_mount ~/arcadia-scripts
+arc_mount ~/arcadia-docs
+arc_mount ~/arcadia-dashboard
+arc_mount ~/cloudia cloudia
+arc_mount ~/cloudia-metro cloudia
+arc_mount ~/cloudia-cloud-java cloudia
+arc_mount ~/cloudia-terraform cloudia
+arc_mount ~/cloudia-monitoring cloudia
+arc_mount ~/cloudia-spinnaker cloudia
+arc_mount ~/cloudia-cloud-go cloudia
+arc_mount ~/cloudia-activeprobes cloudia
+arc_mount ~/cloudia-k8s-deploy cloudia
+arc_mount ~/cloudia-bootstrap-templates cloudia
+arc_mount ~/cloudia-iam-sync cloudia
+arc_mount ~/cloudia-salt-formula cloudia
+history
+history | less
+echo 'export PATH="$HOME/.tfenv/bin:$PATH"' >> ~/.bash_profile
+source ~/.bash_profile
+tfenv
+tfenv use 1.5.7
+cat > ~/.terraformrc <<EOF
+provider_installation {
+  network_mirror {
+    url = "https://terraform-mirror.yandexcloud.net/"
+    include = ["registry.terraform.io/*/*"]
+  }
+  direct {
+    exclude = ["registry.terraform.io/*/*"]
+  }
+}
+EOF
+
+s3_secret=$(ya vault get version sec-01ewn2b4vf3vmj18c65w1b8wh6 -o AccessSecretKey)
+cd /home/ilya-martynov/cloudia-monitoring/cloud/yc-monitoring/juggler-tf/main/iam/testing/
+terraform init -backend-config="secret_key=$s3_secret"
+terraform plan -target=iam-as
+terraform plan -target iam-as
+terraform plan -target module.iam-as
+TF_VAR_juggler_token=$(cat ~/.juggler_oauth_token) terraform plan -target module.iam-as
+cat > ~/.juggler_oauth_token
+TF_VAR_juggler_token=$(cat ~/.juggler_oauth_token) terraform plan -target module.iam-as
+cd /opt/GoLand/GoLand-2024.3/bin/
+./goland > /dev/null 2>&1 &&
+./goland > /dev/null 2>&1 &
+mc
+OA
+OB
+OAOA
+cd ~
+pssh --cause other:check vla04-2ct7-35.cloud.yandex.net
+cd /opt/Idea/idea-IC-251.25410.129/bin
+./idea > /dev/null 2>&1 &
+cd ../..
+cd ../GoLand/GoLand-2024.3/bin/
+./goland > /dev/null 2>&1 &
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="--repository cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/arcadia
+arc_mount ~/arcadia-iam-bot
+arc_mount ~/arcadia-scripts
+arc_mount ~/arcadia-docs
+arc_mount ~/arcadia-dashboard
+arc_mount ~/cloudia cloudia
+arc_mount ~/cloudia-metro cloudia
+arc_mount ~/cloudia-cloud-java cloudia
+arc_mount ~/cloudia-terraform cloudia
+arc_mount ~/cloudia-monitoring cloudia
+arc_mount ~/cloudia-spinnaker cloudia
+arc_mount ~/cloudia-cloud-go cloudia
+arc_mount ~/cloudia-activeprobes cloudia
+arc_mount ~/cloudia-k8s-deploy cloudia
+arc_mount ~/cloudia-bootstrap-templates cloudia
+arc_mount ~/cloudia-iam-sync cloudia
+arc_mount ~/cloudia-salt-formula cloudia
+top
+ycp --profile=prod compute instance get fhm88a0qu6hlk0glrt9t
+sudo echo "deep" > /sys/power/mem_sleep
+sudo su -
+pssh scp --cause other:check iam-as-vla1.svc.cloud-preprod.yandex.net:/tmp/grpc_traffic.pcap .
+ll
+ll grpc*
+pssh scp --cause other:check iam-as-klg1.svc.cloud-preprod.yandex.net:/tmp/grpc_traffic.pcap .
+ll grpc_traffic.pcap 
+pssh scp --cause other:check iam-as-klg1.svc.cloud-preprod.yandex.net:/tmp/server.pem .
+cat server.pem 
+cat > priv_key.pem
+pssh --cause other:check ilya-martynov-20-cvm.bootstrap.cloud-preprod.yandex.net
+pssh --cause other:check iam-rm-vla1.svc.cloud-preprod.yandex.net
+pssh --cause other:check iam-as-klg1.svc.cloud-preprod.yandex.net
+grep -R grpcurl
+wireshark 
+cd ~
+kubectl -n iam-resource-manager-control-plane get deployments
+kubectl config get-contexts
+kubectl config use-context bastion-ycp-preprod-underlay-metro-poc
+kubectl -n iam-resource-manager-control-plane get deployments
+kubectl config -h
+kubectl config set-context -h
+kubectl config set-context --namespace iam-resource-manager-control-plane
+kubectl config set-context bastion-ycp-preprod-underlay-metro-poc --namespace iam-resource-manager-control-plane
+kubectl -n iam-resource-manager-control-plane get pod
+kubectl  get pod
+kubectl exec -it iam-resource-manager-control-plane-68cbbcb476-9rvsg -- bash
+cd /opt/Idea/idea-IC-251.25410.129/bin/
+./idea > /dev/null 2>&1 &
+/etc/systemd/logind.conf
+HandleLidSwitch=ignore
+HandleLidSwitchExternalPower=ignore
+/etc/UPower/UPower.conf
+IgnoreLid=true
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="--repository cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/arcadia
+arc_mount ~/arcadia-iam-bot
+arc_mount ~/arcadia-scripts
+arc_mount ~/arcadia-docs
+arc_mount ~/arcadia-dashboard
+arc_mount ~/cloudia cloudia
+arc_mount ~/cloudia-metro cloudia
+arc_mount ~/cloudia-cloud-java cloudia
+arc_mount ~/cloudia-terraform cloudia
+arc_mount ~/cloudia-monitoring cloudia
+arc_mount ~/cloudia-spinnaker cloudia
+arc_mount ~/cloudia-cloud-go cloudia
+arc_mount ~/cloudia-activeprobes cloudia
+arc_mount ~/cloudia-k8s-deploy cloudia
+arc_mount ~/cloudia-bootstrap-templates cloudia
+arc_mount ~/cloudia-iam-sync cloudia
+arc_mount ~/cloudia-salt-formula cloudia
+cd ../..
+cd ../GoLand/GoLand-2024.3/bin/
+./goland > /dev/null 2>&1 &
+cd ~
+sudo su -
+cd ~
+mc
+pssh --cause other:check iam-activeprobes-vla1.svc.cloud.yandex.net
+pssh --cause other:check 2a02:6b8:c02:901:0:fc34:0:390
+pssh --cause other:check iam-as-klg1.svc.cloud-preprod.yandex.net
+cd IdeaProjects/test/
+git log
+git status
+cd /home/ilya-martynov/cloudia-cloud-go/cloud/cloud-go/pkg/mod/cache/vcs/7c3395356cbb91360e03bee71a67fd0e45ff53574884eca3c89074367381d976
+ll
+cat config 
+cd /opt/Idea/idea-IC-251.25410.129/bin/
+./idea > /dev/null 2>&1 &
+cd ../..
+cd ../GoLand/GoLand-2024.3/bin/
+./goland > /dev/null 2>&1 &
+cd ~
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="--repository cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/arcadia
+arc_mount ~/arcadia-iam-bot
+arc_mount ~/arcadia-scripts
+arc_mount ~/arcadia-docs
+arc_mount ~/arcadia-dashboard
+arc_mount ~/cloudia cloudia
+arc_mount ~/cloudia-metro cloudia
+arc_mount ~/cloudia-cloud-java cloudia
+arc_mount ~/cloudia-terraform cloudia
+arc_mount ~/cloudia-monitoring cloudia
+arc_mount ~/cloudia-spinnaker cloudia
+arc_mount ~/cloudia-cloud-go cloudia
+arc_mount ~/cloudia-activeprobes cloudia
+arc_mount ~/cloudia-k8s-deploy cloudia
+arc_mount ~/cloudia-bootstrap-templates cloudia
+arc_mount ~/cloudia-iam-sync cloudia
+arc_mount ~/cloudia-salt-formula cloudia
+vim ~/.bashrc
+source ~/.bashrc
+pushd /opt/GoLand/GoLand-2024.3/bin/
+jobs
+popd
+cd cloudia-cloud-go/cloud/cloud-go/
+./install-build-deps.sh
+sudo apt install yubico-piv-tool
+./install-build-deps.sh
+ll
+go install ./vendor/github.com/vektra/mockery/cmd/mockery
+echo $?
+ll ~/go
+find ~/go | less
+rm -rf ~/go/*
+sudo rm -rf ~/go/*
+ln -s ~/cloudia-cloud-go/cloud/cloud-go ~/go
+./install-build-deps.sh
+vim ~/.bashrc
+go env GOROOT
+go env GOPATH
+vim ~/.bashrc
+source ~/.bashrc
+go env GOPATH
+ll ~/go/
+rm ~/go/cloud-go
+rm ~/go
+rm -rf ~/go
+ln -s ~/cloudia-cloud-go/cloud/cloud-go ~/go
+ll ~/go/
+go env GOPATH
+pushd /opt/GoLand/GoLand-2024.3/bin/
+fg 
+bg
+jobs
+./goland > /dev/null 2>&1 &
+vim ~/.gitconfig 
+ll /home/ilya-martynov/.ssh/config
+chmod 600 /home/ilya-martynov/.ssh/config
+cat /home/ilya-martynov/.ssh/config
+vim ~/.gitconfig 
+pushd ~
+git clone ssh://git@bb.yandexcloud.net/cloud/gnostic.git
+rm -rf gnostic
+ll /home/ilya-martynov/cloudia-cloud-go/cloud/cloud-go/pkg/mod/sigs.k8s.io/controller-runtime@v0.0.0-20240210214532-bbe3bbe2fb38/go.sum
+cd ~/go
+arc status
+arc pull --rebase
+arc rebase --abort
+arc checkout trunk
+arc pull users/timurabs/some
+arc fetch users/timurabs/some
+arc pull users/timurabs/some
+arc remote -v
+arc checkout users/timurabs/some
+top
+go list
+ll
+go list -m
+go list -m -json all
+sudo su -
+cd /opt/Idea/idea-IC-251.25410.129/bin/
+./idea > /dev/null 2>&1 &
+cd ../..
+cd ../GoLand/GoLand-2024.3/bin/
+./goland > /dev/null 2>&1 &
+cd ~
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="--repository cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/arcadia
+arc_mount ~/arcadia-iam-bot
+arc_mount ~/arcadia-scripts
+arc_mount ~/arcadia-docs
+arc_mount ~/arcadia-dashboard
+arc_mount ~/cloudia cloudia
+arc_mount ~/cloudia-metro cloudia
+arc_mount ~/cloudia-cloud-java cloudia
+arc_mount ~/cloudia-terraform cloudia
+arc_mount ~/cloudia-monitoring cloudia
+arc_mount ~/cloudia-spinnaker cloudia
+arc_mount ~/cloudia-cloud-go cloudia
+arc_mount ~/cloudia-activeprobes cloudia
+arc_mount ~/cloudia-k8s-deploy cloudia
+arc_mount ~/cloudia-bootstrap-templates cloudia
+arc_mount ~/cloudia-iam-sync cloudia
+arc_mount ~/cloudia-salt-formula cloudia
+ll ~/cloudia-bootstrap-templates/cloud/deploy/bootstrap/templates/
+find ~/cloudia-bootstrap-templates/cloud/deploy/bootstrap/templates/terraform/ | less
+top
+vim ~/.yandex/clids-yabrowser.xml 
+find /etc/opt/yandex/browser/
+find /etc/opt/yandex/
+yandex-browser -h
+find ~/.config/yandex-browser/ | less
+less /home/ilya-martynov/.config/yandex-browser/configs/configs_part1.json
+fg
+yandex-browser
+glxinfo | grep "OpenGL renderer"
+nvidia-smi
+sudo su -
+glxinfo | grep "OpenGL renderer"
+lspci -k | grep -A 2 -i vga
+sudo su -
+nvidia-settings -q GPUPowerSource -t
+nvidia-settings -q gpucoretemp
+glxinfo | grep direct
+glxinfo | grep "OpenGL renderer"
+lspci -k -d ::03xx
+lspci -k | grep -A 2 -i vga
+nvidia-smi
+cat /sys/module/nvidia_drm/parameters/modeset
+sudo su -
+echo $USER
+xrandr
+echo $XDG_SESSION_TYPE
+lsusb
+glxinfo | grep "OpenGL renderer"
+sudo su -
+history
+glxinfo | grep "OpenGL renderer"
+nvidia-smi
+cd /opt/envycontrol/
+git clone https://github.com/bayasdev/envycontrol.git
+cd envycontrol/
+python3 envycontrol.py -s integrated
+sudo su -
+nvidia-smi
+glxinfo | grep NVIDIA
+cat /sys/bus/pci/devices/0000\:01\:00.0/power/runtime_status
+nvtop
+cat /sys/bus/pci/devices/0000\:01\:00.0/power/runtime_status
+glxinfo | grep NVIDIA
+nvidia-smi
+sudo su -
+cd ~/IdeaProjects/test/
+grep -R yq
+nvidia-smi
+echo $XDG_SESSION_TYPE
+cd /opt/Idea/idea-IC-251.25410.129/bin/
+./idea > /dev/null 2>&1 &
+cd ../../../GoLand/GoLand-2024.3/bin/
+./goland > /dev/null 2>&1 &
+cd ~
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="--repository cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/arcadia
+arc_mount ~/arcadia-iam-bot
+arc_mount ~/arcadia-scripts
+arc_mount ~/arcadia-docs
+arc_mount ~/arcadia-dashboard
+arc_mount ~/cloudia cloudia
+arc_mount ~/cloudia-metro cloudia
+arc_mount ~/cloudia-cloud-java cloudia
+arc_mount ~/cloudia-terraform cloudia
+arc_mount ~/cloudia-monitoring cloudia
+arc_mount ~/cloudia-spinnaker cloudia
+arc_mount ~/cloudia-cloud-go cloudia
+arc_mount ~/cloudia-activeprobes cloudia
+arc_mount ~/cloudia-k8s-deploy cloudia
+arc_mount ~/cloudia-bootstrap-templates cloudia
+arc_mount ~/cloudia-iam-sync cloudia
+arc_mount ~/cloudia-salt-formula cloudia
+cd cloudia-bootstrap-templates/
+arc branch
+arc pull
+arc checkout -b metro_poc
+ycp --profile=prod container-registry registry get crpsh8lqvs5nupoi3v85
+ycp components update
+ycp --profile=prod container-registry registry list-access-bindings --resource-id crpsh8lqvs5nupoi3v85
+ycp --profile=prod resource-manager folder list-access-bindings --resource-id b1ge3k8712v8bnaemhj4
+ycp --profile=prod resource-manager folder list-access-bindings --resource-id b1ge3k8712v8bnaemhj4 --private-api
+ycp --profile=prod resource-manager folder list-access-bindings --resource-id b1ge3k8712v8bnaemhj4 --private
+ycp --profile=prod resource-manager folder list-access-bindings -e
+ycp --profile=prod resource-manager folder list-access-bindings --resource-id b1ge3k8712v8bnaemhj4 --private-call
+ycp --profile=prod resource-manager folder list-access-bindings --resource-id b1ge3k8712v8bnaemhj4 --private-call | less
+ycp --profile=prod container-registry registry list-access-bindings --resource-id crpsh8lqvs5nupoi3v85 --private-call | less
+ycp --profile=prod resource-manager folder list-access-bindings --resource-id b1ge3k8712v8bnaemhj4 --private-call | less
+ycp --profile=prod resource-manager folder list-access-bindings --resource-id b1ge3k8712v8bnaemhj4 --private-call | yq '.[] | filter(.subject.type == "servcieAccount")'
+sudo apt install yq
+sudo snap install yq
+ycp --profile=prod resource-manager folder list-access-bindings --resource-id b1ge3k8712v8bnaemhj4 --private-call | yq '.[] | filter(.subject.type == "servcieAccount")'
+ycp --profile=prod resource-manager folder list-access-bindings --resource-id b1ge3k8712v8bnaemhj4 --private-call | yq '.[] | filter(.subject.type == "serviceAccount")'
+ycp --profile=prod resource-manager folder list-access-bindings --resource-id b1ge3k8712v8bnaemhj4 --private-call | yq '.[] | select(.subject.type == "serviceAccount")'
+ycp --profile=prod resource-manager cloud list-access-bindings --resource-id b1ggfg2aokc1b7ead930 --private-call | yq '.[] | select(.subject.type == "serviceAccount")'
+ycp --profile=prod --impersonate-service-account-id yc.iam.service-account resource-manager cloud list-access-bindings --resource-id b1ggfg2aokc1b7ead930 --private-call | yq '.[] | select(.subject.type == "serviceAccount")'
+ycp --profile=prod --impersonate-service-account-id yc.iam.service-account resource-manager cloud list-access-bindings --resource-id b1ggfg2aokc1b7ead930 --private-call | yq '.[] | select(.subject.type == "serviceAccount")' | less
+arc log
+cd ~/cloudia-iam-sync/
+arc checkout -b metro_poc
+cd ~/cloudia-terraform/
+cd cloud/iam/terraform/
+arc branch
+arc pull
+arc checkout -b metro_poc
+cd /home/ilya-martynov/cloudia-terraform/cloud/iam/terraform/mk8s/
+./init_terraform.sh preprod ../metro/preprod
+cd ../metro/preprod/
+source /home/ilya-martynov/cloudia-terraform/cloud/iam/terraform/mk8s/common.sh
+cat ~/.aws/credentials
+terraform init
+git clone --depth=1 https://github.com/tfutils/tfenv.git ~/.tfenv
+vim ~/.bashrc
+source ~/.bashrc
+pssh --cause other:check iam-rm-klg1.svc.cloud-preprod.yandex.net
+pssh --cause other:check iam-rm-klg1.svc.cloud-testing.yandex.net
+cd ~
+sudo su -
+cd /opt/Idea/idea-IC-251.25410.129/bin/
+./idea > /dev/null 2>&1 &
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="--repository cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/arcadia
+arc_mount ~/arcadia-iam-bot
+arc_mount ~/arcadia-scripts
+arc_mount ~/arcadia-docs
+arc_mount ~/arcadia-dashboard
+arc_mount ~/cloudia cloudia
+arc_mount ~/cloudia-metro cloudia
+arc_mount ~/cloudia-cloud-java cloudia
+arc_mount ~/cloudia-terraform cloudia
+arc_mount ~/cloudia-monitoring cloudia
+arc_mount ~/cloudia-spinnaker cloudia
+arc_mount ~/cloudia-cloud-go cloudia
+arc_mount ~/cloudia-activeprobes cloudia
+arc_mount ~/cloudia-k8s-deploy cloudia
+arc_mount ~/cloudia-bootstrap-templates cloudia
+arc_mount ~/cloudia-iam-sync cloudia
+arc_mount ~/cloudia-salt-formula cloudia
+vim ~/.bashrc
+source ~/.bashrc
+k get pods
+cd ~/IdeaProjects/test/
+ll
+cp -r . ../test_bak
+rm -rf .idea/
+k describe nodes | grep -A 10 "Allocated resources"
+k describe pod iam-resource-manager-control-plane-d5c844cd4-lb8mz | grep -i "requests\|limits"
+k describe pod iam-resource-manager-control-plane-d5c844cd4-lb8mz -o jsonpath='{.spec.containers[*].image}'
+k get pod iam-resource-manager-control-plane-d5c844cd4-lb8mz -o jsonpath='{.spec.containers[*].image}'
+k top pod iam-resource-manager-control-plane-d5c844cd4-lb8mz 
+k get job
+cd /home/ilya-martynov/cloudia-terraform/cloud/iam/terraform/metro/preprod/
+terraform init
+/home/ilya-martynov/cloudia-terraform/cloud/iam/terraform/mk8s/run_terraform.sh preprod .
+/home/ilya-martynov/cloudia-terraform/cloud/iam/terraform/mk8s/run_terraform.sh preprod . plan
+pushd /home/ilya-martynov/cloudia-terraform/cloud/iam/terraform/mk8s
+run_terraform.sh preprod /home/ilya-martynov/cloudia-terraform/cloud/iam/terraform/metro/preprod plan
+./run_terraform.sh preprod /home/ilya-martynov/cloudia-terraform/cloud/iam/terraform/metro/preprod plan
+popd
+export YCP_PROFILE=preprod
+export YC_PROFILE=$YCP_PROFILE
+export YC_IAM_TOKEN=
+export YC_IAM_TOKEN=$(ycp --profile ${YCP_PROFILE?} iam iam-token create-for-subject --subject-id yc.iam.service-account)
+export YC_TOKEN=${YC_IAM_TOKEN?}
+terraform apply
+curl https://auth.yandex.cloud/oauth/userinfo -H "Authorization: Bearer $(ycp --profile prod iam create-token)"
+echo $?
+curl https://auth.yandex.cloud/oauth/userinfo -H "Authorization: Bearer $(ycp --profile preprod iam create-token)"
+terraform apply
+terraform init
+terraform init -upgrade
+terraform apply
+TF_LOG=debug terraform apply
+terraform init -upgrade
+terraform state ls
+terraform state list
+terraform state show ycp_lockbox_secret.iam_rm_secret_metro_testing
+ycp --profile=preprod lockbox v1 secret update-access-bindings -r - <<REQ
+resource_id: fc3t1v1fhql58h68ha3f
+private_call: true
+access_binding_deltas:
+- action: ADD
+  access_binding:
+    role_id: lockbox.editor
+    subject:
+      id: bfb1q7uugm4rt293sr8q
+      type: userAccount
+REQ
+
+terraform apply
+ycp --profile=preprod lockbox v1 secret update-access-bindings -r - <<REQ
+resource_id: fc3t1v1fhql58h68ha3f
+private_call: true
+access_binding_deltas:
+- action: REMOVE
+  access_binding:
+    role_id: admin
+    subject:
+      id: bfb1q7uugm4rt293sr8q
+      type: userAccount
+REQ
+
+ycp --profile=preprod lockbox v1 secret update-access-bindings -r - <<REQ
+resource_id: fc3t1v1fhql58h68ha3f
+private_call: true
+access_binding_deltas:
+- action: REMOVE
+  access_binding:
+    role_id: editor
+    subject:
+      id: bfb1q7uugm4rt293sr8q
+      type: userAccount
+REQ
+
+terraform apply
+top
+iotop
+top
+curl -v https://auth.yandex.cloud/oauth/userinfo -H "Authorization: Bearer $(ycp --profile preprod iam create-token)"
+curl -v https://auth-preprod.yandex.cloud/oauth/userinfo -H "Authorization: Bearer $(ycp --profile preprod iam create-token)"
+cd /opt/Idea/idea-IC-251.25410.129/bin/
+./idea > /dev/null 2>&1 &
+cd ~/arcadia-dashboard/
+arc status
+arc pull
+arc checkout -b discarded
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="--repository cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/arcadia
+arc_mount ~/arcadia-iam-bot
+arc_mount ~/arcadia-scripts
+arc_mount ~/arcadia-docs
+arc_mount ~/arcadia-dashboard
+arc_mount ~/cloudia cloudia
+arc_mount ~/cloudia-metro cloudia
+arc_mount ~/cloudia-cloud-java cloudia
+arc_mount ~/cloudia-terraform cloudia
+arc_mount ~/cloudia-monitoring cloudia
+arc_mount ~/cloudia-spinnaker cloudia
+arc_mount ~/cloudia-cloud-go cloudia
+arc_mount ~/cloudia-activeprobes cloudia
+arc_mount ~/cloudia-k8s-deploy cloudia
+arc_mount ~/cloudia-bootstrap-templates cloudia
+arc_mount ~/cloudia-iam-sync cloudia
+arc_mount ~/cloudia-salt-formula cloudia
+ycp --profile=prod organization-manager saml federation list -e
+ycp --profile=prod organization-manager saml federation list --organization-id yc.organization-manager.yandex
+ycp --profile=prod --impersonate-service-account-id yc.iam.service-account organization-manager saml federation list --organization-id yc.organization-manager.yandex
+ycp --profile=preprod --impersonate-service-account-id yc.iam.service-account organization-manager saml federation list --organization-id yc.organization-manager.yandex
+ycp --profile=prod --impersonate-service-account-id yc.iam.service-account organization-manager saml federation list --organization-id yc.organization-manager.sandbox
+top
+cat /sys/module/usbcore/parameters/autosuspend
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="--repository cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/arcadia
+arc_mount ~/arcadia-iam-bot
+arc_mount ~/arcadia-scripts
+arc_mount ~/arcadia-docs
+arc_mount ~/arcadia-dashboard
+arc_mount ~/cloudia cloudia
+arc_mount ~/cloudia-metro cloudia
+arc_mount ~/cloudia-cloud-java cloudia
+arc_mount ~/cloudia-terraform cloudia
+arc_mount ~/cloudia-monitoring cloudia
+arc_mount ~/cloudia-spinnaker cloudia
+arc_mount ~/cloudia-cloud-go cloudia
+arc_mount ~/cloudia-activeprobes cloudia
+arc_mount ~/cloudia-k8s-deploy cloudia
+arc_mount ~/cloudia-bootstrap-templates cloudia
+arc_mount ~/cloudia-iam-sync cloudia
+arc_mount ~/cloudia-salt-formula cloudia
+sudo su -
+env | grep buck
+env | grep BUCK
+env | grep JAVA
+JAVA
+java
+mvm
+/opt/apache-maven/apache-maven-3.9.10/bin/mvn
+echo $PATH
+mvn
+echo $PATH
+ll /opt/apache-maven/apache-maven-3.9.10/bin
+TOKEN=y1__xDX9sGRpdT-ARiuKyCvnOECfmRQqjgc2WqvmViTsnVCnQjLKto
+curl -H "Authorization: Bearer $TOKEN" https://api.eliza.yandex.net/models
+curl -H "Authorization: Bearer $TOKEN" https://api.eliza.yandex.net/models 
+curl -H "Authorization: Bearer $TOKEN" https://api.eliza.yandex.net/models  | jq .
+curl -H "Authorization: Bearer $TOKEN" https://api.eliza.yandex.net/models  | jq . | less
+top
+cd ~/cloudia-cloud-go/
+arc branch
+arc status
+arc diff
+arc diff > ~/ap_trace.diff
+arc status
+arc reset --hard
+arc status
+arc branch
+arc checkout trunk
+arc pull
+arc apply -h
+arc --help
+less ~/ap_trace.diff 
+patch -p0 ~/ap_trace.diff 
+arc status
+arc checkout -b tracing
+patch -p0 < ~/ap_trace.diff 
+arc commit -m "otel tracing. ai generated." .
+arc push
+arc show 30acd3521fb6247d45fce90759dd85297afedb27
+arc show 3fc549a2e897934c1fc8c1b2cd468f653a453047
+java -version
+cd ~/cloudia-cloud-java/cloud/iam/
+env | grep BUCK
+vim ~/.bashrc
+mvn install -DskipTests -T1C
+source ~/.bashrc 
+mvn install -DskipTests -T1C
+ll
+pwd
+cd ../cloud-java/iam/
+mvn install -DskipTests -T1C
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="--repository cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/arcadia
+arc_mount ~/arcadia-iam-bot
+arc_mount ~/arcadia-scripts
+arc_mount ~/arcadia-docs
+arc_mount ~/arcadia-dashboard
+arc_mount ~/cloudia cloudia
+arc_mount ~/cloudia-metro cloudia
+arc_mount ~/cloudia-cloud-java cloudia
+arc_mount ~/cloudia-terraform cloudia
+arc_mount ~/cloudia-monitoring cloudia
+arc_mount ~/cloudia-spinnaker cloudia
+arc_mount ~/cloudia-cloud-go cloudia
+arc_mount ~/cloudia-activeprobes cloudia
+arc_mount ~/cloudia-k8s-deploy cloudia
+arc_mount ~/cloudia-bootstrap-templates cloudia
+arc_mount ~/cloudia-iam-sync cloudia
+arc_mount ~/cloudia-salt-formula cloudia
+cd IdeaProjects/test/
+vim vscode.txt
+pushd /opt/Idea/idea-IC-251.25410.129/bin/
+./idea > /dev/null 2>&1 &
+cat ~/.gitconfig 
+git config --global user.name "Ilya Martynov"
+git config --global user.email imartynovsp@gmail.com
+popd
+cd ~
+mc
+ms
+vim ~/.bucket_credentials
+chmod 600 ~/.bucket_credentials
+echo "source '$(readlink --canonicalize ~/.bucket_credentials)'" >> ~/.bashrc
+echo "source '$(readlink --canonicalize ~/.bucket_credentials)'" >> ~/.profile
+less ~/.bashrc
+source ~/.bashrc
+env | grep BUCK
+mv ~/Downloads/apache-maven-3.9.10-bin.tar.gz /tmp/
+vim ~/.bashrc
+source ~/.bashrc
+vim ~/.bashrc
+vim ~/.profile 
+env | grep BASH
+fg
+[ -n "$BASH_VERSION" ] && echo 1
+mvn
+cd ~
+vim ~/.bashrc
+vim ~/.profile 
+vim ~/.common_env
+fg 2
+vim ~/.bashrc
+fg 1
+fg 2
+fg
+source ~/.bashrc
+vim ~/.m2/settings.xml 
+arc unmount ~/cloudia
+arc unmount ~/cloudia-metro
+arc unmount ~/cloudia-cloud-java
+arc unmount ~/cloudia-terraform
+arc unmount ~/cloudia-monitoring
+arc unmount ~/cloudia-spinnaker
+arc unmount ~/cloudia-cloud-go
+arc unmount ~/cloudia-activeprobes
+arc unmount ~/cloudia-k8s-deploy
+arc unmount ~/cloudia-bootstrap-templates
+arc unmount ~/cloudia-iam-sync
+arc unmount ~/cloudia-salt-formula
+arc unmount ~/cloudia-cloud-java
+pssh --cause other:check iam-activeprobes-vla1.svc.cloud.yandex.net
+cd ~
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="--repository cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/arcadia
+arc_mount ~/arcadia-iam-bot
+arc_mount ~/arcadia-scripts
+arc_mount ~/arcadia-docs
+arc_mount ~/arcadia-dashboard
+arc_mount ~/cloudia cloudia
+arc_mount ~/cloudia-metro cloudia
+arc_mount ~/cloudia-cloud-java cloudia
+arc_mount ~/cloudia-terraform cloudia
+arc_mount ~/cloudia-monitoring cloudia
+arc_mount ~/cloudia-spinnaker cloudia
+arc_mount ~/cloudia-cloud-go cloudia
+arc_mount ~/cloudia-activeprobes cloudia
+arc_mount ~/cloudia-k8s-deploy cloudia
+arc_mount ~/cloudia-bootstrap-templates cloudia
+arc_mount ~/cloudia-iam-sync cloudia
+arc_mount ~/cloudia-salt-formula cloudia
+cd cloudia-cloud-java/cloud/cloud-java/
+ll
+env | grep JAVA
+which java
+ll /usr/bin/java
+ll /etc/alternatives/java
+vim  ~/.bashrc
+source ~/.bashrc
+top
+cat /proc/111907/environ 
+cat /proc/111907/environ  | grep mav
+cat /proc/111907/environ  | grep JAVA
+fg
+cd ~/IdeaProjects/test
+ll
+cat arc.sh 
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="--repository cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/arcadia
+arc_mount ~/arcadia-iam-bot
+arc_mount ~/arcadia-scripts
+arc_mount ~/arcadia-docs
+arc_mount ~/arcadia-dashboard
+arc_mount ~/cloudia cloudia
+arc_mount ~/cloudia-metro cloudia
+arc_mount ~/cloudia-cloud-java cloudia
+arc_mount ~/cloudia-terraform cloudia
+arc_mount ~/cloudia-monitoring cloudia
+arc_mount ~/cloudia-spinnaker cloudia
+arc_mount ~/cloudia-cloud-go cloudia
+arc_mount ~/cloudia-activeprobes cloudia
+arc_mount ~/cloudia-k8s-deploy cloudia
+arc_mount ~/cloudia-bootstrap-templates cloudia
+arc_mount ~/cloudia-iam-sync cloudia
+arc_mount ~/cloudia-salt-formula cloudia
+top
+cd ~/arcadia-dashboard/
+arc status
+arc checkout trunk
+arc pull
+arc checkout -b control_plane_sli
+pushd ~/cloudia-terraform/
+arc status
+arc diff
+arc checkout trunk
+arc pull
+arc checkout -b idp_scale
+arc status
+arc commit -m "YCIAM-1476 scale idp prod to 4 Gb ram, 4 cores for pod. 2 vms per zone" .
+arc push
+arc pr c
+apt search docker
+docker run hello-world
+cd ~/cloudia-cloud-java/
+arc status
+arc pull
+arc checkout -b grpc_handler_full
+cd iam-common-fork/util-grpc/
+cd cloud/cloud-java/iam/
+cd iam-common-fork/util-grpc/
+ll
+mvn test
+ll ~/.m2/settings.xml 
+mvn -h
+mvn install
+mvn -version
+ll ~/.m2/settings.xml 
+mvn -X install
+which mvn
+ll /opt/apache-maven/apache-maven-3.9.10/conf/settings.xml 
+less /opt/apache-maven/apache-maven-3.9.10/conf/settings.xml 
+cd ../..
+mvn test -f iam-common-fork/util-grpc
+mvn clean verify -DskipTests -T1C
+arc log /home/ilya-martynov/cloudia-cloud-java/cloud/cloud-java/iam/iam-access-service/iam-access-service-application/src/main/java/yandex/cloud/iam/as/grpc/AccessServiceGrpcInterceptorConfiguration.java
+arc diff d151f6b66e7760c5efcc98f7199055270626a1d1
+arc diff d151f6b66e7760c5efcc98f7199055270626a1d1 d151f6b66e7760c5efcc98f7199055270626a1d1~
+arc diff d151f6b66e7760c5efcc98f7199055270626a1d1~ d151f6b66e7760c5efcc98f7199055270626a1d1
+fg
+arc diff d151f6b66e7760c5efcc98f7199055270626a1d1~ d151f6b66e7760c5efcc98f7199055270626a1d1
+mvn test -f iam-common-fork/util-grpc
+arc status
+arc diff
+arc commit -m "YCIAM-3179 grpc_handler_duration metrics include logging interceptor time" .
+arc push
+arc pr
+arc pr c
+mvn test -f iam-access-service/iam-access-service-application/
+cd /home/ilya-martynov/cloudia-terraform/cloud/iam/terraform/mk8s/
+ll
+./init_terraform.sh prod infra
+./run_terraform.sh prod infra plan
+./run_terraform.sh prod infra apply
+./init_terraform.sh prod iam-idp-cp/app-d-canary
+./run_terraform.sh prod iam-idp-cp/app-d-canary plan
+yc
+export YCP_PROFILE=prod
+export YC_PROFILE=$YCP_PROFILE
+export YC_IAM_TOKEN=
+export YC_IAM_TOKEN=$(ycp --profile ${YCP_PROFILE?} iam iam-token create-for-subject --subject-id yc.iam.service-account)
+export YC_TOKEN=${YC_IAM_TOKEN?}
+./run_terraform.sh prod iam-idp-cp/app-d-canary plan
+yc resource-manager cloud list
+yc init --federation-id yc.yandex-team.federation --cloud-id yc.iam.service-cloud --folder-id yc.iam.service-folder
+yc --profile prod resource-manager cloud get yc.iam.service-cloud
+./run_terraform.sh prod iam-idp-cp/app-d-canary plan
+yc --profile prod k8s create-token
+pushd prod/iam-idp-cp/app-d-canary/
+terraform plan
+TF_LOG=debug terraform plan
+strace -f terraform plan
+strace -f -s 1000 terraform plan | less
+strace -f -s 1000 terraform plan 2>&1 | less
+less /home/ilya-martynov/.config/yandex-cloud/logs/2025-06-17T14-07-06.733-yc_k8s_create-token.txt\n
+less /home/ilya-martynov/.config/yandex-cloud/logs/2025-06-17T14-07-06.733-yc_k8s_create-token.txt
+yc init -h
+yc help
+yc config help
+yc config profile help
+yc config profile activate prod
+yc config profile list
+terraform plan
+fg
+fg 1
+strace -f -s 1000 -e execve terraform plan 2>&1 | less
+terraform plan
+terraform apply
+popd
+./run_terraform.sh prod infra apply
+cd ~
+pssh --cause other:check iam-as-klg1.svc.cloud-preprod.yandex.net
+pssh --cause other:check iam-as-klg1.svc.cloud.yandex.net
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo su -
+docker ps
+whoami
+groups
+ll cloudia-cloud-go/
+ll cloudia-cloud-go/cloud/alb/
+groups
+sudo usermod -aG docker $USER
+newgrp docker
+cd cloudia-cloud-java/cloud/cloud-java/iam/
+mvn test -f iam-access-service/iam-access-service-application/
+sudo shutdown -r
+docker ps
+yc container registry configure-docker
+cat /home/ilya-martynov/.docker/config.json
+exit
+cd ~
+pssh --cause other:check iam-ya-vla1.svc.cloud.yandex.net
+pssh --cause other:check iam-as-vla1.svc.cloud.yandex.net
+exit
+pssh --cause other:check vla04-3ct31r1-11b.cloud.yandex.net
+pssh --cause other:check 2a02:6b8:c0e:501:0:fd62:0:268
+pssh --cause other:check vla04-2ct1-10.cloud.yandex.net
+exit
+ll
+cd mk8s/
+./run_terraform.sh preprod infra plan
+./init_terraform.sh preprod infra
+./run_terraform.sh preprod infra plan
+cd ../..
+cd terraform/internal/
+/home/ilya-martynov/IdeaProjects/test/bash/visit_subfolders.sh internal-dev internal-dev
+chmod +x /home/ilya-martynov/IdeaProjects/test/bash/visit_subfolders.sh 
+/home/ilya-martynov/IdeaProjects/test/bash/visit_subfolders.sh internal-dev internal-dev
+arc log
+/home/ilya-martynov/IdeaProjects/test/bash/visit_subfolders.sh internal-dev internal-dev
+/home/ilya-martynov/IdeaProjects/test/bash/visit_subfolders.sh internal-prestable internal-prestable && /home/ilya-martynov/IdeaProjects/test/bash/visit_subfolders.sh internal-prod internal-prod
+cd ../metro/
+/home/ilya-martynov/IdeaProjects/test/bash/visit_subfolders.sh preprod preprod
+cd ../mk8s/
+/home/ilya-martynov/IdeaProjects/test/bash/visit_subfolders.sh preprod preprod
+/home/ilya-martynov/IdeaProjects/test/bash/visit_subfolders.sh prod prod
+./run_terraform.sh preprod infra plan
+cd mk8s/
+./run_terraform.sh preprod infra plan
+./run_terraform.sh preprod infra apply
+arc log
+arc log -- .
+arc log -- preprod/infra/main.tf
+arc pull
+ll ~/cloudia-spinnaker/
+pushd ~/cloudia-spinnaker/
+arc status
+arc pull
+./spec-single.sh upload main iam/sli.yaml
+echo $GRAFANA_OAUTH_TOKEN
+vim ~/.bashrc
+vim ~/.common_env 
+source ~/.common_env 
+echo $GRAFANA_OAUTH_TOKEN
+./spec-single.sh upload main iam/sli.yaml
+cd solomon-tf/prod/iam/
+ll
+ls -la
+./init.sh 
+ll
+cd prod/
+s3_secret=$(ya vault get version sec-01ewn2b4vf3vmj18c65w1b8wh6 -o AccessSecretKey)
+terraform init -backend-config="secret_key=$s3_secret"
+YCP_PROFILE=prod YC_IAM_TOKEN=$(ycp --profile ${YCP_PROFILE?} iam iam-token create-for-subject --subject-id yc.iam.service-account) terraform apply -parallelism=5 -target module.iam-cp
+echo prod-iam-control-plane-error-slo-yandexpasspo28da832d84deb0e95-1d | wc 
+YCP_PROFILE=prod YC_IAM_TOKEN=$(ycp --profile ${YCP_PROFILE?} iam iam-token create-for-subject --subject-id yc.iam.service-account) terraform apply -parallelism=5 -target module.iam-cp
+YCP_PROFILE=prod YC_IAM_TOKEN=$(ycp --profile ${YCP_PROFILE?} iam iam-token create-for-subject --subject-id yc.iam.service-account) terraform apply -parallelism=5 -target module.iam-as
+YCP_PROFILE=prod YC_IAM_TOKEN=$(ycp --profile ${YCP_PROFILE?} iam iam-token create-for-subject --subject-id yc.iam.service-account) terraform apply -parallelism=5 -target module.iam-ts
+arc status
+echo membership-listresourcemembers | wc
+arc log -- iam/iam-oslogin-daemon/
+cd monitoring/cp_slo/
+mv ~/Downloads/legend.csv .
+pssh --cause other:check iam-as-vla1.svc.cloud.yandex.net
+pssh --cause other:check iam-activeprobes-vla1.svc.cloud-testing.yandex.net
+pssh --cause other:check iam-as-vla1.svc.cloud.yandex.net
+pssh --cause other:check vla04-2ct1-10.cloud.yandex.net
+pssh scp --cause other:check ~/arcadia/logbroker/unified_agent/tools/status_graph/status_graph iam-as-vla1.svc.cloud.yandex.net:/tmp/
+pssh scp --cause other:check iam-as-vla1.svc.cloud.yandex.net:/tmp/status.yml .
+pssh --cause other:check ci-0619-1854-ci-bd81kolsyxv7.bootstrap.cloud-preprod.yandex.net
+pssh --cause other:check ilya-martynov-20-cvm.bootstrap.cloud-preprod.yandex.net
+pssh --cause other:check iam-as-vla1.cloud-testing.yandex.net
+pssh --cause other:check iam-as-vla1.svc.cloud-testing.yandex.net
+pssh --cause other:check ilya-martynov-20-cvm.bootstrap.cloud-preprod.yandex.net
+cd ~
+k get pod
+k get secret
+k get secret app-sa-authorized-key -o yaml
+k get secret app-sa-authorized-key -o yaml | yq '.data'
+k get secret app-sa-authorized-key -o yaml | yq '.data.private_key'
+k get secret app-sa-authorized-key -o yaml | yq '.data.private_key' | base64 -d
+ll ~/.m2/settings.xml 
+less ~/.m2/settings.xml 
+дд
+ll
+history | grep key_convert
+kubectl config set-context bastion-ycp-preprod-underlay-metro-poc --namespace iam-resource-manager-control-plane
+k get secret
+k get secret app-sa-authorized-key -o yaml
+k get secret app-sa-authorized-key -o yaml | yq '.data.private_key'
+k get secret app-sa-authorized-key -o yaml | yq '.data.private_key' | base64 -d
+ycp --profile testing iam key get ajeevfh0cjb2h4b8ap1e
+ycp --profile preprod iam key get ajeevfh0cjb2h4b8ap1e
+kubectl config use-context bastion-ycp-preprod-underlay-metro-poc
+k get pod
+k get secret
+ycp --profile preprod iam key get fc3iv2cq0q5qnr1lmvsi
+ycp --profile testing iam key get fc3iv2cq0q5qnr1lmvsi
+k get secret fc3iv2cq0q5qnr1lmvsi -o yaml | yq '.data.private_key' | base64 -d
+k get ns
+k get secret fc3iv2cq0q5qnr1lmvsi -o yaml | yq '.'
+ycp --profile=preprod lockbox v1 secret get fc3t1v1fhql58h68ha3f
+ycp --profile=preprod --impersonate-service-account-id yc.iam.service-account lockbox v1 payload get -e
+ycp --profile=preprod --impersonate-service-account-id yc.iam.service-account lockbox v1 payload get-value -e
+ycp --profile=preprod --impersonate-service-account-id yc.iam.service-account lockbox v1 payload get-value -h
+ycp --profile=preprod --impersonate-service-account-id yc.iam.service-account lockbox v1 payload get-value --id fc3t1v1fhql58h68ha3f --key sa.key.json
+ycp --profile=preprod --impersonate-service-account-id yc.iam.service-account lockbox v1 payload get-value --id fc3t1v1fhql58h68ha3f --key sa.key.json | jq '.private_key'
+ycp --profile=preprod --impersonate-service-account-id yc.iam.service-account lockbox v1 payload get-value --id fc3t1v1fhql58h68ha3f --key sa.key.json | jq '.private_key' | sed 's/\\n/\
+/g'
+ycp --profile testing iam key get d260k2lhlaeul36uvljs
+k config -h
+k config get-contexts
+k get pod
+k config get-contexts
+k get pod
+k exec iam-resource-manager-control-plane-d5c844cd4-lb8mz -- ls -la /var/log/yc/
+k exec iam-resource-manager-control-plane-d5c844cd4-lb8mz -- ls -la /var/log/yc/rm-control-plane/
+k get configmap
+k get configmap service-configs -o yaml
+k exec iam-resource-manager-control-plane-d5c844cd4-lb8mz -- ls -la /var/log/yc/rm-control-plane/
+curl -H "X-Solomon-FetcherId: 0" -v "http://iam-resource-manager-control-plane-klg-65f655b47d-m2md2.svc.cloud-testing.yandex.net:8080/read?project=yandexcloud&service=resource_manager_control_plane" | less
+curl -H "X-Solomon-FetcherId: 0" -v "http://iam-resource-manager-control-plane-d5c844cd4-lb8mz.svc.cloud-testing.yandex.net:8080/read?project=yandexcloud&service=resource_manager_control_plane" | less
+curl -H "X-Solomon-FetcherId: 0" -v "http://iam-resource-manager-control-plane-klg-65f655b47d-m2md2.svc.cloud-testing.yandex.net:8080/read?project=yandexcloud&service=resource_manager_control_plane" 
+k get pod
+ping iam-resource-manager-control-plane-d5c844cd4-lb8mz.svc.cloud-testing.yandex.net
+k config get-contexts
+k exec iam-resource-manager-control-plane-d5c844cd4-lb8mz -- ls -la /var/log/yc/rm-control-plane/
+ping iam-resource-manager-control-plane-574f74d7f-9h5xl.svc.cloud-testing.yandex.net
+k get pod
+k config get-contexts
+k config -h
+k config use-context testing-metro-common-ru-central1-d
+kubectl config set-context testing-metro-common-ru-central1-d --namespace iam-resource-manager-control-plane
+k get pod
+k logs iam-resource-manager-control-plane-klg-bf46d768b-87277
+k exec iam-resource-manager-control-plane-klg-bf46d768b-87277 -- ls -la /var/log/yc/
+k exec iam-resource-manager-control-plane-klg-bf46d768b-87277 -- ls -la /var/log/yc/rm-control-plane/
+k exec iam-resource-manager-control-plane-klg-bf46d768b-87277 -- ls -la /var/log/yc/rm-control-plane/access.log
+k exec iam-resource-manager-control-plane-klg-bf46d768b-87277 -- cat /var/log/yc/rm-control-plane/access.log
+k exec iam-resource-manager-control-plane-klg-bf46d768b-87277 -- cat /var/log/yc/rm-control-plane/server.log
+k exec iam-resource-manager-control-plane-klg-bf46d768b-87277 -- ls -la /var/log/yc/rm-control-plane/server.log
+k exec iam-resource-manager-control-plane-klg-bf46d768b-87277 -- ls -la /var/log/yc/rm-control-plane/
+k get pod
+k exec iam-resource-manager-control-plane-klg-574f74d7f-dv5dw -- ls -la /var/log/yc/rm-control-plane/
+k get pod
+k exec iam-resource-manager-control-plane-klg-574f74d7f-kbdpd -- ls -la /var/log/yc/rm-control-plane/
+k get config-map
+k get configmap
+k get configmap service-configs -o yaml
+k get configmap service-configs -o yaml | yq '.data.config.yaml'
+cat > 1
+less 1
+k get pod
+k exec iam-resource-manager-control-plane-klg-574f74d7f-prnvx -- cat /var/log/yc/rm-control-plane/server.log
+k exec iam-resource-manager-control-plane-klg-574f74d7f-prnvx -- cat /var/log/yc/rm-control-plane/access.log
+k exec iam-resource-manager-control-plane-klg-574f74d7f-prnvx -- cat /var/log/yc/rm-control-plane/access.log | wc -l
+k exec iam-resource-manager-control-plane-klg-574f74d7f-prnvx -- cat /var/log/yc/rm-control-plane/access.log | less
+k --context testing-a-svm -n iam get pod
+k --context testing-a-svm -n iam exec iam-oslogin-service-canary-gllqh -- keytool -list         -alias YandexInternalRootCA         -keystore /usr/lib/jvm/temurin-23-jdk-amd64/lib/security/cacerts -storepass changeit
+k --context testing-a-svm -n iam exec iam-oslogin-service-canary-gllqh -- keytool -list       -keystore /usr/lib/jvm/temurin-23-jdk-amd64/lib/security/cacerts -storepass changeit
+k --context testing-a-svm -n iam exec iam-oslogin-service-canary-gllqh -- keytool -list       -keystore /usr/lib/jvm/temurin-23-jdk-amd64/lib/security/cacerts -storepass changeit | less
+k --context testing-a-svm -n iam get saltformula
+kubectl saltformula --context testing-a-svm -n iam get iam-resource-manager-control-plane-canary-iam-resource-manager
+source ~/.bashrc
+k krew
+kubectl krew index add bootstrap https://git@git.arc-vcs.yandex-team.ru/bootstrap-krew-index
+kubectl krew install bootstrap/saltformula
+kubectl saltformula --context testing-a-svm -n iam get iam-resource-manager-control-plane-canary-iam-resource-manager
+kubectl saltformula --context testing-a-svm -n iam get job
+kubectl saltformula --context testing-a-svm -n iam get pod
+kubectl  --context testing-a-svm -n iam get jog
+kubectl  --context testing-a-svm -n iam get job
+kubectl  --context testing-a-svm -n iam get pod
+kubectl  --context testing-a-svm -n iam get saltformula
+kubectl  --context testing-a-svm -n iam get saltformularollout
+kubectl  --context testing-a-svm -n iam get saltformularollout iam-resource-manager-control-plane-canary-iam-resource-mand9n7j
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="--repository cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/arcadia
+arc_mount ~/arcadia-iam-bot
+arc_mount ~/arcadia-scripts
+arc_mount ~/arcadia-docs
+arc_mount ~/arcadia-dashboard
+arc_mount ~/cloudia cloudia
+arc_mount ~/cloudia-metro cloudia
+arc_mount ~/cloudia-cloud-java cloudia
+arc_mount ~/cloudia-terraform cloudia
+arc_mount ~/cloudia-monitoring cloudia
+arc_mount ~/cloudia-spinnaker cloudia
+arc_mount ~/cloudia-cloud-go cloudia
+arc_mount ~/cloudia-activeprobes cloudia
+arc_mount ~/cloudia-k8s-deploy cloudia
+arc_mount ~/cloudia-bootstrap-templates cloudia
+arc_mount ~/cloudia-iam-sync cloudia
+arc_mount ~/cloudia-salt-formula cloudia
+history | grep pssh | sort | uniq
+pssh --cause other:check ilya-martynov-20-cvm.bootstrap.cloud-preprod.yandex.net
+cd ~/arcadia-docs/
+arc status
+arc pull
+arc checkout -b idp_doc
+pssh --cause other:check iam-activeprobes-kz1-a1.svc.yacloudkz.tech
+cd /home/ilya-martynov/arcadia-dashboard/cloud/java/dashboard/
+ll
+vim ~/.bashrc
+source ~/.bashrc
+vim ~/.bashrc
+source ~/.bashrc
+vim ~/.bashrc
+source ~/.bashrc
+ll
+./spec-single.sh upload main iam/sli.yaml
+pushd ~/arcadia-dashboard/
+ya make -j0 --checkout devtools/junit-runner
+ya make -j0 --checkout cloud/java/dashboard
+popd
+./run-main.sh
+./spec-single.sh upload main iam/sli.yaml
+./docker-build.sh
+./spec-single.sh upload main iam/sli.yaml
+yc config -h
+yc config profile list
+yc --profile testing --impersonate-service-account-id yc.iam.service-account iam key create --algorithm rsa-4096 --service-account-id yc.iam.resource-manager-control-plane --output yc.iam.resource-manager-control-plane-key.json
+ycp iam key create -e
+yc --profile testing iam key create --algorithm rsa-4096 --service-account-id yc.iam.resource-manager-control-plane --output yc.iam.resource-manager-control-plane-key.json
+yc --debug --profile testing iam key create --algorithm rsa-4096 --service-account-id yc.iam.resource-manager-control-plane --output yc.iam.resource-manager-control-plane-key.json
+export YCP_PROFILE=prod
+export YCP_PROFILE=testing
+export YC_TOKEN=$(ycp --profile ${YCP_PROFILE?} iam iam-token create-for-service-account --service-account-id yc.iam.service-account)
+yc --debug --profile testing iam key create --algorithm rsa-4096 --service-account-id yc.iam.resource-manager-control-plane --output yc.iam.resource-manager-control-plane-key.json
+export YC_IAM_TOKEN=$(ycp --profile ${YCP_PROFILE?} iam iam-token create-for-service-account --service-account-id yc.iam.service-account)
+yc --debug --profile testing iam key create --algorithm rsa-4096 --service-account-id yc.iam.resource-manager-control-plane --output yc.iam.resource-manager-control-plane-key.json
+yc config profile activate 
+yc config profile list
+yc config profile activate
+yc config profile activate testing
+yc --debug --profile testing iam key create --algorithm rsa-4096 --service-account-id yc.iam.resource-manager-control-plane --output yc.iam.resource-manager-control-plane-key.json
+./spec-single.sh upload main iam/sli.yaml
+history | less
+cat ~/.arc/token
+sudo su -
+k config -h
+k config get-contexts
+arc status
+arc commit -m "YCIAM-3697 idp minimal doc" .
+arc add .
+arc commit -m "YCIAM-3697 idp minimal doc" .
+arc pr create
+arc add .
+arc commit -m "YCIAM-3697 idp minimal doc" .
+arc push
+cd ../cloudia-terraform/
+arc status
+arc diff
+arc commit -m "YCIAM-1476 idp tf doc" .
+arc status
+arc push
+arc rebase
+arc rebase trunk
+arc push
+arc push -f
+arc pr create
+cd ~/cloudia-monitoring/
+arc status
+arc commit -m "YCIAM-1476 idp alerts metrics select host=*" .
+arc rebase trunk
+arc push -f
+arc pr create
+arc commit -m "YCIAM-1476 idp alerts metrics select host=*" .
+arc push 
+cd cloud/deploy/
+find -name token_agent
+св юю
+cd ..
+find -type d -name token_agent
+cd ~/cloudia-cloud-go/
+arc fetch
+arc checkout users/timurabs/some
+arc pull
+top
+yc config profile list
+cd ~/cloudia-terraform/
+arc history
+ll
+arc log
+arc status
+arc commit -m "YCIAM-1476 use predefined yc profile 'default' for prod" .
+arc rebase trunk
+arc push
+arc push -f
+arc pr c
+arc pull trunk
+arc rebase trunk
+arc push
+arc push -f
+cd ~
+curl https://get.arc-vcs.yandex.net/plugins/vscode/stable -o arcadia.vsix ; code --install-extension arcadia.vsix ; rm arcadia.vsix
+cd cloudia-terraform/
+arc pull
+k get pod
+k config -h
+k config get-contexts
+k config use-context iam-mk8s-prod
+k get pod
+k get describe pod app-vla-1-754ddd867f-gnl7f | less
+k  describe pod app-vla-1-754ddd867f-gnl7f | less
+cd ~
+ycp --impersonate-service-account-id yc.iam.service-account iam key list -e
+ycp --impersonate-service-account-id yc.iam.service-account iam key create -e
+ycp --impersonate-service-account-id yc.iam.service-account iam service-account get yc.iam.resource-manager
+ycp --impersonate-service-account-id yc.iam.service-account iam service-account get yc.iam.resource-manager-control-plane
+ycp --impersonate-service-account-id yc.iam.service-account iam service-account get yc.iam.rm-control-plane
+ycp --profile testing --impersonate-service-account-id yc.iam.service-account iam key create -r -<<REQ
+description: "metro PoC"
+format: PEM_FILE
+key_algorithm: RSA_4096
+service_account_id: yc.iam.rm-control-plane
+REQ
+
+mc
+OB
+vim config.yaml 
+less config.yaml 
+ycp -h
+vim config.yaml 
+ycp --profile testing --impersonate-service-account-id yc.iam.service-account iam key create -r -<<REQ
+description: "metro PoC"
+format: json
+key_algorithm: RSA_4096
+service_account_id: yc.iam.rm-control-plane
+REQ
+
+vim config.yaml 
+cd ~
+cat > key.txt
+chmod +x /home/ilya-martynov/IdeaProjects/test/iam/authorized_key_convert.py
+/home/ilya-martynov/IdeaProjects/test/iam/authorized_key_convert.py key.txt 
+python3 /home/ilya-martynov/IdeaProjects/test/iam/authorized_key_convert.py key.txt 
+python3
+python3 /home/ilya-martynov/IdeaProjects/test/iam/authorized_key_convert.py key.txt 
+python3
+cd Downloads/
+ll
+fg
+dig AAAA ts.iam.private-api.cloud-preprod.yandex.net +short
+dig AAAA ts.iam.private-api.cloud-preprod.yandex.net 
+dig  ts.iam.private-api.cloud-preprod.yandex.net 
+curl -v https://ts.iam.private-api.cloud-preprod.yandex.net:4282
+curl -v https://ts.iam.private-api.cloud-preprod.yandex.net:4286
+dig ts.private-api.cloud-preprod.yandex.net:4282
+dig ts.private-api.cloud-preprod.yandex.net
+dig ts.private-api.iam.cloud-preprod.yandex.net
+curl -v https://ts.private-api.cloud-preprod.yandex.net:4282
+yc iam whoami
+yc components update
+fg
+cd ~/cloudia-cloud-go/
+cp ~/arcadia/education/schoolbook/monoui/services/gpttr/.clinerules-* ./
+vim .clinerules-architect 
+mkdir memory-bank
+vim .arcignore 
+cd cloud/cloud-go/
+ll
+vim .arcignore 
+mv ../../.clinerules-* iam/activeprobes/
+top
+curl -H "X-Solomon-FetcherId: 0" -v "http://\[2a02:6b8:bf00:3d00:1c80:2935:de59:7e5e\]:8080/read?project=yandexcloud&service=resource_manager_control_plane"
+curl -v -H "X-Solomon-FetcherId: 0" -v "http://\[2a02:6b8:bf00:3d00:1c80:2935:de59:7e5e\]:8080/read?project=yandexcloud&service=resource_manager_control_plane"
+curl -H "X-Solomon-FetcherId: 0" -v "http://iam-resource-manager-control-plane-klg-65f655b47d-m2md2.svc.cloud-testing.yandex.net:8080/read?project=yandexcloud&service=resource_manager_control_plane"
+curl -H "X-Solomon-FetcherId: 0" -v "http://iam-resource-manager-control-plane-klg-65f655b47d-m2md2.svc.cloud-testing.yandex.net:8080/read?project=yandexcloud&service=resource_manager_control_plane" | jq '.' | less
+cd ~
+cat > test-metro.sh
+bash test-metro.sh
+ап
+fg
+top
+cd arcadia/logbroker/unified_agent/tools/status_graph/
+ya make
+ll
+./status_graph --input /tmp/status.yml --output ~/status.svg
+./status_graph --input ~/status.yml --output ~/status.svg
+ll ~/status.svg
+less ~/status.svg
+rm ~/status.svg*
+./status_graph --input ~/status.yml --output ~/status
+pwd
+cd ~
+(   set -x; cd "$(mktemp -d)" &&   OS="$(uname | tr '[:upper:]' '[:lower:]')" &&   ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" &&   KREW="krew-${OS}_${ARCH}" &&   curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&   tar zxvf "${KREW}.tar.gz" &&   ./"${KREW}" install krew; )
+vim ~/.bashrc
+cd ..
+cd crypto-common/deploy/docker_images/yarl
+ll
+docker build ./ -t cr.yandex/yc-iam/yarl:1.0 --build-arg BASE_IMAGE=cr.yandex/mirror/ubuntu:20.04
+docker images
+/home/ilya-martynov/cloudia-terraform/cloud/iam/terraform/mk8s/misc/yarl/build_image.sh
+chmod +x /home/ilya-martynov/cloudia-terraform/cloud/iam/terraform/mk8s/misc/yarl/build_image.sh
+/home/ilya-martynov/cloudia-terraform/cloud/iam/terraform/mk8s/misc/yarl/build_image.sh
+arc log
+arc status
+arc log
+arc status
+arc log
+ll
+cd ..
+ll
+cd dsl-support/
+ll
+grep -R waitStage
+cd ../
+cd terraform/mk8s/misc/yarl/
+ll
+YCP_PROFILE=prod
+export YC_TOKEN=$(ycp --profile ${YCP_PROFILE?} iam iam-token create-for-service-account --service-account-id yc.iam.service-account)
+./build_image.sh 
+echo $YC_TOKEN
+export YC_TOKEN=sfsfsfsffsf
+./build_image.sh 
+export YC_IAM_TOKEN=$(ycp --profile ${YCP_PROFILE?} iam iam-token create-for-service-account --service-account-id yc.iam.service-account)
+./build_image.sh 
+k get pod
+k config get-contexts
+k config use-context preprod-a-svm
+k get pod
+k -n iam get pod
+k config get-contexts
+k -n iam get pod
+k config use-context testing-a-svm
+k -n iam get pod
+k -n iam logs iam-activeprobes-canary-hqgph
+k -n iam get pod
+k -n iam describe pod iam-activeprobes-canary-2tmtz
+ll ~/arcadia-scripts/cloud/iam
+pssh --cause other:check https://vla19-13ct21-39.cloud.yandex.net/
+pssh --cause other:check vla19-13ct21-39.cloud.yandex.net
+sudo su -
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="--repository cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/arcadia
+arc_mount ~/arcadia-iam-bot
+arc_mount ~/arcadia-scripts
+arc_mount ~/arcadia-docs
+arc_mount ~/arcadia-dashboard
+arc_mount ~/cloudia cloudia
+arc_mount ~/cloudia-metro cloudia
+arc_mount ~/cloudia-cloud-java cloudia
+arc_mount ~/cloudia-terraform cloudia
+arc_mount ~/cloudia-monitoring cloudia
+arc_mount ~/cloudia-spinnaker cloudia
+arc_mount ~/cloudia-cloud-go cloudia
+arc_mount ~/cloudia-activeprobes cloudia
+arc_mount ~/cloudia-k8s-deploy cloudia
+arc_mount ~/cloudia-bootstrap-templates cloudia
+arc_mount ~/cloudia-iam-sync cloudia
+arc_mount ~/cloudia-salt-formula cloudia
+ycp --profile=preprod compute instance list -e
+ycp --profile=preprod compute instance list --folder-id yc.iam.token-service-folder
+ycp components update
+ycp --profile=preprod compute instance get a7l5jtj89eqsmggulc11
+ycp --profile=preprod compute instance update -e
+vim ~/.config/ycp/config.yaml 
+vim ~/.docker/config.json 
+yc config profile list
+yc config profile activate preprod
+vim ~/.docker/config.json 
+cd ~/.docker/
+ll
+cat config_oauth.json 
+cat .token_seed
+== | base64 -d 
+python3
+top
+vim ~/.profile 
+vim ~/.bashrc 
+vim ~/.common_env 
+source ~/.bashrc
+klib 
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="--repository cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/arcadia
+arc_mount ~/arcadia-iam-bot
+arc_mount ~/arcadia-scripts
+arc_mount ~/arcadia-docs
+arc_mount ~/arcadia-dashboard
+arc_mount ~/cloudia cloudia
+arc_mount ~/cloudia-metro cloudia
+arc_mount ~/cloudia-cloud-java cloudia
+arc_mount ~/cloudia-terraform cloudia
+arc_mount ~/cloudia-monitoring cloudia
+arc_mount ~/cloudia-spinnaker cloudia
+arc_mount ~/cloudia-cloud-go cloudia
+arc_mount ~/cloudia-activeprobes cloudia
+arc_mount ~/cloudia-k8s-deploy cloudia
+arc_mount ~/cloudia-bootstrap-templates cloudia
+arc_mount ~/cloudia-iam-sync cloudia
+arc_mount ~/cloudia-salt-formula cloudia
+java -version
+echo $JAVA_HOME
+java -version
+cd ~
+ycp --profile=testing compute instance list -e
+ycp --profile=testing compute instance list --folder-id yc.iam.access-service-folder
+ycp --profile=testing compute instance get allfoujtmp7groji5e8u
+ycp --profile=testing compute instance get allfoujtmp7groji5e8u | less
+curl 'https://st.yandex-team.ru/v2/issues/DEVTOOLSSUPPORT-66446'   -H 'accept: application/json, text/plain, */*'   -H 'accept-language: ru'   -H 'content-type: application/json'   -b 'gdpr=0; _ym_uid=1748613168721214133; _ym_d=1748613168; yp=2063973279.udn.cDppbHlhLW1hcnR5bm92; L=Ry5mXH58AUNpWQR0enNvTWIKdldgU3xAMTwWK3kXGyFFNjkaBg==.1748613279.8072.323279.a4c1bc599385b56609ba1e4c0228467d; yandex_login=ilya-martynov; uxs_uid=d2198d10-3d60-11f0-a9df-f1357437b52d; i=ZbOu7i2vT+eCH6s+27MvZ/9ZVWt/5I5On4VS0gn/uiCeb0DGQmoBFHObgY+NFFbhL0NE9Uj+A//cGPwhGxxU+lYFxNk=; yandexuid=5382911791748862960; yashr=1115345471748862960; sessguard=1.1748862960.1748613279227:om0fsrR89esADxGAvwYCKg:b247..5.824:98939.yugBhnDp.cHTS4MzHFh97GZLTv_006GbNjoo; orbitTheme=system; Session_id=3:1752482535.5.0.1748613279227:om0fsrR89esADxGAvwYCKg:b247.1.2:3.4:1|1120000000686935.0.2002.3:1748613279|5:10238583.368400.HogfUfCCWKzk-Fs4sf2QqTVZZAk; sessar=1.31.CiChytgrL8r6vG8aUblfkBw4GSFr9a2Wrhc_BM3WLpl_mw.FMDyGMXoLV_wIT0jTHjFIeJYKC_ICy7Acn4SGFC-T4o; sessionid2=3:1752482535.5.0.1748613279227:om0fsrR89esADxGAvwYCKg:b247.1.2:3.4:1|1120000000686935.0.2002.3:1748613279|5:10238583.368400.fakesign0000000000000000000; _ym_isad=2; _ym_visorc=b; _yasc=OzhYuNK7axb4YX5BD2pTGpfZgRdP2JGUY9eigZQyms/pmN/Yk/HqV3QSHgkgSzXQDe27pXs=; CSRF-TOKEN=b7ec5700381c2ff9dc6d91255c8368d76afc5dbc%3A1752656198'   -H 'origin: https://st.yandex-team.ru'   -H 'priority: u=1, i'   -H 'referer: https://st.yandex-team.ru/YCIAM-5240'   -H 'sec-ch-ua: "Chromium";v="134", "Not:A-Brand";v="24", "YaBrowser";v="25.4", "Yowser";v="2.5"'   -H 'sec-ch-ua-arch: "x86"'   -H 'sec-ch-ua-bitness: "64"'   -H 'sec-ch-ua-full-version-list: "Chromium";v="134.0.6998.1132", "Not:A-Brand";v="24.0.0.0", "YaBrowser";v="25.4.1.1132", "Yowser";v="2.5"'   -H 'sec-ch-ua-mobile: ?0'   -H 'sec-ch-ua-platform: "Linux"'   -H 'sec-ch-ua-platform-version: "6.8.0"'   -H 'sec-ch-ua-wow64: ?0'   -H 'sec-fetch-dest: empty'   -H 'sec-fetch-mode: cors'   -H 'sec-fetch-site: same-origin'   -H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 YaBrowser/25.4.0.0 Safari/537.36'   -H 'x-csrf-token: d6c2d03ad8338d216b02ec108bfb455ff80b4365:1752654523'   -H 'x-requested-with: XMLHttpRequest'
+curl -v 'https://st.yandex-team.ru/v2/issues/DEVTOOLSSUPPORT-66446'   -H 'accept: application/json, text/plain, */*'   -H 'accept-language: ru'   -H 'content-type: application/json'   -b 'gdpr=0; _ym_uid=1748613168721214133; _ym_d=1748613168; yp=2063973279.udn.cDppbHlhLW1hcnR5bm92; L=Ry5mXH58AUNpWQR0enNvTWIKdldgU3xAMTwWK3kXGyFFNjkaBg==.1748613279.8072.323279.a4c1bc599385b56609ba1e4c0228467d; yandex_login=ilya-martynov; uxs_uid=d2198d10-3d60-11f0-a9df-f1357437b52d; i=ZbOu7i2vT+eCH6s+27MvZ/9ZVWt/5I5On4VS0gn/uiCeb0DGQmoBFHObgY+NFFbhL0NE9Uj+A//cGPwhGxxU+lYFxNk=; yandexuid=5382911791748862960; yashr=1115345471748862960; sessguard=1.1748862960.1748613279227:om0fsrR89esADxGAvwYCKg:b247..5.824:98939.yugBhnDp.cHTS4MzHFh97GZLTv_006GbNjoo; orbitTheme=system; Session_id=3:1752482535.5.0.1748613279227:om0fsrR89esADxGAvwYCKg:b247.1.2:3.4:1|1120000000686935.0.2002.3:1748613279|5:10238583.368400.HogfUfCCWKzk-Fs4sf2QqTVZZAk; sessar=1.31.CiChytgrL8r6vG8aUblfkBw4GSFr9a2Wrhc_BM3WLpl_mw.FMDyGMXoLV_wIT0jTHjFIeJYKC_ICy7Acn4SGFC-T4o; sessionid2=3:1752482535.5.0.1748613279227:om0fsrR89esADxGAvwYCKg:b247.1.2:3.4:1|1120000000686935.0.2002.3:1748613279|5:10238583.368400.fakesign0000000000000000000; _ym_isad=2; _ym_visorc=b; _yasc=OzhYuNK7axb4YX5BD2pTGpfZgRdP2JGUY9eigZQyms/pmN/Yk/HqV3QSHgkgSzXQDe27pXs=; CSRF-TOKEN=b7ec5700381c2ff9dc6d91255c8368d76afc5dbc%3A1752656198'   -H 'origin: https://st.yandex-team.ru'   -H 'priority: u=1, i'   -H 'referer: https://st.yandex-team.ru/YCIAM-5240'   -H 'sec-ch-ua: "Chromium";v="134", "Not:A-Brand";v="24", "YaBrowser";v="25.4", "Yowser";v="2.5"'   -H 'sec-ch-ua-arch: "x86"'   -H 'sec-ch-ua-bitness: "64"'   -H 'sec-ch-ua-full-version-list: "Chromium";v="134.0.6998.1132", "Not:A-Brand";v="24.0.0.0", "YaBrowser";v="25.4.1.1132", "Yowser";v="2.5"'   -H 'sec-ch-ua-mobile: ?0'   -H 'sec-ch-ua-platform: "Linux"'   -H 'sec-ch-ua-platform-version: "6.8.0"'   -H 'sec-ch-ua-wow64: ?0'   -H 'sec-fetch-dest: empty'   -H 'sec-fetch-mode: cors'   -H 'sec-fetch-site: same-origin'   -H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 YaBrowser/25.4.0.0 Safari/537.36'   -H 'x-csrf-token: d6c2d03ad8338d216b02ec108bfb455ff80b4365:1752654523'   -H 'x-requested-with: XMLHttpRequest'
+cat > .st_oauth_token
+cat y1_AQAD-qJSMHtXAAAD > .st_oauth_token
+cat y1_AQAD-qJSMHtXAAAD > ~/.st_oauth_token
+echo y1_AQAD-qJSMHtXAAAD > ~/.st_oauth_token
+curl -v 'https://st.yandex-team.ru/v2/issues/DEVTOOLSSUPPORT-66446' -H 'content-type: application/json' -H 'Authorization: Bearer y1_AQAD-qJSMHtXAAAD'
+curl -v 'https://st.yandex-team.ru/v2/issues/DEVTOOLSSUPPORT-66446' -H 'content-type: application/json' -H 'Authorization: OAuth y1_AQAD-qJSMHtXAAAD'
+curl -v 'https://st.yandex-team.ru/v2/myself' -H 'content-type: application/json' -H 'Authorization: OAuth y1_AQAD-qJSMHtXAAAD'
+curl -v 'https://st-api.yandex-team.ru/v2/issues' -H 'content-type: application/json' -H 'Authorization: OAuth y1_AQAD-qCMHtXAAADwAAAA'
+curl -v 'https://st-api.yandex-team.ru/v2/issues/DEVTOOLSSUPPORT-66446' -H 'content-type: application/json' -H 'Authorization: OAuth y1_AQAD-qJSMHtXAAAD'
+curl 'https://st-api.yandex-team.ru/v2/issues/DEVTOOLSSUPPORT-66446' -H 'content-type: application/json' -H 'Authorization: OAuth y1_AQAD-qJSMHtXAAAD' | jq .
+ST_OAUTH_TOKEN=$(cat ~/.st_oauth_token)
+curl 'https://st-api.yandex-team.ru/v2/issues/DEVTOOLSSUPPORT-66446' -H 'content-type: application/json' -H "'Authorization: ${ST_OAUTH_TOKEN?}'" | jq .
+cat .st_oauth_token 
+echo $ST_OAUTH_TOKEN
+curl -V 'https://st-api.yandex-team.ru/v2/issues/DEVTOOLSSUPPORT-66446' -H 'content-type: application/json' -H "'Authorization: ${ST_OAUTH_TOKEN?}'" 
+curl -v 'https://st-api.yandex-team.ru/v2/issues/DEVTOOLSSUPPORT-66446' -H 'content-type: application/json' -H "'Authorization: ${ST_OAUTH_TOKEN?}'" 
+curl -v 'https://st-api.yandex-team.ru/v2/issues/DEVTOOLSSUPPORT-66446' -H 'content-type: application/json' -H "Authorization: ${ST_OAUTH_TOKEN?}" 
+curl -v 'https://st-api.yandex-team.ru/v2/issues/DEVTOOLSSUPPORT-66446' -H 'content-type: application/json' -H "OAuth: ${ST_OAUTH_TOKEN?}" 
+curl -v 'https://st-api.yandex-team.ru/v2/issues/DEVTOOLSSUPPORT-66446' -H 'content-type: application/json' -H "Authorization: OAuth ${ST_OAUTH_TOKEN?}" 
+curl -v -X POST -H 'content-type: application/json' -H "Authorization: OAuth ${ST_OAUTH_TOKEN?}" https://st-api.yandex-team.ru/v3/issues/_search?expand=transitions -d '{"query": "Queue: YCIAM \"Sort by\": Created DESC"}'
+curl -v -X POST -H 'content-type: application/json' -H "Authorization: OAuth ${ST_OAUTH_TOKEN?}" https://st-api.yandex-team.ru/v3/issues/_search -d '{"query": "Queue: YCIAM \"Sort by\": Created DESC"}' | jq .
+curl -X POST -H 'content-type: application/json' -H "Authorization: OAuth ${ST_OAUTH_TOKEN?}" https://st-api.yandex-team.ru/v3/issues/_search?expand=transitions -d '{"query": "Queue: YCIAM Components: \"IAM Metadata\" Summary: Deploy Status: Закрыт \"Sort by\": Created DESC"}'
+curl -X POST -H 'content-type: application/json' -H "Authorization: OAuth ${ST_OAUTH_TOKEN?}" https://st-api.yandex-team.ru/v3/issues/_search?expand=transitions -d '{"query": "Queue: YCIAM Components: \"IAM Metadata\" Summary: Deploy Status: Закрыт \"Sort by\": Created DESC"}' | jq .
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="--repository cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/arcadia
+arc_mount ~/arcadia-iam-bot
+arc_mount ~/arcadia-scripts
+arc_mount ~/arcadia-docs
+arc_mount ~/arcadia-dashboard
+arc_mount ~/cloudia cloudia
+arc_mount ~/cloudia-metro cloudia
+arc_mount ~/cloudia-cloud-java cloudia
+arc_mount ~/cloudia-terraform cloudia
+arc_mount ~/cloudia-monitoring cloudia
+arc_mount ~/cloudia-spinnaker cloudia
+arc_mount ~/cloudia-cloud-go cloudia
+arc_mount ~/cloudia-activeprobes cloudia
+arc_mount ~/cloudia-k8s-deploy cloudia
+arc_mount ~/cloudia-bootstrap-templates cloudia
+arc_mount ~/cloudia-iam-sync cloudia
+arc_mount ~/cloudia-salt-formula cloudia
+ll cloudia-cloud-java/
+ll /home/ilya-martynov/cloudia-iam-sync
+sudo umount -f /home/ilya-martynov/cloudia-salt-formula
+sudo lsof +D /home/ilya-martynov/cloudia-salt-formula
+less /var/log/dmesg
+systemctl list-units | grep arc
+systemctl list-units | less
+ll cloudia-cloud-java/
+ll cloudia-cloud-java/cloud/
+sudo lsof -D cloudia-cloud-java/cloud/
+sudo lsof +D cloudia-cloud-java/cloud/
+sudo lsof +D arcadia
+ll arcadia
+ll arcadia 2>&1 | less
+sudo lsof +D arcadia
+arc -version
+arc --version
+cd arcadia
+arc dump debug --bundle 
+arc dump debug --help
+arc dump debug --bundle -o /tmp/arc-debug
+ll /tmp/arc_debug_bundle_V6xayy.tgz
+cat /tmp/arc_debug_bundle_V6xayy.tgz
+sudo dmesg > ~/dmesg
+ya upload ~/dmesg
+less ~/dmesg 
+arc -h
+arc fsck
+arc fsck objects
+arc fsck overlay
+arc fsck overlay -h
+arc fsck overlay .
+systemctl status arc
+cd ~
+sudo lsof +D cloudia-spinnaker/
+kill 2848269
+sudo lsof +D cloudia-spinnaker/
+sudo umount -f cloudia-spinnaker
+arc_mount ~/cloudia-spinnaker cloudia
+java -version
+echo $JAVA_HOME
+ll /usr/lib/jvm/axiomjdk-java23-pro-amd64
+ll /usr/lib/jvm/axiomjdk-java23-pro-amd64/bin/
+which java
+ll /usr/bin/java
+ll /etc/alternatives/java
+/opt/jdk/jdk-17.0.15+6/bin/java
+fg
+sudo su -
+ps auxf | less
+sudo ps auxf | less
+cd Downloads/
+ll
+rm -rf code_1.10*
+sudo su -
+fg
+sudo ps auxf | grep arc
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="--repository cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/arcadia
+arc_mount ~/arcadia-iam-bot
+arc_mount ~/arcadia-scripts
+arc_mount ~/arcadia-docs
+arc_mount ~/arcadia-dashboard
+arc_mount ~/cloudia cloudia
+arc_mount ~/cloudia-metro cloudia
+arc_mount ~/cloudia-cloud-java cloudia
+arc_mount ~/cloudia-terraform cloudia
+arc_mount ~/cloudia-monitoring cloudia
+arc_mount ~/cloudia-spinnaker cloudia
+arc_mount ~/cloudia-cloud-go cloudia
+arc_mount ~/cloudia-activeprobes cloudia
+arc_mount ~/cloudia-k8s-deploy cloudia
+arc_mount ~/cloudia-bootstrap-templates cloudia
+arc_mount ~/cloudia-iam-sync cloudia
+arc_mount ~/cloudia-salt-formula cloudia
+cd ~
+lsof +D cloudia-spinnaker/
+kill 3156599
+lsof +D cloudia-spinnaker/
+arc unmount cloudia-spinnaker/
+arc_mount ~/cloudia-spinnaker cloudia
+find cloudia-spinnaker/cloud/spinnaker/ -type f -name 'StartrekStage*'
+less cloudia-spinnaker/cloud/spinnaker/plugins/ytrplugin/startrek-deck/src/StartrekStage.tsx
+less cloudia-spinnaker/cloud/spinnaker/plugins/ytrplugin/startrek-orca/src/main/kotlin/com/yandex/spinnaker/startrek/plugin/tasks/startrek/StartrekStageTask.kt
+less cloudia-spinnaker/cloud/spinnaker/plugins/ytrplugin/startrek-orca/src/main/kotlin/com/yandex/spinnaker/startrek/plugin/pipeline/startrek/StartrekStage.kt
+find cloudia-spinnaker/cloud/spinnaker/ -type f -name 'TeamcityBuildStage*'
+sudo su -
+ll
+arc branch
+arc branch -a
+arc status
+dpkg -s xserver-xorg-video-intel
+sudo su -
+lspci -knn | grep VGA -A2
+sudo su -
+mc
+cd ~/IdeaProjects/test
+git status
+git commit -m "." .
+git status
+git add .
+git commit -m "." .
+git push
+function arc_mount() {   path=$1;   repo=$2;   if [ "${repo?}" ]; then     echo "it's cloudia";     object_store=~/.arc/stores/objects-common;     repo_param="--repository cloudia";   else     echo "it's arcadia";     object_store=~/.arc/stores/objects-common-arcadia;     repo_param=;   fi;   if nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?}; then     echo "Mounted ${path?}";   else     echo "Failed to mount ${path?}";     sudo umount -f ${path?};     nice arc mount --allow-other ${repo_param?} -m ${path?} --object-store ${object_store?};   fi; }
+arc_mount ~/arcadia
+arc_mount ~/arcadia-iam-bot
+arc_mount ~/arcadia-scripts
+arc_mount ~/arcadia-docs
+arc_mount ~/arcadia-dashboard
+arc_mount ~/cloudia cloudia
+arc_mount ~/cloudia-metro cloudia
+arc_mount ~/cloudia-cloud-java cloudia
+arc_mount ~/cloudia-terraform cloudia
+arc_mount ~/cloudia-monitoring cloudia
+arc_mount ~/cloudia-spinnaker cloudia
+arc_mount ~/cloudia-cloud-go cloudia
+arc_mount ~/cloudia-activeprobes cloudia
+arc_mount ~/cloudia-k8s-deploy cloudia
+arc_mount ~/cloudia-bootstrap-templates cloudia
+arc_mount ~/cloudia-iam-sync cloudia
+arc_mount ~/cloudia-salt-formula cloudia
+cd ~/cloudia/cloud/cloud-go/
+arc status
+arc fetch
+arc branch -a
+arc checkout users/timurabs/YCIAM-847-OOOO
+arc pull
+arc log
+OB
+OA
+./token
+./id_ecdsa_github

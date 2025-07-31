@@ -1,3 +1,13 @@
+
+Comm Shift T            reopen last closed
+Comm Y                  history
+
+
+
+
+
+
+Linux
 F11	        full screen
 F12	        dev mode
 Ctlr + '+-'	zoom
