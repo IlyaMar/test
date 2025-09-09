@@ -2,13 +2,18 @@ mkdir ~/.arc/stores/objects-common
 mkdir ~/.arc/stores/objects-common-arcadia
 
 nice arc mount --allow-other --repository arcadia -m ~/arcadia --object-store ~/.arc/stores/objects-common-arcadia
+nice arc mount --allow-other --repository arcadia -m ~/arcadia-dashboard --object-store ~/.arc/stores/objects-common-arcadia
+
 
 nice arc mount --allow-other --repository cloudia -m ~/cloudia-cloud-go --object-store ~/.arc/stores/objects-common
 nice arc mount --allow-other --repository cloudia -m ~/cloudia-terraform --object-store ~/.arc/stores/objects-common
 nice arc mount --allow-other --repository cloudia -m ~/cloudia-salt --object-store ~/.arc/stores/objects-common
-nice arc mount --allow-other --repository cloudia -m ~/cloudia-bootstrap --object-store ~/.arc/stores/objects-common
+#nice arc mount --allow-other --repository cloudia -m ~/cloudia-bootstrap --object-store ~/.arc/stores/objects-common
+nice arc mount --allow-other --repository cloudia -m ~/cloudia-deploy --object-store ~/.arc/stores/objects-common
+
 nice arc mount --allow-other --repository cloudia -m ~/cloudia-k8s-deploy --object-store ~/.arc/stores/objects-common
 nice arc mount --allow-other --repository cloudia -m ~/cloudia-cloud-java --object-store ~/.arc/stores/objects-common
+nice arc mount --allow-other --repository cloudia -m ~/cloudia-monitoring --object-store ~/.arc/stores/objects-common
 
 
 

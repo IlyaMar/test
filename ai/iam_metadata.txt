@@ -25,29 +25,29 @@
 
 Примеры пермиссий:
 
-для сервиса example ресурс типа example.child и действия get. Категория READ_DATA_PLANE потому что читаются данные ресурса:
+для сервиса example ресурс типа example.child и действия get:
 permissions:
   example.children.get:
     description: Returns a child entity
-    category: READ_DATA_PLANE
+    category: READ_DATA_PLANE # потому что читаются данные ресурса
     stage: GA
     visibility: internal
     resourceType: example.child
 
-для листинга пользователей в облаке iam. Категория READ_CONTROL_PLANE потому что мы просто перечисляем ресурсы, их данные не читаем:
+для листинга пользователей в облаке iam:
 permissions:
   iam.cloudUsers.list:
     description: List users in a cloud
-    category: READ_CONTROL_PLANE
+    category: READ_CONTROL_PLANE  # потому что мы просто перечисляем ресурсы, их данные не читаем
     stage: GA
     visibility: public
     resourceType: resource-manager.cloud
 
-для выпуска токена сервисного аккаунта iam. Категория USE_DATA_PLANE так выпуск токенов это работа с данными ресурса
+для выпуска токена сервисного аккаунта iam
 permissions:
   iam.serviceAccounts.issueToken:
     description: ''
-    category: USE_DATA_PLANE
+    category: USE_DATA_PLANE. # так выпуск токенов это работа с данными ресурса
     stage: GA
     visibility: public
     resourceType: iam.serviceAccount

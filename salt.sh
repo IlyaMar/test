@@ -11,6 +11,7 @@ yc-bootstrap --template testing.yaml --ticket-id CLOUD-173108 --filter host=iam-
                                                                                                               salt-state                                    path-to-file
 salt-call --local --config-dir /srv/yc/ci/salt-formulae/common/data/etc/salt state.sls_id /etc/yandex/unified_agent/secrets/access-service_secret.txt common.unified-agent.configure  test=True
 salt-call --local --config-dir /srv/yc/ci/salt-formulae/common/data/etc/salt state.sls roles.common test=True queue=True
+salt-call --local --config-dir /srv/yc/ci/salt-formulae/iam-access-service/data/etc/salt state.sls roles.iam-access-service  queue=True
 
 
 yc-bootstrap --template testing.yaml --ticket-id CLOUD-173108 --filter host=iam-as-vla1.svc.cloud-testing.yandex.net --apply \
@@ -31,3 +32,6 @@ supported_stands := testing preprod prod israel nemax cloudvm hw-cgw-dev-lab
 
 
 yc-bootstrap --apply --ticket-id COMPUTEOPS-1198  --template pre-prod.yaml --filter iam-as-myt3.svc.cloud-preprod.yandex.net - gather-hosts-cluster-map
+
+
+sudo -i YC_BS_ID=yc-b-t6o7bp5dvievr9ciu /opt/yc-ci-remote/yc-ci-remote run-salt --state roles.iam-access-service --salt-role iam-access-service --salt-formula-package-version 0.1-148027.250808 --timeout 1800 --json-out-file yc-b-t6o7bp5dvievr9ciu.roles.iam-access-service.1d7pcv0mu0ke021ah.json --salt-cpu-limiters none

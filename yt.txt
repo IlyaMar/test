@@ -1,0 +1,17 @@
+USE hahn;
+
+SELECT `timestamp`, duration,
+       grpc_status_code, grpc_status_message,
+       request, response
+FROM `logs/yc-iam-access-log-prod/30min/2025-08-08T16:30:00`
+WHERE app = "token-service"
+  AND grpc_method = "CreateForServiceAccount"
+  AND host = ""
+ORDER BY `timestamp`
+
+
+
+USE hahn;
+PRAGMA yt.Pool = 'yc-support-fast';
+SELECT *
+FROM RANGE(`logs/yc-iam-access-log-prod/30min`, "2025-08-27T13:30:00", "2025-08-27T13:30:00")

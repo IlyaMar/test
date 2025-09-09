@@ -1,9 +1,11 @@
 
 Comm Shift T            reopen last closed
 Comm Y                  history
-
-
-
+Comm 1-9                focus tab
+Comm ,                  settings
+Comm R                  reload page
+Comm F5                 reload with cache override
+Comm Opt B              bookmarks manager
 
 
 

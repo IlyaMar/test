@@ -1,2 +1,7 @@
 HOST=\'x@iam-ya-*.svc.cloud.yandex.net\'
 pssh exec run-predefined --ycp-profile prod "iam.systemctl" ${HOST?} -- --sudo="sudo" --command="restart" --unit="yc-team-integrations"
+
+
+SVM dns records:
+- название хоста iam-rm-klg1.svc.cloud-testing.yandex.net has IPv6 address 2a02:6b8:bf00:3d00:1c80:17ff:fe59:7e5e
+- locallb запись klg.4284.tcp.rm.local-lb.iam.cloud-testing.yandex.net

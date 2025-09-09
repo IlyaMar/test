@@ -16,5 +16,7 @@ grpcurl \
   yandex.cloud.priv.servicecontrol.v1.AccessService/Authorize
 
 
+IAM_TOKEN=$(ycp --profile=prod iam create-token) && grpcurl -d "{\"iam_token\":\"${IAM_TOKEN?}\"}" -authority as.private-api.cloud.yandex.net iam-as-overlay-vla1.svc.cloud.yandex.net:4286 yandex.cloud.priv.servicecontrol.v1.AccessService/Authenticate
+
 
 grpcurl -v --insecure -H "Authroization: Bearer $YC_IAM_TOKEN" -d '{"payload":"{\"arguments\":[\"dynamic-values\",\"cache-refresher\",\"unset\"],\"flags\":{\"instance-id\":\"iam-internal-prestable-klg1\"}}"}' localhost:4286 yandex.cloud.priv.maintenance.v1.MaintenanceService/ExecuteCommand

@@ -33,3 +33,23 @@ from (
 )
 group by status, restrictions
 order by status, restrictions
+
+
+
+YCP_PROFILE=preprod
+IAM_TOKEN=$(ycp --profile ${YCP_PROFILE?} iam iam-token create-for-service-account --subject-id yc.iam.service-account)
+# Список шардов фолдера
+curl -H "Authorization: Bearer ${IAM_TOKEN?}" \
+    -H "X-Request-ID: ${REQUEST_ID}" \
+    -s -v https://solomon.cloud-prod.yandex-team.ru:443/api/v2/projects/${FOLDER_ID}/shards/ \
+    | jq
+# Удаление шарда
+curl -H "Authorization: Bearer ${IAM_TOKEN?}" \
+    -H "X-Request-ID: ${REQUEST_ID}" \
+    -s -v -X DELETE https://solomon.cloud-prod.yandex-team.ru:443/api/v2/projects/${FOLDER_ID}/shards/${FOLDER_ID}_${SHARD_ID} \
+    | jq
+# Удаление кластера
+curl -H "Authorization: Bearer ${IAM_TOKEN?}" \
+    -H "X-Request-ID: ${REQUEST_ID}" \
+    -s -v -X DELETE https://solomon.cloud-prod.yandex-team.ru:443/api/v2/projects/${FOLDER_ID}/clusters/${FOLDER_ID}_${CLUSTER_ID} \
+    | jq

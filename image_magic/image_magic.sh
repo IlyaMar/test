@@ -1,3 +1,8 @@
+magick свидетельство_о_рождении_1.JPG -resize 60% svid.jpg
+
+
+# Linux
+
 sudo apt-get install imagemagick
 
 convert -resize 2000x photo_2024-10-07_20-32-22.jpg 3.jpg

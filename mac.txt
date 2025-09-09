@@ -10,10 +10,16 @@ Shift Comm I        rename tab
 
 
 UI
-	
+Ctrl right / triple tap + right      switch desktop
+Ctrl up / triple tap + up            mission control
+Comm `          switch app window inside desktop
+
+
 Ctrl Comm F         full screen
 Fn Down             page down
 Shift Comm 5        take screenshot
+
+
 
 Maccy clipboard
 Comm Shift C        open

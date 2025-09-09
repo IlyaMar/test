@@ -5,6 +5,7 @@ Ctrl + Shift + G		vcs
 Ctrl ,			        settings
 Ctrl Shift P            command palette
 Ctrl `                  console
+Comm B              hide left panel
 
 
 Comm K, Z           zen mode
@@ -16,7 +17,6 @@ Comm L              select line
 Shift Opt Down      dublicate line
 Comm Shift K        delete line
 
-
 Ctrl -              navigate backward
 Ctrl Shift -        navigate forward
 Shift Comm O        go to symbol in file
@@ -27,8 +27,6 @@ Comm Up/Down        navigate to first/last line
 
 
 
-
-
-
-Ctrl Alt K          toggle bookmark
-Ctrl Alt A          annotate
+"workbench.colorCustomizations": {
+  "titleBar.activeBackground": "#553955" // change this color!
+}
