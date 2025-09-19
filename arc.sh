@@ -14,6 +14,9 @@ nice arc mount --allow-other --repository cloudia -m ~/cloudia-deploy --object-s
 nice arc mount --allow-other --repository cloudia -m ~/cloudia-k8s-deploy --object-store ~/.arc/stores/objects-common
 nice arc mount --allow-other --repository cloudia -m ~/cloudia-cloud-java --object-store ~/.arc/stores/objects-common
 nice arc mount --allow-other --repository cloudia -m ~/cloudia-monitoring --object-store ~/.arc/stores/objects-common
+nice arc mount --allow-other --repository cloudia -m ~/cloudia-aw --object-store ~/.arc/stores/objects-common
+nice arc mount --allow-other --repository cloudia -m ~/cloudia-spinnaker --object-store ~/.arc/stores/objects-common
+nice arc mount --allow-other --repository cloudia -m ~/cloudia-iam-sync --object-store ~/.arc/stores/objects-common
 
 
 
@@ -50,6 +53,7 @@ arc_mount ~/cloudia-cloud-java cloudia
 arc_mount ~/cloudia-terraform cloudia
 arc_mount ~/cloudia-monitoring cloudia
 arc_mount ~/cloudia-spinnaker cloudia
+arc_mount ~/cloudia-aw cloudia
 arc_mount ~/cloudia-cloud-go cloudia
 arc_mount ~/cloudia-activeprobes cloudia
 arc_mount ~/cloudia-k8s-deploy cloudia

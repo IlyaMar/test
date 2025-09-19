@@ -1,5 +1,7 @@
+#!/bin/zsh
+
 ycp --impersonate-service-account-id yc.iam.service-account --profile ${PROFILE?} maintenance reaper task-processor \
-task search DeleteCloudJob#<Operation id>
+task search DeleteCloudJob#$Operation_id
 
 # cloud status
 $list_join = ($l) -> { return Unicode::JoinFromList(ListSort($l), ', '); };
