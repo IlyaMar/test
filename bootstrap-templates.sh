@@ -1,6 +1,6 @@
 
 export YANDEX_YC_IAM_TOKEN=$(ycp --profile ${YCP_PROFILE?} iam iam-token create-for-service-account --service-account-id yc.iam.service-account)
-pssh --cause other:YCIAM-5501 bootstrap-b.gear.cloud.yandex.net --send-env YANDEX_YC_IAM_TOKEN
+pssh --cause other:YCIAM-6363 bootstrap-b.gear.cloud.yandex.net --send-env YANDEX_YC_IAM_TOKEN
 export YC_IAM_TOKEN=$YANDEX_YC_IAM_TOKEN
 yc-bootstrap --template pre-prod.yaml --ticket-id YCIAM-2374 - provision-default-resources --resources-path iam -target ycp_resource_manager_folder_iam_member.yc-iam-logs-folder-logging-writer-role-hwnodes
 

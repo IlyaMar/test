@@ -1,1 +1,4 @@
 dig klg.9080.tcp.compute-api-l7.local-lb.compute.cloud-preprod.yandex.net. aaaa +short
+
+dig as.local-lb.iam.cloud-testing.yandex.net txt
+dig vla.4286.tcp.as.local-lb.iam.cloud-testing.yandex.net aaaa
