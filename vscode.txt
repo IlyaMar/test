@@ -25,8 +25,29 @@ Comm Up/Down        navigate to first/last line
 
 
 
-
-
+workspace settings:
 "workbench.colorCustomizations": {
   "titleBar.activeBackground": "#553955" // change this color!
 }
+
+user settings:
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-24",
+            "path": "/Library/Java/JavaVirtualMachines/temurin-24.jdk/Contents/Home",
+            "default": true
+        }
+    ],
+    "redhat.telemetry.enabled": false,
+    "java.maven.downloadSources": true,
+    "explorer.confirmDelete": false,
+    "java.configuration.maven.userSettings": "~/.m2/settings.xml",
+        
+    "go.alternateTools": {
+        "go.alternateTools": {
+            "gopls": "/Users/ilya-martynov/.ya/tools/v4/gopls-darwin-arm64/gopls"
+        },
+    },
+
+rm /Users/ilya-martynov/go/bin/gopls                       
+ln -s $(ya tool gopls --print-path) /Users/ilya-martynov/go/bin/gopls
