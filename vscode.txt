@@ -5,24 +5,38 @@ Ctrl + Shift + G		vcs
 Ctrl ,			        settings
 Ctrl Shift P            command palette
 Ctrl `                  console
-Comm B              hide left panel
+Comm B                  hide left panel
 
 
 Comm K, Z           zen mode
 Ctrl W              switch VSCode window
 Ctrl Comm F         full screen
+Comm Opt [          fold region
+Opt Z               word wrap
 
 
 Comm L              select line
+Comm Shift Opt      box selection
 Shift Opt Down      dublicate line
+Opt Down            move line down
 Comm Shift K        delete line
+Comm C              copy line
+Comm X              cut line
 
 Ctrl -              navigate backward
 Ctrl Shift -        navigate forward
 Shift Comm O        go to symbol in file
 Ctrl G              go to line
 Comm Up/Down        navigate to first/last line
+Fn Up               page down
 
+
+F12                 go to definition
+Shift F12           find references
+F2                  rename symbol
+
+
+Comm N              create file
 
 
 workspace settings:
@@ -49,5 +63,6 @@ user settings:
         },
     },
 
+После загрузки проекта, заменить стандартный gopls на патченный
 rm /Users/ilya-martynov/go/bin/gopls                       
 ln -s $(ya tool gopls --print-path) /Users/ilya-martynov/go/bin/gopls

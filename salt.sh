@@ -3,13 +3,19 @@ yc-bootstrap --template prod.yaml --ticket-id CLOUD-119068 --filter host=iam-int
 yc-bootstrap --template prod.yaml --ticket-id CLOUD-144044 --filter '%iam-control-plane @ru-central1-c' - update-cluster --salt-role iam-control-plane --salt-state roles.iam-control-plane
 yc-bootstrap --template testing.yaml --ticket-id CLOUD-173108 --filter host=iam-as-vla1.svc.cloud-testing.yandex.net --apply - update-cluster --salt-role common --salt-state roles.common
 
+yc-bootstrap --template testing.yaml --ticket-id CLOUD-173108 --filter host=hwnode1.yandex.net - update-cluster --salt-role infra-automation --salt-state roles.infra-automation
+
+
+
 --salt-role common --salt-state common.unified-agent
 --salt-state roles.iam-ya-base
 --template prod.yaml --filter role=iam-internal-dev
 --template testing.yaml --filter role=iam-access-service
 --filter role=compute --filter zone=ru-central1-c
-                                                                                                              salt-state                                    path-to-file
-salt-call --local --config-dir /srv/yc/ci/salt-formulae/common/data/etc/salt state.sls_id /etc/yandex/unified_agent/secrets/access-service_secret.txt common.unified-agent.configure  test=True
+                                                                                                              salt-state                                                 path-to-file
+salt-call --local --config-dir /srv/yc/ci/salt-formulae/common/data/etc/salt            state.sls_id /etc/yandex/unified_agent/secrets/access-service_secret.txt common.unified-agent.configure  test=True queue=True 
+salt-call --local --config-dir /srv/yc/ci/salt-formulae/infra-automation2/data/etc/salt state.sls_id /etc/yandex/unified_agent/conf.d/logs/yc-iam-oslogin-daemon-logs.yml roles.infra-automation test=True queue=True
+
 salt-call --local --config-dir /srv/yc/ci/salt-formulae/common/data/etc/salt state.sls roles.common test=True queue=True
 salt-call --local --config-dir /srv/yc/ci/salt-formulae/iam-access-service/data/etc/salt state.sls roles.iam-access-service  queue=True
 

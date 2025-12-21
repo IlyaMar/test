@@ -1,0 +1,9 @@
+kubectl cluster-info --context kind-pelican dump
+
+kubectl config use-context kind-pelican
+kind get nodes --name pelican
+
+kind load docker-image cr.yandex/yc-iam/iam-k8s-infra:35 --name pelican
+
+
+kubectl port-forward service/nginx-service 8080:80

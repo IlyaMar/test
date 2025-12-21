@@ -1,0 +1,16 @@
+brew leaves | xargs -n1 brew desc
+
+pkgutil --pkgs
+
+pkgutil --files net.temurin.24.jdk
+sudo pkgutil --forget net.temurin.24.jdk
+
+sudo installer -pkg ~/Downloads/OpenJDK25U-jdk_aarch64_mac_hotspot_25.0.1_8.pkg -target /
+
+
+
+
+ilya-martynov@ilya-martynov-o kind % ls -lO /usr/bin/java
+-rwxr-xr-x  37 root  wheel  restricted,compressed 135664 Jul 19 08:13 /usr/bin/java
+ilya-martynov@ilya-martynov-o kind % sudo chflags norestricted /usr/bin/java
+chflags: /usr/bin/java: Operation not permitted

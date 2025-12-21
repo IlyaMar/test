@@ -1,0 +1,1 @@
+ycp --profile=prod maintenance iam task-processor task search --alive-before "2025-11-10T09:42:32.208" | grep -v '>' | jq 'select(.job.callerOperationId)'
