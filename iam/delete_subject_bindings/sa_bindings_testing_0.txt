@@ -1,0 +1,550 @@
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: yc.iam.service-cloud
+    type: resource-manager.cloud
+- role_id: internal.computeadmin
+  resource:
+    id: bat52pf5q7rjqm29q4go
+    type: resource-manager.cloud
+  is_system: true
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: batql1bbpfete42lb8a4
+    type: resource-manager.cloud
+- role_id: internal.computeadmin
+  resource:
+    id: bat5dnhuvorh8alncuau
+    type: resource-manager.cloud
+  is_system: true
+- role_id: vpc.support
+  resource:
+    id: yc.vpc.bootstrap
+    type: resource-manager.cloud
+  is_system: true
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: batm46ns6pucbkq4poue
+    type: resource-manager.cloud
+- role_id: admin
+  resource:
+    id: batql1bbpfete42lb8a4
+    type: resource-manager.cloud
+- role_id: internal.computeadmin
+  resource:
+    id: yc.netinfra.cloud
+    type: resource-manager.cloud
+  is_system: true
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: bat804cu8huiscp0i4il
+    type: resource-manager.cloud
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: batf333f1gqi70iqq1a6
+    type: resource-manager.cloud
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: bat7tcjqeelg404pgihh
+    type: resource-manager.cloud
+- role_id: vpc.support
+  resource:
+    id: yc.compute.cloud
+    type: resource-manager.cloud
+  is_system: true
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: yc.netinfra.cloud
+    type: resource-manager.cloud
+- role_id: internal.iam.crossCloudBindings
+  resource:
+    id: foo0root0resource0id
+    type: root
+  is_system: true
+- role_id: internal.iam.gizmoAccessBindingAdmin
+  resource:
+    id: foo0root0resource0id
+    type: root
+  is_system: true
+- role_id: vpc.support
+  resource:
+    id: batuqklisbonn5u5mh5n
+    type: resource-manager.cloud
+  is_system: true
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: yc.vpc.service-cloud
+    type: resource-manager.cloud
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: yc.devel.developers-cloud
+    type: resource-manager.cloud
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: bat52pf5q7rjqm29q4go
+    type: resource-manager.cloud
+- role_id: vpc.support
+  resource:
+    id: bat7njuvc3p09gb6634k
+    type: resource-manager.cloud
+  is_system: true
+- role_id: vpc.support
+  resource:
+    id: yc.devel.developers-cloud
+    type: resource-manager.cloud
+  is_system: true
+- role_id: vpc.support
+  resource:
+    id: yc.vpc.service-cloud
+    type: resource-manager.cloud
+  is_system: true
+- role_id: internal.computeadmin
+  resource:
+    id: yc.devel.developers-cloud
+    type: resource-manager.cloud
+  is_system: true
+- role_id: internal.computeadmin
+  resource:
+    id: yc.vpc.service-cloud
+    type: resource-manager.cloud
+  is_system: true
+- role_id: vpc.support
+  resource:
+    id: yc.nbs.cloud
+    type: resource-manager.cloud
+  is_system: true
+- role_id: internal.computeadmin
+  resource:
+    id: yc.yandexcloud.serviceCloud
+    type: resource-manager.cloud
+  is_system: true
+- role_id: vpc.support
+  resource:
+    id: bat5dnhuvorh8alncuau
+    type: resource-manager.cloud
+  is_system: true
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: yc.vpc.bootstrap
+    type: resource-manager.cloud
+- role_id: vpc.support
+  resource:
+    id: yc.vpc.virtual-network
+    type: resource-manager.cloud
+  is_system: true
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: yc.vpc.monitoring
+    type: resource-manager.cloud
+- role_id: admin
+  resource:
+    id: bat3h9e5usnu3vqfo047
+    type: resource-manager.cloud
+- role_id: vpc.support
+  resource:
+    id: yc.vpc.monitoring
+    type: resource-manager.cloud
+  is_system: true
+- role_id: vpc.support
+  resource:
+    id: yc.tools.admin-tools-cloud
+    type: resource-manager.cloud
+  is_system: true
+- role_id: internal.computeadmin
+  resource:
+    id: bat804cu8huiscp0i4il
+    type: resource-manager.cloud
+  is_system: true
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: bats9fb2setab4r5rruo
+    type: resource-manager.cloud
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: bats537o3h749c6jdj61
+    type: resource-manager.cloud
+- role_id: admin
+  resource:
+    id: yc.yandexcloud.serviceCloud
+    type: resource-manager.cloud
+- role_id: admin
+  resource:
+    id: yc.nbs.cloud
+    type: resource-manager.cloud
+- role_id: vpc.support
+  resource:
+    id: bat7t06thqec3u8miucg
+    type: resource-manager.cloud
+  is_system: true
+- role_id: vpc.support
+  resource:
+    id: bats9fb2setab4r5rruo
+    type: resource-manager.cloud
+  is_system: true
+- role_id: vpc.support
+  resource:
+    id: bats537o3h749c6jdj61
+    type: resource-manager.cloud
+  is_system: true
+- role_id: internal.computeadmin
+  resource:
+    id: yc.compute.cloud
+    type: resource-manager.cloud
+  is_system: true
+- role_id: vpc.support
+  resource:
+    id: batshqre91q749a3pdc1
+    type: resource-manager.cloud
+  is_system: true
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: batfb2lrk4cf16c01fbe
+    type: resource-manager.cloud
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: bat5dnhuvorh8alncuau
+    type: resource-manager.cloud
+- role_id: admin
+  resource:
+    id: bat5dnhuvorh8alncuau
+    type: resource-manager.cloud
+- role_id: admin
+  resource:
+    id: bat804cu8huiscp0i4il
+    type: resource-manager.cloud
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: batuqklisbonn5u5mh5n
+    type: resource-manager.cloud
+- role_id: admin
+  resource:
+    id: bat7njuvc3p09gb6634k
+    type: resource-manager.cloud
+- role_id: internal.computeadmin
+  resource:
+    id: yc.nbs.cloud
+    type: resource-manager.cloud
+  is_system: true
+- role_id: internal.computeadmin
+  resource:
+    id: yc.yc-e2e-tests.serviceCloud
+    type: resource-manager.cloud
+  is_system: true
+- role_id: internal.computeadmin
+  resource:
+    id: yc.disk-manager.cloud
+    type: resource-manager.cloud
+  is_system: true
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: yc.yandexcloud.serviceCloud
+    type: resource-manager.cloud
+- role_id: admin
+  resource:
+    id: bat52pf5q7rjqm29q4go
+    type: resource-manager.cloud
+- role_id: admin
+  resource:
+    id: yc.iam.service-cloud
+    type: resource-manager.cloud
+- role_id: internal.computeadmin
+  resource:
+    id: bat7njuvc3p09gb6634k
+    type: resource-manager.cloud
+  is_system: true
+- role_id: internal.computeadmin
+  resource:
+    id: yc.vpc.bootstrap
+    type: resource-manager.cloud
+  is_system: true
+- role_id: internal.computeadmin
+  resource:
+    id: yc.vpc.virtual-network
+    type: resource-manager.cloud
+  is_system: true
+- role_id: admin
+  resource:
+    id: bat7tcjqeelg404pgihh
+    type: resource-manager.cloud
+- role_id: internal.computeadmin
+  resource:
+    id: yc.tools.admin-tools-cloud
+    type: resource-manager.cloud
+  is_system: true
+- role_id: admin
+  resource:
+    id: yc.netinfra.cloud
+    type: resource-manager.cloud
+- role_id: admin
+  resource:
+    id: yc.vpc.monitoring
+    type: resource-manager.cloud
+- role_id: vpc.support
+  resource:
+    id: batql1bbpfete42lb8a4
+    type: resource-manager.cloud
+  is_system: true
+- role_id: internal.computeadmin
+  resource:
+    id: bats537o3h749c6jdj61
+    type: resource-manager.cloud
+  is_system: true
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: yc.vpc.api
+    type: resource-manager.cloud
+- role_id: admin
+  resource:
+    id: yc.vpc.api
+    type: resource-manager.cloud
+- role_id: admin
+  resource:
+    id: yc.devel.developers-cloud
+    type: resource-manager.cloud
+- role_id: admin
+  resource:
+    id: batuqklisbonn5u5mh5n
+    type: resource-manager.cloud
+- role_id: admin
+  resource:
+    id: yc.vpc.service-cloud
+    type: resource-manager.cloud
+- role_id: vpc.support
+  resource:
+    id: yc.netinfra.cloud
+    type: resource-manager.cloud
+  is_system: true
+- role_id: vpc.support
+  resource:
+    id: yc.yc-e2e-tests.serviceCloud
+    type: resource-manager.cloud
+  is_system: true
+- role_id: admin
+  resource:
+    id: yc.tools.admin-tools-cloud
+    type: resource-manager.cloud
+- role_id: admin
+  resource:
+    id: yc.yc-e2e-tests.serviceCloud
+    type: resource-manager.cloud
+- role_id: vpc.support
+  resource:
+    id: batf333f1gqi70iqq1a6
+    type: resource-manager.cloud
+  is_system: true
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: yc.compute.cloud
+    type: resource-manager.cloud
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: yc.yc-e2e-tests.serviceCloud
+    type: resource-manager.cloud
+- role_id: internal.computeadmin
+  resource:
+    id: yc.iam.service-cloud
+    type: resource-manager.cloud
+  is_system: true
+- role_id: internal.computeadmin
+  resource:
+    id: batql1bbpfete42lb8a4
+    type: resource-manager.cloud
+  is_system: true
+- role_id: internal.computeadmin
+  resource:
+    id: batf333f1gqi70iqq1a6
+    type: resource-manager.cloud
+  is_system: true
+- role_id: vpc.support
+  resource:
+    id: bat7tcjqeelg404pgihh
+    type: resource-manager.cloud
+  is_system: true
+- role_id: internal.computeadmin
+  resource:
+    id: yc.vpc.api
+    type: resource-manager.cloud
+  is_system: true
+- role_id: vpc.support
+  resource:
+    id: yc.yandexcloud.serviceCloud
+    type: resource-manager.cloud
+  is_system: true
+- role_id: vpc.support
+  resource:
+    id: yc.vpc.cgw
+    type: resource-manager.cloud
+  is_system: true
+- role_id: admin
+  resource:
+    id: batfb2lrk4cf16c01fbe
+    type: resource-manager.cloud
+- role_id: internal.computeadmin
+  resource:
+    id: bat3h9e5usnu3vqfo047
+    type: resource-manager.cloud
+  is_system: true
+- role_id: vpc.support
+  resource:
+    id: bat52pf5q7rjqm29q4go
+    type: resource-manager.cloud
+  is_system: true
+- role_id: internal.computeadmin
+  resource:
+    id: bats9fb2setab4r5rruo
+    type: resource-manager.cloud
+  is_system: true
+- role_id: admin
+  resource:
+    id: batm46ns6pucbkq4poue
+    type: resource-manager.cloud
+- role_id: internal.computeadmin
+  resource:
+    id: batshqre91q749a3pdc1
+    type: resource-manager.cloud
+  is_system: true
+- role_id: internal.computeadmin
+  resource:
+    id: yc.vpc.cgw
+    type: resource-manager.cloud
+  is_system: true
+- role_id: admin
+  resource:
+    id: yc.compute.cloud
+    type: resource-manager.cloud
+- role_id: vpc.support
+  resource:
+    id: batfb2lrk4cf16c01fbe
+    type: resource-manager.cloud
+  is_system: true
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: bat7t06thqec3u8miucg
+    type: resource-manager.cloud
+- role_id: admin
+  resource:
+    id: yc.vpc.cgw
+    type: resource-manager.cloud
+- role_id: admin
+  resource:
+    id: bat7t06thqec3u8miucg
+    type: resource-manager.cloud
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: batshqre91q749a3pdc1
+    type: resource-manager.cloud
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: yc.nbs.cloud
+    type: resource-manager.cloud
+- role_id: vpc.support
+  resource:
+    id: yc.vpc.api
+    type: resource-manager.cloud
+  is_system: true
+- role_id: vpc.support
+  resource:
+    id: bat804cu8huiscp0i4il
+    type: resource-manager.cloud
+  is_system: true
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: yc.tools.admin-tools-cloud
+    type: resource-manager.cloud
+- role_id: admin
+  resource:
+    id: yc.disk-manager.cloud
+    type: resource-manager.cloud
+- role_id: internal.computeadmin
+  resource:
+    id: batfb2lrk4cf16c01fbe
+    type: resource-manager.cloud
+  is_system: true
+- role_id: internal.computeadmin
+  resource:
+    id: bat7tcjqeelg404pgihh
+    type: resource-manager.cloud
+  is_system: true
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: yc.disk-manager.cloud
+    type: resource-manager.cloud
+- role_id: vpc.support
+  resource:
+    id: bat3h9e5usnu3vqfo047
+    type: resource-manager.cloud
+  is_system: true
+- role_id: admin
+  resource:
+    id: batshqre91q749a3pdc1
+    type: resource-manager.cloud
+- role_id: internal.computeadmin
+  resource:
+    id: batm46ns6pucbkq4poue
+    type: resource-manager.cloud
+  is_system: true
+- role_id: admin
+  resource:
+    id: batf333f1gqi70iqq1a6
+    type: resource-manager.cloud
+- role_id: admin
+  resource:
+    id: bats537o3h749c6jdj61
+    type: resource-manager.cloud
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: yc.vpc.virtual-network
+    type: resource-manager.cloud
+- role_id: vpc.support
+  resource:
+    id: batm46ns6pucbkq4poue
+    type: resource-manager.cloud
+  is_system: true
+- role_id: vpc.support
+  resource:
+    id: yc.iam.service-cloud
+    type: resource-manager.cloud
+  is_system: true
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: bat7njuvc3p09gb6634k
+    type: resource-manager.cloud
+- role_id: internal.computeadmin
+  resource:
+    id: bat7t06thqec3u8miucg
+    type: resource-manager.cloud
+  is_system: true
+- role_id: internal.computeadmin
+  resource:
+    id: batuqklisbonn5u5mh5n
+    type: resource-manager.cloud
+  is_system: true
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: bat3h9e5usnu3vqfo047
+    type: resource-manager.cloud
+- role_id: admin
+  resource:
+    id: yc.vpc.bootstrap
+    type: resource-manager.cloud
+- role_id: admin
+  resource:
+    id: yc.vpc.virtual-network
+    type: resource-manager.cloud
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: yc.vpc.cgw
+    type: resource-manager.cloud
+- role_id: admin
+  resource:
+    id: bats9fb2setab4r5rruo
+    type: resource-manager.cloud
+- role_id: internal.computeadmin
+  resource:
+    id: yc.vpc.monitoring
+    type: resource-manager.cloud
+  is_system: true
+- role_id: vpc.support
+  resource:
+    id: yc.disk-manager.cloud
+    type: resource-manager.cloud
+  is_system: true

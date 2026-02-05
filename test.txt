@@ -1,51 +1,222 @@
-Ты ассистент разработчика, который создает новые роли и пермиссии в сервисе яндекс облака. 
+# порт для метрик UA меняем с дефолтного 16300 на 16302, дефолтный занят другим UA на svm
+monitoring:
+  port: 16302
 
-Пермиссия описывает что можно делать с ресурсом. Пермиссия определяется для сервиса. Пермиссия имеет категорию, visibilty, ресурс тип, стейдж, описание. Категория определяется по действию, это одно из CREATE/UPDATE/DELETE/READ_CONTROL_PLANE. Visibility - public или private. Ресурс тип - ресурс на который проверяется доступ. Стейдж - на каком этапе разрешена пермиссия, обычно GA. 
+# порт для статуса UA меняем с дефолтного 16301 на 16303, дефолтный занят другим UA на svm
+status:
+  port: 16303
 
-Имя пермиссии состоит из имени сервиса, типа ресурса (во множественном числе) и действия: <service>.<resource(s)>.<action>, где
-<service> - имя сервиса, который будет авторизовывать действия.
-<resource(s)> - имя ресурса, над которым действие совершается, во множественном числе.
-<action> - атомарное действие, которое необходимо авторизовать.
-Кроме имени пермиссии могут иметь вспомогательные атрибуты, влияющие на авторизацию и другие сценарии.
+import:
+  - /configs/*.yaml
+    iam-clickhouse.yaml":"routes:
+  - input:
+      plugin: file_input
+      id: file_input-iam-oslogin-service_clickhouse_access_log
+      config:
+        path: /varlog/access.log
+        state_directory: /varlib/data/oslogin-service_cloudlogging_access_log_input_state
+        max_bytes_in_line: 10mb
 
-Примеры атрибутов:
-stage - атрибут, отвечающий за этап (или альфа-флаг). Этап - это механизм выборочного предоставления новой функциональности на ограниченное подмножество пользователей. Подробнее
-visibility - атрибут публичности. Пермиссии могут быть публичными (public) или внутренними (internal). Пермиссии с visibility: unpublished не попадают в базу, а используются для примера — не используйте их в своих сервисах;
-category - атрибут категории пермиссии для применения ограничений к пермиссии. Пермиссия будет разрешена или запрещена при наложенном на ресурс ограничении в зависимости от описания конкретного ограничения.
-Пермиссии на чтение и удаление ресурсов обычно не блокируются.
+    channel:
+      pipe:
+        - filter:
+            plugin: batch
+            id: batch-iam-oslogin-service_clickhouse_access_log
+            config:
+              delimiter: \"\
+\"
+              flush_period: 1s
+              limit:
+                count: 40000
+                bytes: 20mb
+      output:
+        plugin: clickhouse
+        id: clickhouse-iam-oslogin-service_clickhouse_access_log
+        config:
+          hosts:
+            - rc1a-d66et9iifm66p7ej.mdb.cloud-preprod.yandex.net
+          port: 9440
+          use_ssl: true
+          user: logs
+          password_file: /varsecrets/clickhouse_secret.txt
+          database: logs
+          table: access_log
+","iam-cloudlogging.yaml":"routes:
+  - input:
+      plugin: file_input
+      id: file_input-iam-oslogin-service_cloudlogging_server_log
+      config:
+        path: /varlog/server_json.log
+        state_directory: /varlib/data/oslogin-service_cloudlogging_server_log_input_state
+        max_bytes_in_line: 10mb
 
-Пример описания пермиссии для сервиса Example:
-permissions:
-  example.children.get:
-    description: Returns a child entity
-    category: READ_DATA_PLANE
-    stage: GA
-    # Do not use 'unpublished' visibility in your service. Use one of 'public' or 'internal'.
-    # The visibility 'unpublished' used here and below to exclude these permissions from being delivered to the DB.
-    visibility: unpublished
-    resourceType: example.child
+    channel:
+      output:
+        plugin: yc_logs
+        id: yc_logs-iam-oslogin-service_cloudlogging_server_log
+        config:
+          url: ingester.logging.cloud-preprod.yandex.net:443
+          folder_id: yc.iam.logs-folder
+          log_group_id: preprod.yc-iam.server-log
+          iam:
+            cloud_meta:
+              url: \"http://localhost:6770/computeMetadata/v1/instance/service-accounts/default/token\"
+          use_ssl: { }
+          parse_json:
+            payload:
+              keys: [\"message\"]
+            timestamp:
+              keys: [\"instant\"]
+            priority:
+              keys: [\"level\"]
+          resource_id: !expr \"{$host_name}\"
+          resource_type: oslogin-service_cloudlogging
+","iam-dpl-events.yaml":"routes:
+  - input:
+      plugin: file_input
+      id: file_input-iam-oslogin-service_dpl_events_dpl_events_log
+      config:
+        path: /varlog/dpl-events.log
+        state_directory: /varlib/data/oslogin-service_dpl_events_dpl_log_input_state
+        max_bytes_in_line: 10mb
 
-Другой пример пермиссии:
-permissions:
-  service.resourceType.action:
-    description: 'Сделать действие action на ресурсе resourceType сервиса service'
-    category: CREATE
-    stage: GA
-    visibility: public
-    resourceType: service.resourceType
+    channel:
+      pipe:
+        - filter:
+            plugin: batch
+            id: batch-iam-oslogin-service_dpl_events_dpl_events_log
+            config:
+              delimiter: \"\
+\"
+              flush_period: 1s
+              limit:
+                count: 300
+                bytes: 8mb
+      output:
+        plugin: logbroker
+        id: logbroker-iam-oslogin-service_dpl_events_dpl_events_log
+        config:
+          endpoint: lb.audit-trails-input-events-topics-db.ydb.mdb.cloud-preprod.yandex.net
+          port: 2135
+          database: /pre-prod_global/audit-trails-input-events-topics-db
+          topic: topics/data-plane/iam
+          codec: gzip
+          use_ydb_discovery: true
+          use_ssl: {}
+          iam:
+            cloud_meta:
+              url: \"http://localhost:6770/computeMetadata/v1/instance/service-accounts/default/token\"
+","iam-events.yaml":"routes:
+  - input:
+      plugin: file_input
+      id: file_input-iam-oslogin-service_events_events_log
+      config:
+        path: /varlog/events.log
+        state_directory: /varlib/data/oslogin-service_events_log_input_state
+        max_bytes_in_line: 10mb
 
+    channel:
+      pipe:
+        - filter:
+            plugin: batch
+            id: batch-iam-oslogin-service_events_events_log
+            config:
+              delimiter: \"\
+\"
+              flush_period: 1s
+              limit:
+                count: 300
+                bytes: 8mb
+      output:
+        plugin: logbroker
+        id: logbroker-iam-oslogin-service_events_events_log
+        config:
+          endpoint: lb.audit-trails-input-events-topics-db.ydb.mdb.cloud-preprod.yandex.net
+          port: 2135
+          database: /pre-prod_global/audit-trails-input-events-topics-db
+          topic: topics/control-plane/common
+          codec: gzip
+          use_ydb_discovery: true
+          use_ssl: {}
+          iam:
+            cloud_meta:
+              url: \"http://localhost:6770/computeMetadata/v1/instance/service-accounts/default/token\"
+","iam-logbroker.yaml":"routes:
+  - input:
+      plugin: file_input
+      id: file_input-iam-oslogin-service_logbroker_access_log
+      config:
+        path: /varlog/access.log
+        state_directory: /varlib/data/oslogin-service_logbroker_access_log_input_state
+        max_bytes_in_line: 10mb
 
-Категория может быть только из списка: READ_CONTROL_PLANE, READ_DATA_PLANE, CREATE, DELETE, UPDATE, UPDATE_ACCESS, USE_DATA_PLANE, USE_CONTROL_PLANE, START, STOP.
+    channel:
+      pipe:
+        - filter:
+            plugin: batch
+            id: batch-iam-oslogin-service_logbroker_access_log
+            config:
+              delimiter: \"\
+\"
+              flush_period: 1s
+              limit:
+                count: 1000
+                bytes: 8mb
+      output:
+        plugin: logbroker
+        id: logbroker-iam-oslogin-service_logbroker_access_log
+        config:
+          endpoint: lb.iam-logbroker-global.ydb.mdb.cloud-preprod.yandex.net 
+          port: 2135
+          database: /pre-prod_global/yc.iam.service-cloud/cc80dv2sjgaitdeut590
+          topic: yc-iam-access-log
+          codec: gzip
+          use_ydb_discovery: true
+          use_ssl: {}
+          iam:
+            cloud_meta:
+              url: \"http://localhost:6770/computeMetadata/v1/instance/service-accounts/default/token\"
 
-Для ролей:
-примитивные роли на уровне типов ресурсов сервиса в формате <service>.<resources>.<primitive>.
+  - input:
+      plugin: file_input
+      id: file_input-iam-oslogin-service_logbroker_server_log
+      config:
+        path: /varlog/server_json.log
+        state_directory: /varlib/data/oslogin-service_logbroker_server_log_input_state
+        max_bytes_in_line: 10mb
 
-Пермиссии описывай отдельно, роли - отдельно. Роли могут включать в себя пермисиии и другие роли
+    channel:
+      output:
+        plugin: logbroker
+        id: logbroker-iam-oslogin-service_logbroker_server_log
+        config:
+          endpoint: lb.iam-logbroker-global.ydb.mdb.cloud-preprod.yandex.net
+          port: 2135
+          database: /pre-prod_global/yc.iam.service-cloud/cc80dv2sjgaitdeut590
+          topic: yc-iam-server-log
+          codec: gzip
+          use_ydb_discovery: true
+          use_ssl: {}
+          iam:
+            cloud_meta:
+              url: \"http://localhost:6770/computeMetadata/v1/instance/service-accounts/default/token\"
+","iam-traces.yaml":"routes:
+  - input:
+      plugin: otel_traces
+      id: otel_traces-iam_traces_input
+      config:
+        protocol: grpc
+        uri: localhost:4317
 
-  
-Создай роль и пермиссии в формате yaml по данному примеру
-
-
-
-
-§1234567890-=,./><±7894561230..
+    channel:
+      output:
+        plugin: otel_traces
+        id: otel_traces-iam_traces_output
+        config:
+          url: collector.tracing.cloud-preprod.yandex.net:4317
+          project: yc.iam.service-cloud
+          cluster: yc.iam.logs-folder
+          service: iam-oslogin-service
+          iam:
+            cloud_meta:
+              url: \"http://localhost:6770/computeMetadata/v1/instance/service-accounts/default/token\"

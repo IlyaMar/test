@@ -1,0 +1,42 @@
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: batql1bbpfete42lb8a4
+    type: resource-manager.cloud
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: batf333f1gqi70iqq1a6
+    type: resource-manager.cloud
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: bat7tcjqeelg404pgihh
+    type: resource-manager.cloud
+- role_id: internal.iam.crossCloudBindings
+  resource:
+    id: foo0root0resource0id
+    type: root
+  is_system: true
+- role_id: internal.iam.gizmoAccessBindingAdmin
+  resource:
+    id: foo0root0resource0id
+    type: root
+  is_system: true
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: bat52pf5q7rjqm29q4go
+    type: resource-manager.cloud
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: bats9fb2setab4r5rruo
+    type: resource-manager.cloud
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: bat5dnhuvorh8alncuau
+    type: resource-manager.cloud
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: bat7t06thqec3u8miucg
+    type: resource-manager.cloud
+- role_id: resource-manager.clouds.owner
+  resource:
+    id: bat3h9e5usnu3vqfo047
+    type: resource-manager.cloud

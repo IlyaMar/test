@@ -7,10 +7,16 @@ curl -X POST -H 'content-type: application/json' -H "Authorization: OAuth ${ST_O
 (queue: yciam) and Components: "IAM Metadata" and Summary: Deploy and Status: Закрыт
 
 
-
 {
    "filter": {
       "<имя_поля>": "<значение_в_поле>"
    },
    "order":"+<ключ_поля>"
 }
+
+
+/Users/ilya-martynov/arcadia/cloud/iam/planning_tool
+./planning_tool timesheet -c configs/iam_infra.yaml -f 2025-07-01 -t 2025-12-30 --mds-off -o timesheet_iam_2025h2.html
+
+cloudia-cloud-go % source ~/venv/planning_tool/bin/activate                                                                                               
+(planning_tool) cloudia-cloud-go % python3 junk/sviridenko/iam/planning-tables-generator.py -o ~/Downloads/iam-plans-2026q1-rev36
