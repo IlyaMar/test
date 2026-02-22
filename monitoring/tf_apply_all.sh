@@ -55,7 +55,7 @@ main() {
     echo "Starting Terraform operations with command: ${command}"
 
 
-    # run_terraform "solomon-tf/prod/iam/prod"       "monitoring" "prod"    
+    run_terraform "solomon-tf/prod/iam/prod"       "monitoring" "prod"    
     # run_terraform "solomon-tf/preprod/iam/preprod" "monitoring" "preprod"
     # run_terraform "solomon-tf/preprod/iam/testing" "monitoring" "preprod"
     
@@ -68,10 +68,11 @@ main() {
     # run_terraform "solomon-tf/main/iam/internal-dev"       "monitoring" "main"
     # run_terraform "solomon-tf/main/iam/internal-prestable" "monitoring" "main"
     # run_terraform "solomon-tf/main/iam/internal-prod"      "monitoring" "main"
+    # run_terraform "solomon-tf/main/iam/prod"      "monitoring" "main"
 
 
     # run_terraform "juggler-tf/main/iam/prod" juggler
-    run_terraform "juggler-tf/main/iam/preprod" juggler
+    # run_terraform "juggler-tf/main/iam/preprod" juggler
     # run_terraform "juggler-tf/main/iam/testing" juggler
     # run_terraform "juggler-tf/kz/iam/kz" juggler
     # run_terraform "juggler-tf/main/iam/internal-dev" juggler

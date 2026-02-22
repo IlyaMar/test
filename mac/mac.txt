@@ -25,3 +25,7 @@ Maccy clipboard
 Comm Shift C        open
 Opt Enter           paste selected
 Enter               copy selected to clipboard
+
+
+
+launchctl list | grep ru.yandex-team.proxyhelper

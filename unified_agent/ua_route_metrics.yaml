@@ -1,0 +1,21 @@
+routes:
+  - input:
+      plugin: metrics_pull
+      id: metrics_pull-iam-resource-manager_app
+      config:
+        project: yc.iam.service-cloud
+        service: iam-resource-manager
+        url: http://localhost:9960/metrics
+        format:
+          prometheus: {}
+    channel:
+      pipe:
+      - filter:
+          plugin: change_metric_type
+          config:
+            match: "{name=~iam_operations_.*}"
+            source_type: HIST_RATE
+            target_type: HIST
+      channel_ref:
+        name: metrics_channel
+

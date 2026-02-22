@@ -2,21 +2,26 @@ mkdir ~/.arc/stores/objects-common
 mkdir ~/.arc/stores/objects-common-arcadia
 
 nice arc mount --allow-other --repository arcadia -m ~/arcadia --object-store ~/.arc/stores/objects-common-arcadia
-nice arc mount --allow-other --repository arcadia -m ~/arcadia-dashboard --object-store ~/.arc/stores/objects-common-arcadia
-
-
 nice arc mount --allow-other --repository cloudia -m ~/cloudia-cloud-go --object-store ~/.arc/stores/objects-common
-# nice arc mount --allow-other --repository cloudia -m ~/cloudia-terraform --object-store ~/.arc/stores/objects-common
-#nice arc mount --allow-other --repository cloudia -m ~/cloudia-salt --object-store ~/.arc/stores/objects-common
-#nice arc mount --allow-other --repository cloudia -m ~/cloudia-bootstrap --object-store ~/.arc/stores/objects-common
-nice arc mount --allow-other --repository cloudia -m ~/cloudia-deploy --object-store ~/.arc/stores/objects-common
-
 nice arc mount --allow-other --repository cloudia -m ~/cloudia-iam --object-store ~/.arc/stores/objects-common
+nice arc mount --allow-other --repository cloudia -m ~/cloudia-deploy --object-store ~/.arc/stores/objects-common
 nice arc mount --allow-other --repository cloudia -m ~/cloudia-cloud-java --object-store ~/.arc/stores/objects-common
 nice arc mount --allow-other --repository cloudia -m ~/cloudia-monitoring --object-store ~/.arc/stores/objects-common
+
 nice arc mount --allow-other --repository cloudia -m ~/cloudia-aw --object-store ~/.arc/stores/objects-common
-nice arc mount --allow-other --repository cloudia -m ~/cloudia-spinnaker --object-store ~/.arc/stores/objects-common
-nice arc mount --allow-other --repository cloudia -m ~/cloudia-iam-sync --object-store ~/.arc/stores/objects-common
+# nice arc mount --allow-other --repository cloudia -m ~/cloudia-spinnaker --object-store ~/.arc/stores/objects-common
+
+
+# Unmount commands for all repositories
+arc unmount ~/arcadia
+
+arc unmount ~/cloudia-cloud-go
+arc unmount ~/cloudia-deploy
+arc unmount ~/cloudia-iam
+arc unmount ~/cloudia-cloud-java
+arc unmount ~/cloudia-monitoring
+arc unmount ~/cloudia-aw
+arc unmount ~/cloudia-spinnaker
 
 
 ya whoami

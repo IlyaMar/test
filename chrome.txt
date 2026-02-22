@@ -34,5 +34,5 @@ Ctrl + Shift + N	New Incognito window
 Shift + Esc	Process Manager
 Ctrl + Shift + T	Open last closed tab
 Ctrl + T	New tab
-Alt + D, Alt + Enter	Dublicate tab
+Comm L, Opt Return  Dublicate tab
 Ctrl + Shift + PgDown	move tab

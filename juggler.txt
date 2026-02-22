@@ -1,0 +1,27 @@
+https://grafana.yandex-team.ru/d/iam-duty/iam-duty-dashboard?orgId=1&refresh=1m&var-service=iam-control-plane&var-ds=Solomon%20Cloud&var-taskprocessor_pool=All&var-host=All&var-method=iam.v1.AccessBindingService%2FListAccessBindings&var-topic=All&var-env=prod&var-cluster=prod-iam-control-plane&var-app=iam-control-plane_server&var-consumer_name_prefix=access-service
+
+https://grafana.yandex-team.ru/d/iam-duty/iam-duty-dashboard?
+orgId=1&refresh=1m&
+var-service=iam-control-plane&
+var-ds=Solomon%20Cloud&
+var-taskprocessor_pool=All&
+var-host=All&
+var-method=iam.v1.AccessBindingService%2FListAccessBindings&
+var-topic=All&
+var-env=prod&
+var-cluster=prod-iam-control-plane&
+var-app=iam-control-plane_server&
+var-consumer_name_prefix=access-service
+
+
+🔴 CRIT на yc_iam_cp_svm_prod:request-fail в 2026-02-04 12:37:05 MSK
+PROD iam-control-plane request fail
+From 2026-02-04T09:35:11.598Z UTC alert in ALARM
+fail_rate = 0.010, slo = 0.001
+requests = 722.0
+method = iam.v1.SubjectService/BulkGetOrCreate
+Url: https://monitoring.yandex.cloud/projects/yc.iam.service-cloud/alerts/prod-iam-control-plane-request-fail
+(prod-iam-control-plane-request-fail)
+https://grafana.yandex-team.ru/d/iam-duty/iam-duty-dashboard?&var-service=iam-control-plane&var-ds=Solomon%20Cloud&var-method=iam.v1.AccessBindingService%2FListAccessBindings&var-env=prod&var-cluster=prod-iam-control-plane
+
+https://monium.yandex.cloud/projects/yc.iam.service-cloud/alerts/prod-iam-control-plane-request-fail

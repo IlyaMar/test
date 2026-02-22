@@ -64,5 +64,4 @@ user settings:
     },
 
 После загрузки проекта, заменить стандартный gopls на патченный
-rm /Users/ilya-martynov/go/bin/gopls                       
-ln -s $(ya tool gopls --print-path) /Users/ilya-martynov/go/bin/gopls
+rm /Users/ilya-martynov/go/bin/gopls; ln -s $(ya tool gopls --print-path) /Users/ilya-martynov/go/bin/gopls

@@ -13,3 +13,6 @@ apt-cache show libpam0g-dev
 
 apt-get install --only-upgrade google-compute-engine-oslogin=20220205.00~2402020807~yc+underlay	upgrade to sepcific version
 apt-get install --allow-downgrades google-compute-engine-oslogin=20220205.00~2203171259~yc+underlay	downgrade
+
+apt-get install --only-upgrade yandex-unified-agent=26.01.10
+apt-get install --allow-downgrades yandex-unified-agent=25.07.40

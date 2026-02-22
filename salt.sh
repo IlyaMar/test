@@ -24,13 +24,13 @@ yc-bootstrap --template testing.yaml --ticket-id CLOUD-173108 --filter host=iam-
 - update-cluster --salt-role common --salt-state roles.common
 
 
-# Local render, from salt-formula/tests
+# Local render, from salt-formula/tests. Prod grains parsing consume more 2Gb RAM, docker container terminated
 make test-render-salt.iam-token-service.testing FROM_FILE=False
 make test-render-salt.iam-ya.prod FROM_FILE=False
 make test-render-salt.iam-internal-prestable.prod FROM_FILE=False
 make test-render-salt.iam-internal-dev.prod FROM_FILE=False
 make test-render-salt.iam-base.hw4-lab FROM_FILE=False LOG_LEVEL=DEBUG
-
+make STANDS=testing LOG_LEVEL=debug FROM_FILE=true ROLES=compute CUSTOM_ARGS="--salt-roles compute-cp-vpc"
 # Override grains. Base role's salt-roles list stored in grains. Create tests/render_salt/test_grains/grains_testing, modify host vla04-ct5-1.cloud.yandex.net roles list.
 # For lab. Add stand to tests/Makefile:
 supported_stands := testing preprod prod israel nemax cloudvm hw-cgw-dev-lab

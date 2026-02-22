@@ -13,5 +13,9 @@ ORDER BY `timestamp`
 
 USE hahn;
 PRAGMA yt.Pool = 'yc-support-fast';
+
+PRAGMA yt.StaticPool = "cloud";
+PRAGMA yt.Pool = 'yc-iam-fast';
+
 SELECT *
 FROM RANGE(`logs/yc-iam-access-log-prod/30min`, "2025-08-27T13:30:00", "2025-08-27T13:30:00")
