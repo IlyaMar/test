@@ -1,0 +1,2 @@
+Comm I      agent mode
+Shift Tab   plan mode

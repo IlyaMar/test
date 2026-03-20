@@ -1,0 +1,2 @@
+sudo launchctl unload /Library/LaunchDaemons/com.yandex.splitty.plist
+sudo launchctl load -w /Library/LaunchDaemons/com.yandex.splitty.plist

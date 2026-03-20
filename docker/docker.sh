@@ -12,3 +12,6 @@ docker push cr.cloud-preprod.yandex.net/crtqchh33vmh7gjrr5uq/$IMAGE
 
 docker run cr.cloud-preprod.yandex.net/crtqchh33vmh7gjrr5uq/iam-focal-service:latest
 yc container docker-credential get
+
+
+docker login cr.cloud-preprod.yandex.net --username iam --password-stdin

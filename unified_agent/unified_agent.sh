@@ -1,3 +1,5 @@
+https://wiki.yandex-team.ru/unified-agent/support/
+
 cat curl http://localhost:16301/status > status.yml
 
 cd ~/arcadia/logbroker/unified_agent/tools/status_graph

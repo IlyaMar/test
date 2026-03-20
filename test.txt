@@ -1,4 +1,17 @@
-Расчет числа мест постоянного размещения транспортных средств жителей выполняется по формуле: 
-Nп = (S / S1) x A x К1, 
-где: NП - число мест постоянного размещения транспортных средств (мест); 
-S - суммарная поэтажная площадь жилой части здания, кв. м;
+docker pull cr.yandex/crpsh8lqvs5nupoi3v85/iam-focal-build-axiom-jdk25:6 
+&& . /opt/buildagent/temp/agentTmp/docker-wrapper-11770302167585066990.sh 
+&& docker run --rm -w /opt/buildagent/work/1b3c9f857d2b9916 --label jetbrains.teamcity.buildId=28070670 
+-v "/var/run/docker.sock:/var/run/docker.sock" 
+-v "/opt/buildagent/lib:/opt/buildagent/lib:ro" 
+-v "/opt/buildagent/tools:/opt/buildagent/tools:ro" 
+-v "/opt/buildagent/plugins:/opt/buildagent/plugins:ro" 
+-v "/opt/buildagent/work/1b3c9f857d2b9916:/opt/buildagent/work/1b3c9f857d2b9916" 
+-v "/opt/buildagent/temp/agentTmp:/opt/buildagent/temp/agentTmp" 
+-v "/opt/buildagent/temp/buildTmp:/opt/buildagent/temp/buildTmp" 
+-v "/opt/buildagent/system:/opt/buildagent/system" 
+--env-file /opt/buildagent/temp/agentTmp/docker-wrapper-13588001047572206107.envList 
+--entrypoint /bin/sh "cr.yandex/crpsh8lqvs5nupoi3v85/iam-focal-build-axiom-jdk25:6" /opt/buildagent/temp/agentTmp/docker-shell-script-17033223272171558120.sh"
+21:53:55   in directory: /opt/bui
+
+
+

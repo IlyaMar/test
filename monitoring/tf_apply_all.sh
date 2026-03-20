@@ -24,9 +24,11 @@ run_terraform() {
     # Change to the directory
     cd "${dir}"
     
-    # Run terraform init
-    echo "Initializing terraform in ${dir}"
-    ./init.sh
+    # Run terraform init (only when RUN_INIT=true)
+    if [ "${RUN_INIT}" = "true" ]; then
+        echo "Initializing terraform in ${dir}"
+        ./init.sh
+    fi
     
     echo "Running terraform in ${dir}"
     if [ "${kind}" = "monitoring" ]; then
@@ -54,27 +56,27 @@ main() {
    
     echo "Starting Terraform operations with command: ${command}"
 
-
-    run_terraform "solomon-tf/prod/iam/prod"       "monitoring" "prod"    
-    # run_terraform "solomon-tf/preprod/iam/preprod" "monitoring" "preprod"
     # run_terraform "solomon-tf/preprod/iam/testing" "monitoring" "preprod"
-    
+    # run_terraform "solomon-tf/preprod/iam/preprod" "monitoring" "preprod"
+    # run_terraform "solomon-tf/prod/iam/prod"       "monitoring" "prod"     
+    # run_terraform "solomon-tf/prod/iam/kz"       "monitoring" "prod"     
     # run_terraform "solomon-tf/kz/iam/kz"                   "monitoring" "kz"
     
     # run_terraform "solomon-tf/prod/iam/internal-dev"       "monitoring" "prod"
     # run_terraform "solomon-tf/prod/iam/internal-prestable" "monitoring" "prod"
     # run_terraform "solomon-tf/prod/iam/internal-prod"      "monitoring" "prod"
 
+    # run_terraform "solomon-tf/main/iam/prod"      "monitoring" "main"
     # run_terraform "solomon-tf/main/iam/internal-dev"       "monitoring" "main"
     # run_terraform "solomon-tf/main/iam/internal-prestable" "monitoring" "main"
     # run_terraform "solomon-tf/main/iam/internal-prod"      "monitoring" "main"
-    # run_terraform "solomon-tf/main/iam/prod"      "monitoring" "main"
 
 
-    # run_terraform "juggler-tf/main/iam/prod" juggler
-    # run_terraform "juggler-tf/main/iam/preprod" juggler
     # run_terraform "juggler-tf/main/iam/testing" juggler
-    # run_terraform "juggler-tf/kz/iam/kz" juggler
+    run_terraform "juggler-tf/main/iam/preprod" juggler
+    run_terraform "juggler-tf/main/iam/prod" juggler
+    run_terraform "juggler-tf/kz/iam/kz" juggler
+    # run_terraform "juggler-tf/prod/iam/kz" juggler
     # run_terraform "juggler-tf/main/iam/internal-dev" juggler
     # run_terraform "juggler-tf/main/iam/internal-prestable" juggler
     # run_terraform "juggler-tf/main/iam/internal-prod" juggler

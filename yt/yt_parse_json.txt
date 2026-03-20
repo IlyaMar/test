@@ -1,0 +1,23 @@
+USE hahn;
+
+PRAGMA yt.StaticPool = "cloud";
+PRAGMA yt.Pool = 'yc-iam-fast';
+
+$header = ($rest) -> {
+    return unwrap($rest)['subject_info']
+};
+
+
+SELECT app, grpc_method, grpc_service, _rest, request, response, user_agent
+FROM `logs/yc-iam-access-log-internal/30min/2026-02-25T11:00:00`
+WHERE 
+(app = "iam-control-plane" or app = "rm-control-plane" or app = "org-service")
+and 
+(String::Contains(grpc_method, "Set") 
+or String::Contains(grpc_method, "Update")
+or String::Contains(grpc_method, "Create")  
+)
+and grpc_method != "GetSettings"
+and client_app is NULL
+AND NOT String::StartsWith(Yson::YPathString(unwrap(_rest)['subject_info'], "/subject_id"), "yc.iam.")
+limit 100

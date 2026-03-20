@@ -50,3 +50,5 @@ yc --profile testing iam key create --algorithm rsa-4096 --service-account-id yc
 
 
 yc --profile preprod serverless function invoke b09kba1adf0iipb4vntr -d "$IAM_TOKEN"
+
+ycp --profile preprod --impersonate-service-account-id yc.iam.service-account iam create-token

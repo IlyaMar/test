@@ -19,3 +19,26 @@ routes:
       channel_ref:
         name: metrics_channel
 
+
+
+
+routes:
+  - input:
+      plugin: metrics_pull
+      id: metrics_pull-iam-control-plane_app
+      config:
+        project: yc.iam.service-cloud
+        service: iam-control-plane
+        url: http://localhost:9970/metrics
+        format:
+          prometheus: {}
+    channel:
+      pipe:
+      - filter:
+          plugin: change_metric_type
+          config:
+            match: "{name=~iam_operations_active.*}"
+            source_type: HIST_RATE
+            target_type: HIST
+      channel_ref:
+        name: metrics_channel
