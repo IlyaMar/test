@@ -15,3 +15,8 @@ yc container docker-credential get
 
 
 docker login cr.cloud-preprod.yandex.net --username iam --password-stdin
+
+
+colima stop -f
+# memory
+colima start -m 20 -c 10

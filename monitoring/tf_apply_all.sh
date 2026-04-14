@@ -73,11 +73,11 @@ main() {
 
 
     # run_terraform "juggler-tf/main/iam/testing" juggler
-    run_terraform "juggler-tf/main/iam/preprod" juggler
-    run_terraform "juggler-tf/main/iam/prod" juggler
-    run_terraform "juggler-tf/kz/iam/kz" juggler
+    # run_terraform "juggler-tf/main/iam/preprod" juggler
+    # run_terraform "juggler-tf/main/iam/prod" juggler
+    # run_terraform "juggler-tf/kz/iam/kz" juggler
     # run_terraform "juggler-tf/prod/iam/kz" juggler
-    # run_terraform "juggler-tf/main/iam/internal-dev" juggler
+    run_terraform "juggler-tf/main/iam/internal-dev" juggler
     # run_terraform "juggler-tf/main/iam/internal-prestable" juggler
     # run_terraform "juggler-tf/main/iam/internal-prod" juggler
     

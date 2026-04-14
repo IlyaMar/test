@@ -2,3 +2,5 @@ pssh run "cat /var/log/yc/token-service/events.log | jq 'select(.authentication.
 cat access.log | jq 'select(.type=="HTTP" and .request_uri!="/ping" and (.request_headers | .["x-forwarded-for"]) and (.request_headers.cookie | select(. != null) | contains("Session_id")) )' | less
 
 jq 'select(.type=="HTTP" and .request_uri!="/ping" )'
+
+less access.log | tail -100 | jq '. | select(.app == "iam-control-plane") | select(has("client_app") == false)'

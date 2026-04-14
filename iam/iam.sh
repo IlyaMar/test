@@ -52,3 +52,27 @@ yc --profile testing iam key create --algorithm rsa-4096 --service-account-id yc
 yc --profile preprod serverless function invoke b09kba1adf0iipb4vntr -d "$IAM_TOKEN"
 
 ycp --profile preprod --impersonate-service-account-id yc.iam.service-account iam create-token
+
+
+
+
+
+ycp --profile prod --impersonate-service-account-id yc.iam.service-account resource-manager folder update-access-bindings -r  - <<REQ
+resource_id: yc.iam.idm-agent-folder
+private_call: true
+access_binding_deltas:
+- action: ADD
+  access_binding:
+    role_id: editor
+    subject:
+      id: ajekdpbsrmuo96650cb0
+      type: userAccount
+REQ
+
+
+ycp --profile prod iam key create -r -<<REQ
+description: "ESO for iam-idm-agent"
+format: json
+key_algorithm: RSA_4096
+service_account_id: aje45tqcmt945jntuiat
+REQ
