@@ -14,14 +14,14 @@ access_binding_deltas:
 REQ
 
 
-ycp --profile=doublecloud-aws-prod --impersonate-service-account-id yc.iam.service-account resource-manager folder update-access-bindings -r - <<REQ
-resource_id: abcq14q27nqmtv17rqu7
+ycp --profile=internal-dev --impersonate-service-account-id yc.iam.service-account resource-manager folder update-access-bindings -r - <<REQ
+resource_id: yc.iam.idp-folder
 private_call: true
 access_binding_deltas:
-- action: ADD
+- action: REMOVE
   access_binding:
-    role_id: resource-manager.folders.owner
+    role_id: editor
     subject:
-      id: accjfv0j2ar0pgmp51um
+      id: cn5s0hun1d4b3pploltc
       type: userAccount
 REQ

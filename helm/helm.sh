@@ -47,3 +47,12 @@ helm upgrade app-ru-central1-a-1 iam-idp-auth-service-136161.tgz --set javaOptio
 helm upgrade app-ru-central1-a-1 iam-idp-auth-service-136161.tgz  -f values_bak.yaml
 
 helm upgrade app-ru-central1-a-1 https://cr.cloud-preprod.yandex.net/crtqchh33vmh7gjrr5uq/charts/iam-idp-auth-service-136161.tgz --set javaOptions.xmx=2G --reuse-values
+
+# from folder helm
+helm template test .
+
+
+# helm fails to login in cr.yandex
+/opt/homebrew/bin/docker-credential-osxkeychain
+/opt/homebrew/Cellar/docker-credential-helper/0.9.3/bin/docker-credential-osxkeychain
+brew uninstall docker-credential-helper

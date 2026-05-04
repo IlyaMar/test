@@ -21,3 +21,6 @@ yc-bootstrap --template pre-prod.yaml --ticket-id CLOUD-143756 --filter host=myt
 
 HOST_FQDN=iam-as-overlay-vla2.svc.cloud.yandex.net
 yc-bootstrap --template="prod.yaml" --filter="${HOST_FQDN?}" --ticket-id YCIAM-4589 --apply add-svms
+
+# go on from workflow step
+--start-step=reconfigure_balancers_svms_nodelete

@@ -10,3 +10,20 @@ yc managed-kubernetes node-group update c499h9do4sckg9rvc59k --version 1.29
 
 прод
 yc managed-kubernetes cluster update catto8lrg2rltbiujdai --version 1.29
+
+
+
+ycp --profile=preprod --impersonate-service-account-id yc.iam.service-account compute instance restart --instance-id dqtaamolkrsh8k4f72v2
+
+# temporarily allow edit. in console, enable oslogin on k8s node VM
+ycp --profile=prod --impersonate-service-account-id yc.iam.service-account resource-manager folder update-access-bindings -r - <<REQ
+resource_id: yc.iam.mk8s-folder
+private_call: true
+access_binding_deltas:
+- action: ADD
+  access_binding:
+    role_id: editor
+    subject:
+      id: ajekdpbsrmuo96650cb0
+      type: userAccount
+REQ
